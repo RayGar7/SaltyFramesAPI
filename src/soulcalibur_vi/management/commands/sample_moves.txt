@@ -1,0 +1,151 @@
+:A:
+:A::A:
+:A::A::A:
+:A::A::B:
+:6::A:
+:6::A: (tip)
+:3::A:
+:3::A: (tip)
+:3::A::A:
+:3::A::A: (tip)
+:2::A:
+:1::A: (close)
+:1::A: (tip)
+:4::A:
+:7::A:
+:8::A:
+FC :2::A:
+FC :3::A:
+FC :3::A::K:
+WR :A:
+WR :A::A:
+BT :A:
+BT :2::A:
+:B:
+:B::B:
+:B::B::A:
+:B::B::B:
+:B::4::B:
+:B::6:
+:6::B:
+:6::b-small::A:
+:6::b-small::A: (tip)
+:aB:
+:a(A):
+:3::B:
+:3::B: (tip)
+:3::b-small::K:
+:3::b-small::K: (fast)
+:2::B:
+:2::B::A:
+:2::B::B:
+:2::B::K:
+:1::B:
+:1::B: (tip)
+:4::B:
+:7::B:
+:8::B:
+FC :2::B:
+FC :2::B::B:
+WR :B:
+BT :B:
+BT :2::B:
+:K:
+:6::K:
+:3::K::K:
+:2::K:
+:1::K:
+:4::K::B:
+FC :2::K:
+FC :1::K:
+FC :1::K::K:
+WR :K:
+:8::K:
+:7::K:
+BT :K:
+BT :2::K:
+:A+B:
+:6::A+B:
+:2::A+B:
+:4::A+B::A::B:
+:4::A+B::A+B:
+:9::A+B:
+:9::a-small::+::b-small::G:
+:9::A+B::B:
+:8::A+B:
+:B+K:
+:6::B+K:
+:2::B+K:
+:4::B+K:
+:8::B+K:
+:8::B+K::B:
+:8::B+K::B::B:
+WR :B+K:
+:(6)::A:
+:(2):*:(8)::A:
+:(2):*:(8)::A::A:
+:(1):*:(7)::A:
+:(1):*:(7)::A: (tip)
+:(4)::A:
+:(4)::A: (tip)
+:(6)::B:
+:(2):*:(8)::B:
+:(1):*:(7)::B:
+:(1):*:(7)::B: (tip)
+:(4)::B:
+:(6)::K:
+:(6)::K::K:
+:(6)::K::K::K:
+:(2):*:(8)::K:
+:(4)::K:
+:(6)::A+B:
+:(4)::A+B:
+:(6)::B+K:
+:(6)::(B+K):
+:(4)::B+K:
+:(4)::(B+K):
+Run :K:
+LS :A:
+LS :B:
+LS :K:
+:A+G:
+:4::A+G:
+:4::6::A+G:
+:4::6::A+G::B:
+:4::6::A+G::(B):
+Right side throw
+Left side throw
+Back throw:
+:B+G:
+:(B+G):
+:RE::A:
+:RE::A::A:
+:RE::A::B:
+:RE::B:
+:RE::K:
+:A+B+K:
+:4::A+B+K:
+:SC::6::A:
+:SC::B::B::B:
+:SC::1::B:
+:SC: FC :1::K::K:
+:SC: FC :1::K::K::B:
+:SC::(6)::A:
+:SC::(6)::A::A:
+:SC::(2):*:(8)::A::A::A:
+:SC::(2):*:(8)::A::A::A::A:
+:SC::(1):*:(7)::B:
+:SC::(6)::A+B:
+:SC::(4)::A+B:
+:SC::(4)::B+K:
+:SC::(4)::(B+K):
+
+
+{'type': 'fd6row', 'atk': 'Bringer of Ruin', 'cmd': 'SC :1::A::A:', 'lvl': ':L::L:', 'dmg': '65', 'imp': '36', 'grd': '-24', 'hit': 'KND', 'cnt': 'KND', 'gb': '5%', 'nts': 'NC'}
+
+added in the db: Seong Mi-na, Astaroth. Xinghua
+
+This one is failing for Groh:
+{'type': 'fd6row', 'atk': 'Guard', 'cmd': ':G:', 'lvl': 'n/a', 'dmg': 'n/a', 'chip': 'n/a', 'imp': 'n/a', 'grd': 'n/a', 'hit': 'n/a', 'cnt': 'n/a', 'gb': 'n/a'}
+
+looks liek some data fro groh is bad
