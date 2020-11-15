@@ -1,0 +1,244 @@
+,Command,regexp,Name/Nickname,Hit level,Damage,Start up frame,Block frame,Hit frame,Counter hit frame,Total Frames,RBNorway Notes,Notes,Needs Trans,Engrish Notes,gfycat
+,1,,Jab,h,7,10,+1,+8,+8,,,,,,
+,2,,Right Jab,h,8,10,0,+6,+6,,,,,,
+,3,,Croque-Monsieur (1),h,14,18~19,-9~-8,-4~-3,-4~-3,,,,,,
+,4,,High Kick,h,15,13,-9,+7,Launch (JG?),41,,,,,
+,"1, 1",,Straight Rondel (2),"h, h","7,7",10,-1,+5,+5,,,NC,,,
+,"1, 2",,One Two Punch,"h, h","7,10",10,-3,+3,+3,,,NC,,,https://gfycat.com/NiftySelfishEland
+,"1, 3",,Course Picante (2),"h, l","7,10",10,-16~-15,-5~-4,-5~-4,,,NC,,,
+,"1, 4",,Course Sarat,"h, h","7,15",10,-6,+5,Launch (JG?),,,NC,,,https://gfycat.com/ReliableVillainousGalapagosalbatross
+,"2, 1",,Barista Swirl (2),"h, m","8,10",10,-4~-2,+4~+6,+7~+9,,,NC,,,
+,"3, 4",,Croque-Monsieur,"h, m (TJ)","14,17",js18~,-10~-5s,+4~+9s,KND,,,"Low Crush 18F, Force Crouch, NC, Active extra 2F",,,https://gfycat.com/UnnaturalMealyGallowaycow
+,"4, 3",,Sparkling Hop (2),"h, m","15,12",13,-8~-7,+3~+4,+3~+4,,,,,,
+,"1, 1, 2",,Straight Rondel,"h, h, h","7,7,12",10,-12,+3,+3,,,NC,,,https://gfycat.com/WindyTatteredBantamrooster
+,"1, 3, 3",,Course Picante,"h, l, m","7,10,18",10,-14~-13,-6~-5,KND,,,"NCC 2nd hit, Delay window 11F, CH confirm window 5F",,,https://gfycat.com/ComplexUntriedFennecfox
+,"2, 1, 4",,Barista Swirl,"h, m, m (TJ)","8,10,20",js12~,-4~-3,KND,KND,,,"Low Crush 12F, NCC 2nd hit",,,https://gfycat.com/ObedientBlondFox
+,in rage d/f+1+2,df1\+2,Rage Art,m,55,20 pc8~17,-22,KND,KND,,Rage art,Armor 8-17F,,,https://gfycat.com/LinearNaturalBeauceron
+,"in rage f, f, F+3+4* or WR+3+4*",fff3\+4\*,Rage Drive,"m (TJ), m (TJ)","27,20",26,+2,KND(KND),KND(KND),,,"Low Crush 15F, Force Crouch on block",,,
+,"in rage f, f, F+3+4*, f or WR+3+4*, f",fff3\+4\*f,Rage Drive to BAL,"m (TJ), m (TJ), (Special) (TC)(BAL)","27,20s",26,+9,KND(KND),KND(KND),,,"Low Crush 15F, Force Crouch on block",,,https://gfycat.com/FalseWeightyFrilledlizard
+,"1, 2, 1+2",,Fast Break,"h, h, m","7,10,20",10,-13~-12,+9~+10k,KND,,Tail spin,"Tail spin, NCC 2nd hit, Delay window 10F, CH confirm window7F",,,https://gfycat.com/HarmfulOddballArctichare
+,"1, d+4",,Course Achuto,"h, l","7,13",10,-12,-1,-1,,,NC,,,https://gfycat.com/EthicalAmpleIndianrhinoceros
+,"4, 3, 3+4",,Sparkling Hop,"h, m, m (TJ)","15,12,14",js17~,-5~0s,KND,KND,,,"Low Crush 17F, Force Crouch on block, Active extra 4F",,,https://gfycat.com/FearfulDefiniteArcherfish
+,1+2,,Black Poêlé (1),m,18,19~20,-13~-12s,0~+1s,0~+1s,,,Force Crouch,,,
+,"1+2, 1+2",,Black Poêlé,"m, m","18,20",19~20,-20~-19,KND,KND,,,"NC, Delay window 21F, CH confirm window20F",,,https://gfycat.com/ValuableMagnificentJavalina
+,"1+2, F",,Black Poêlé (1) to SB,"m, (Special) (TC)(BAL)",18,19~20s,+4~+5s,+17~+18s,+17~+18s,,,"High Crush, Ends in FC, Force Crouch",,,
+,"1+2, F (After stance ends)",1\+2f,,"m, (Special) (TC)(BAL)",18,19~20s,-19~-18s,-6~-5s,-6~-5s,,,,,,
+,"1+2, B",,Black Poêlé (1) to RSB,"m, (Special) (TC)(BAL)",18,19~20s,-36~-35s,-23~-22s,-23~-22s,,,"High Crush, Ends in FC, Force Crouch",,,
+,f+2,,Circle Whopper (1),h,12,12,-8,+3,+3,,,,,,
+,"f+2, 3",,Circle Whopper,"h, m","12,20",12,-15~-14,KND,KND,,,"NC, Delay window 10F, Confirm window 10F",,,https://gfycat.com/BestThatArctichare
+,f+3,,Merguez Kick Combo (1),m,18,21~27,-4~+2,0~+6s,+8~+14s,,,"Force Crouch on hit, Active extra 3F",,,
+,"f+3, 4",,Merguez Kick Combo,"m, m","18,23",21~27,-11~-10,KND,CS,,,"NCC, Delay window 7F",,,https://gfycat.com/OldDecimalAnkolewatusi
+,f+4,,Spinning Linguine,h,20,16~17,-6~-5,KND,KND(Throw),50,"Homing, Tail spin","Homing, Tail spin, Dmg in parentheses upon Hit Grab",,,https://gfycat.com/SpecificIncredibleBernesemountaindog
+,f+1+2,,Giga Jacker,m,25,15~19 pc8~14,-13~-9,KND,KND,,Power crush,"Armor 8F, Active extra 2F",,,https://gfycat.com/IllImpressiveJabiru
+,d/f+1,,Quick Upper,m,13,14~15,-3~-2,+5~+6,+5~+6,,,,,,
+,"d/f+1,1+2",,Escalope Pound,"m,m","13,25",14~15,-12,KND,KND,,,"NCC, Delayable",,,
+,"d/f+1, 2",,Escalope Elbow,"m, m","13,15",14~15,-10,+6,+6,,,"NC, Delay window 11F, CH confirm window 8F",,,https://gfycat.com/FrequentThunderousLemur
+,d/f+2,,Slash Darne,m,14,15~16,-8~-7,+3~+4a,Launch (JG?),42,,,,,https://gfycat.com/HarmlessImaginativeCalf
+,d/f+3,,Gaufrettes Cutter (1),m,14,18,-7,+4,+4,,,,,,
+,"d/f+3, 1",,Gaufrettes Cutter (2),"m, h","14,11",18,-3,+8,+8,,,NC,,,
+,"d/f+3, 1, 1",,Gaufrettes Cutter,"m, h, m","14,11,20",18,-10,+1,KND,,,"NCC 2nd hit, Delay window 10F, CH confirm window10F",,,https://gfycat.com/FaithfulFirsthandHart
+,"d/f+3, 2",,Gaufrettes Punch,"m, h","14,20",18,-9~-8,KND,KND,,,NC,,,https://gfycat.com/DefiantGlumBeagle
+,"d/f+3, 4",,Gaufrettes Kick (2),"m, l","14,10",18,-12~-11,-1~0,-1~0,,,NCC,,,
+,"d/f+3, 4, 4",,Gaufrettes Kick,"m, l, h","14,10,16",18,-13~-12,0~+1,0~+1,,,NC 2nd hit,,,https://gfycat.com/AlarmingDisastrousBordercollie
+,d/f+4,,Front Kick,m,16,13~14,-9~-8,+2~+3,+2~+3,41,,,,,
+,d/f+3+4,,Runner Flip (1),mm,"6,6","18,28",-13,KND,KND,,,,,,
+,"d/f+3+4, 4",,Runner Flip,"mm, m (TJ)","6,6,23",js17~,-4~-2,KND,KND,,Tail spin,"Low Crush 17F, Tail spin",,,https://gfycat.com/PinkThunderousDiplodocus
+,d+1,,Coupé Chop,m,18,18~19s,-11~-10,+5~+6s,KND,,,"Ends in FC, Force Crouch on normal hit",,,https://gfycat.com/CrazyCheerfulIbis
+,d+2,,Combination Mince (1),m,12,15,-9,+2,+2,43,,,,,
+,"d+2, 1",,Combination Mince,"m, m","12,14",15,-10~-9,+1~+2,+1~+2,,,NC,,,
+,"d+2, 1, 2",,Combination Ble,"m, m, m","12,14,18",15,-10~-8,+3~+5,+3~+5,,,Delayable,,,
+,"d+2, 1, 2, 2",,Combination Baldo,"m, m, m, m","12,14,18,21",15,-21,KND,KND,,,"NC 3rd hit, Delay window 12F, Confirm window 6F",,,https://gfycat.com/ScentedAstonishingHornet
+,"d+2, 3",,Combination Ble,"m, m","12,21",15,-4,+9,CS,,,,,,https://gfycat.com/LeftBabyishLhasaapso
+,"d+2, 4",,Combination Baldo,"m, m (TJ)","12,21",15a,-13,KND,KND,,,NC,,,https://gfycat.com/EminentBruisedArgentineruddyduck
+,d+3,,Panini Sweep (1),l (TC),14,19s cs6~,-18~-17,-7~-6,-7~-6,,,"High Crush 6F, Ends in FC",,,
+,"d+3, 4",,Panini Sweep,"l, h","14,20",19 6~,-8~-7,KND,KND,,Tail spin,"High Crush 6F, Tail spin, NCC",,,https://gfycat.com/ImmaculateIndolentHorse
+,d+4,,Tornado Mixer (1),l,11,16,-12,-1,-1,,,,,,
+,"d+4, 3",,Tornado Mixer (2),"l, h","11,15",16,-7,-2,-2,,,NCC,,,
+,"d+4, 3, 4",,Tornado Mixer,"l, h, m","11,15,24",16,-12~-11,KND,KND,,,NCC 2nd hit,,,https://gfycat.com/UglyJampackedFrigatebird
+,d+1+2,,Apicius Special (2),hh,"5,5","14,25",-9,+2,+2,,,,,,
+,"d+1+2, 2",,Apicius Special (3),"hh, m","5,5,5","14,25",-8,+3,+3,,,"NC, guard disabled 8F",ガード不可-8Fまで,"Combo from 1st NH, Unblockable -8F",
+,"d+1+2, 2, 1",,Apicius Special,"hh, m, h","5,5,5,20","14,25",-16~-15,KND,KND,,,"NC, input d to ki charge",,,https://gfycat.com/MeanInfatuatedComet
+,d+3+4,,Duck Flip,mm,"12,20","15~16, 24~26 2js20~",-15~-13,Launch,Launch,,,Low Crush,,,https://gfycat.com/ShrillPointlessFirebelliedtoad
+,d+3+4 (Second hit miss),d3\+4,,m,12,15~16,-24~-23,Launch (JG?),Launch (JG?),,,,,,
+,d/b+2,,Bite Uppercut,m,17,14,-8,+6,+6,,,,,,https://gfycat.com/EmbarrassedPleasingEasternglasslizard
+,d/b+3,,Liaison Spike,l,17,20,-12,+2,KND,,,,,,https://gfycat.com/OptimalParchedChamois
+,d/b+4,,Contorno Farce (1),l (TC),15,24~25 cs6~,-12~-11,-1~0,-1~0,,,High Crush 6F,,,
+,"d/b+4, 4",,Contorno Farce (2),"l (TC), m","15,14",js14~,-12~-10,-2~0,-2~0,,,"Low Crush, NCC, Active extra 2F",,,
+,"d/b+4, 4, 3",,Contorno Farce (3),"l (TC), m, h","15,14,12",14~,-10,+3,+3,,,NCC 2nd hit,,,
+,"d/b+4, 4, 3, 3",,Contorno Farce,"l (TC), m, h, m","15,14,12,18",14~,-12~-7,KND,KND,,,NCC 3rd hit,持続になりやすい,,https://gfycat.com/AlertAbandonedAnophelesmosquito
+,"d/b+4, 4, 4",,Contorno Mist,"l (TC), m, l","15,14,10",cs11~,-12~-10,-1~+1,-1~+1,,,High Crush,,,https://gfycat.com/DarkActiveIntermediateegret
+,"d/b+4, 4, 4, D",,Contorno Mist to Crouching,"l (TC), m, l","15,14,10",s cs11~,-12~-10,-1~+1,-1~+1,,,"High Crush, Ends in FC",,,
+,d/b+1+2,,Abats Snipe,m?,16,18~19,-13~-12,Launch,Launch,,,,,,https://gfycat.com/ComplexFarGermanwirehairedpointer
+,d/b+3+4,,Huile Slip (1),l,10,19,-31,+6,+6,,,Stagger block,,,
+,"d/b+3+4, 4",,Huile Slip,"l, l","10,18",19,,+8s,+8,,,"NC, Force Crouch on hit",,,https://gfycat.com/ImpolitePlainDobermanpinscher
+,"d/b+3+4, 4 (Second hit only)",db3\+44,,l,12,19,-28,-9s,KND,,,Force Crouch on normal hit,,,
+,b+1,,Ravenous (1),m,15,17~19,-9~-7,+4~+6s,+4~+6s,,,"Force Crouch on hit, active extra 1F",,,
+,"b+1, 2",,Ravenous,"m, m","15,16",17~19,-8~-7,+7~+8,+7~+8,,,NC,,,https://gfycat.com/GrimShoddyAustraliancurlew
+,b+2,,Combination Bitter (1),m,10,13~14,-5~-4,+6~+7,+6~+7,,,,,,
+,"b+2, 2",,Combination Bitter (2),"m, h","10,12",13~14,-3,+8,+8,,,NC,,,
+,"b+2, 2, 4",,Combination Bitter (3),"m, h, m","10,12,16",13~14,-9,+7,+7,,,"NCC 2nd hit, Delayable 10F, CH confirm window 8F",,,
+,"b+2, 2, 4, 4",,Combination Bitter,"m, h, m, h","10,12,16,20",13~14,-7~-6,KND,KND,,Tail spin,"Tail spin, NC 3rd hit",,,https://gfycat.com/InformalCarefulBasenji
+,b+3,,Whopping Kick,m,20,17~18,-15~-14,KND,uKZD,,,,,,https://gfycat.com/EducatedPoshLiger
+,b+4,,Pretzel Crush (1),m,15,15,-7,+4,+4,,,,,,
+,"b+4, 1",,Pretzel Crush,"m, m","15,20",15,-7,+9s,+9s,,,"Force Crouch on hit, NCC",,,https://gfycat.com/ZestyBlueBoar
+,"b+4, 4",,Combination Bittersweet,"m, h","15,20",15,-7~-6,+11~+12,+11~+12,,Tail spin,"Tail spin, NC",,,https://gfycat.com/DazzlingGentleCockatiel
+,b+1+2,,Three Star Combo (1),m,20,17~18,-9~-8,+8~+9s,+8~+9s,,,Force Crouch on hit,,,
+,"b+1+2, 1",,Three Star Combo (2),"m, m","20,10",17~18,-11,0,0,,,"NCC, Delay window 10F, CH confirm window 9F",,,
+,"b+1+2, 1, 2",,Three Star Combo,"m, m, h","20,10,20",17~18,-16,KND,KND,,,"NC 2nd hit, Delay window 20F, Confirm window 20F",,,https://gfycat.com/ThornyDirtyAlligatorgar
+,b+3+4,,Reverse Spinner Ball,(Special) (TC),,s,,,,50,,"High Crush 6F, Ends in FC",しゃがみステータス以前から姿勢で潜る,,https://gfycat.com/NaughtyCrazyApisdorsatalaboriosa
+,u/b+3,,Reverse Duck Flip,mm (TJ),"14,20","15~16, 24~26 js13~",-15~-13,Launch,Launch,,,Low Crush 13F,,,https://gfycat.com/HauntingSameFlee
+,u/b+3 (First hit only),ub3,,m (TJ),14,15~16 js13~,-24~-23,Launch (JG?),Launch (JG?),,,Low Crush 13F,,,
+,u/b+3 (Second hit only),ub3,,m (TJ),20,24~26 js13~,-15~-13,Launch (JG?),Launch (JG?),,,Low Crush 13F,,,
+,u+1+2,,Egg Bound,(Special) (TJ),,a,,,,,,Low Crush 9F,,,https://gfycat.com/SomeNeglectedCoelacanth
+,"u+1+2, F",,Egg Bound to SB,"(Special) (TJ), (Special) (TC)(BAL)",,as,,,,,,"High Crush, Ends in FC",,,
+,"u+1+2, B",,Egg Bound to RSB,"(Special) (TJ), (Special) (TC)(BAL)",,as,,,,,,"High Crush, Ends in FC",,,
+,"u+1+2, 1",,Hatching Punch,"(Special) (TJ), m (TJ)",21,11~13s (28~) js1~,-9,KND,KND,,Wall bounce,"Wall bounce, Ends in FC",,,https://gfycat.com/HeavyUltimateEmperorshrimp
+,u+3+4,,Strainer,m (TJ),20,24~30s js13~,-4~+2s,+6+12s,KND,,,"Low Crush 13F, Ends in FC, Force Crouch, Active extra 5F",,,https://gfycat.com/HilariousFantasticAzurewingedmagpie
+,u+3,,Flying Jambon,m (TJ),20,20 js9~,-13,KND,KND,,,Low Crush 9F,,,
+,u/f+3,,Flying Jambon,m (TJ),20,20 js9~,-13,Launch (JG?),Launch (JG?),,,Low Crush 9F,,,https://gfycat.com/SimplisticImpressionableAtlanticsharpnosepuffer
+,u or u/f+4,uf?4,Faisan Crow (1),m (TJ),14,25~27 js15~,-9~-7,0~+2,0~+2,,,Low Crush 15F,,,
+,"u or u/f+4, 4",uf?44,Faisan Crow,"m (TJ), m","14,18",js1~5,0~+1,+4~+5s,KND,,,"Low Crush 15F, Force Crouch on normal hit, active extra 1F",,,https://gfycat.com/RightYellowIbadanmalimbe
+,u/f+1+2,,Cracker Tariata (1),m (TJ),15,16~18 js13~,-11~-9,-3~-1,-3~-1,,,"Low Crush 13F, active extra 1F",,,
+,"u/f+1+2, 4",,Cracker Tariata,"m (TJ), h (TJ)","15,20",js10~,-1~0,+14~+15kg,KND,,Tail spin,"Tail spin, Low Crush, NC, Delay window 15F, Confirm window 15F",,,https://gfycat.com/ClearcutDimArabianwildcat
+,"u/f+1+2, 1+2",,Cracker Jacker,"m (TJ), m","15,25",10~,-17~-13,KND,KND,,,"NC, Delay window 30F, Confirm window 15F",,,https://gfycat.com/AccomplishedFinishedArgali
+,u/f+3+4,,Rolling Kebab (2),lh,"10,12","21,31 2js24~",-15(-25s),-4,-4,,,"Low Crush 24F, 1st hit block/2nd hit whiff -25F, NC ",,,
+,"u/f+3+4, 4",,Rolling Kebab,"lh, h (TJ)","10,12,20",js1~,-4,KND,KND,,Tail spin,"Tail spin, NCC 2nd hit",,,https://gfycat.com/ExaltedInferiorDuckbillcat
+,"f, F+2",,Zip Cutter,m,25,14~15 (15~),-8~-7,KND,KND,,,"Startup from Neutral 15F, not bufferable",,,https://gfycat.com/AgileUnsungArcherfish
+,"f, F+3",,Jumping Beans,m (TJ),18,18~21a (19~) js8~,-7~-4,+4~+7,CS,,,"Low Crush 8F, Startup from Neutral 19F, Active extra 1F, not bufferable",,,https://gfycat.com/WhiteGoodnaturedLadybird
+,"f, F+4",,Double Chapati (1),m (TJ),12,22~23 (23~) js14~,-9~-8,+2~+3,+2~+3,,Homing,"Homing, Low Crush 14F, Startup from Neutral 23F, not bufferable",,,
+,"f, F+4, 4",,Double Chapati,"m (TJ), m (TJ)","12,20",js1~,-13~-11,KND,KND,,,"Low Crush, NC, 2nd hit disabled after 1st whiff",,,https://gfycat.com/WelllitAcceptableGourami
+,"f, F+3+4",,Huitres Crush,mm (TJ),"10,20","26~28, 35~40 (27~) js16~34",-0s~+5s,KND,KND,,,"Low Crush 16F, not bufferable, Startup from neutral 27F, Active extra 2F",,,https://gfycat.com/UnevenUnsightlyCatfish
+,"f, F+3+4 (Second hit miss)",ff3\+4,,m (TJ),10,26(27~) js16~,-25,-14,-14,,,Low Crush 16F,,,
+,"b, f+1",,Hot Cross Bun/Backswing Blow,m,25,26(26~),-12,+9,KND,,,,,,https://gfycat.com/KlutzyDefinitiveBasil
+,"b, B+4",,Langouste Tail,m,20,26~28 (27~) js15~,-4~-2s,KND,KND,,,"Low Crush 15F, Force Crouch on block, not bufferable, Startup from neutral 27F, Active extra 2F",,,https://gfycat.com/YawningWarmBichonfrise
+,"b, B+3+4",,Grater Langouste,m! (TJ),60,72~74 (73~) js51~,KND,KND,KND,,,"Low Crush 50F, Unblockable",,,https://gfycat.com/ThisHonoredBellsnake
+,"b, B+3+4, 2",,Grater Langouste Feint Knuckle,m,25,15~16 (58~59),-8~-7,KND,KND,,,Not bufferable,,,https://gfycat.com/InferiorSaltyHound
+,"b, B+2+3",,Quick Langouste,h! (TJ),32,48~50 (49~) js20~,KND,KND,KND,,Tail spin,"Tail spin, Low Crush 19F, Unblockable",,,https://gfycat.com/CommonFantasticCanvasback
+,"f, f, F+3 or WR+3",fff3,Perfect Slash,m (TJ),30,20~26 (23~) js3~,+9~+15g,KND,KND,,,"Low Crush 3F, Active extra 6F",,,https://gfycat.com/ThoroughDescriptiveFreshwatereel
+,"f, f, F+3+4 or WR+3+4",fff3\+4,Supersize Missile,m (TJ),27,26~36a (29~) js15~,+8~+18g,KND,KND,,,"Low Crush 15F, Active extra 8F minimum",,,https://gfycat.com/TidyGloomyBobolink
+,WS+1,,Cross Butcher (1),m,11,15~17,-11~-9,0~+2,0~+2,,,,,,
+,"WS+1, 2",,Cross Butcher,"m, h","11,20",15~17,-9~-8,KND,CS,,Tail spin,"Tail spin, NC, Delay window 11F, Confirm window 8F",,,https://gfycat.com/LawfulUncomfortableAmmonite
+,"WS+1, 3",,Hot Guimauve,"m, m","11,25",15~17,-13~-12,KND,KND,,,NC,,,https://gfycat.com/WetOffensiveGazelle
+,WS+2,,Spinach Upper (1),m,10,14,-7,+4,+4,,,,,,
+,"WS+2, 1",,Spinach Upper,"m, m","10,12",14,-20~-17,Launch (JG?),Launch (JG?),,,"NC, Delay window 14F",,,https://gfycat.com/MilkyDisfiguredIlladopsis
+,"WS+2, 2",,Spinach Hammer,"m, m","10,20",14,-13s,+5s,KND,,,"Force Crouch, NC, Delay window 14F",,,https://gfycat.com/DeterminedCostlyAsp
+,WS+3,,Brioche Star (1),h,17,17~18,-8~-7,KND,KND,,,,,,
+,"WS+3, 3+4",,Brioche Star,"h, m (TJ)","17,28",js15~,-4~+4s,KND,KND,,,"Low Crush 15F, Force Crouch on block, Active extra 7F",,,https://gfycat.com/CreepyOnlyCorydorascatfish
+,WS+4,,Toe Smash,m,20,11~12,-6~-5,+5~+6,+5~+6,,,,,,
+,WS+1+2,,Rising Matzo,m,25,15~17,-9~-7,KND,Launch (JG?),,,,,,https://gfycat.com/BigSeveralEider
+,FC+d/f+2,,Polpo Swing (1),m,14,14,-8,+3,+3,,,,,,
+,"FC+d/f+2, 1",,Polpo Swing (2),"m, m","14,12",14,-7,+4,+4,,,NC,,,
+,"FC+d/f+2, 1, 1+2",,Polpo Swing,"m, m, m","14,12,25",14,-13,KND,KND,,,NCC 2nd hit,,,https://gfycat.com/DeterminedSplendidChick
+,"FC+d/f+2, 4",,Seppia Swing (2),"m, l","14,12",cs15~,-12~-10,-1~+1,-1~+1,,,"High Crush, NC",2段止め時、ガード硬直大 出し切りだと硬直減,,
+,"FC+d/f+2, 4, 1+2",,Sepia Swing,"m, l, m","14,12,25",15~,-13,KND,KND,,,NCC 2nd hit,,,https://gfycat.com/SarcasticPopularCormorant
+,SS+1+2,,Bánh mi Strike,m,24,15~16 (24~),-5~-4s,KND,KND,,,Force crouch on block,,,https://gfycat.com/WeeklyWhirlwindIchthyosaurs
+,BT d+2,,Plague Pick,m,17,15~16,-9~-8,KND,CS,,,,,,https://gfycat.com/BarrenSpotlessAmericanbobtail
+,1+2+3+4,,Ki Charge,(Special),,15~16,,,,55,,,,,
+,"1+2+3+4, 1+2",,,(Special) (TJ),,as,,,,,,"105F animation, ends in FC",,,
+,"1+2+3+4, 4",,Sucre Tile,h! (TJ),42,17~18a (72~) js4~15,KND,KND,KND,,,"Low Crush, Unblockable",,,https://gfycat.com/AffectionateBitesizedHoki
+,f+3+4 (to BAL),f3\+4,Spinner Ball,(Special) (TC)(BAL),,s,,,,,,"High Crush 8F, Ends in FC, 25F animation",,,https://gfycat.com/HastyDarkGalago
+,BAL 1,,Lyonnaise Break,m,17,18~19 (43~),-8~-7,+6~+7,CS,,,,,,https://gfycat.com/IncredibleDopeyAsianporcupine
+,BAL 2,,Galette Slicer,m,21,23~24s (48~),-11~-10,KND,KND,,"Homing, Tail spin","Homing, Tail spin, Ends in FC",,,https://gfycat.com/ShinySnoopyCow
+,BAL 3,,Snail Kick,h,30,20~23s (45~) cs1~,+8~+11,SH,SH,,,"High Crush, Ends in FC, Active extra 2F",,,https://gfycat.com/WeightyWeeIbizanhound
+,BAL 4,,Stealing Home,l,14,23~26s (48~) cs1~,-24~-21,KND,KND,,,"High Crush, Ends in FC unless blocked",,,https://gfycat.com/LightSarcasticAegeancat
+,BAL 3+4,,Perfect Press,m (TJ),28,29~33s (54~) js1~,-18~-14s,KND,KND,,,"Low Crush 1F, Ends in FC, Force Crouch on block, Active extra 4F",,,https://gfycat.com/TiredArcticAndalusianhorse
+,"BAL 3+4, B",,Perfect Press to BT,"m (TJ), (Special)",28,29~33b (54~) js1~,-18~-14s,KND,KND,,,"Low Crush 1F, Force Crouch on block, Active extra 4F",,,
+,"f, n, d, D/F",,Crouch Dash,(Special),,s,,,,,,"Ends in FC, not bufferable",,,
+,"f, n, d, d/f+1",,Langue Washer,h,25,13~14 (16~),-2~-1,KND,KND,36,Tail spin,"Tail spin, not bufferable",,,https://gfycat.com/AmbitiousWideeyedBlesbok
+,"f, n, d, d/f+2",,Spiral Rocky,m,"24(,5)",16~17a (19~),-23~-22,Launch,Launch,,,"Damage () is on landing, not bufferable, Startup from neutral 19F",,,https://gfycat.com/FrequentVariableCub
+,"f, n, d, d/f+3",,Gambero Knee (1),m (TJ),14,16~17 (19~) js14~,-10~-9,KND,KND,50,,"Low Crush 14F, not bufferable, Startup from neutral 19F",,,
+,"f, n, d, d/f+3, 4",,,"m (TJ), h (TJ)","14,17",js1~,-11,,KND,KND,Tail spin,"Low Crush 14F, not bufferable, Startup from neutral 19F, ssl second hit",,,
+,"f, n, d, d/f+3, 2",,Gambero Knee,"m (TJ), h (TJ)","14,30",js1~,-3~-2s,KND,KND,,,"Low Crush 14F, stop move after 1st whiff, Jails",,,https://gfycat.com/BarrenForkedAmericankestrel
+,"f, n, d, d/f+4",,Apres Sweep,l,16,18~19s (21~),-28,-1~0 (KND),-1~0 (KND),,,"Stagger Block, Ends in FC unless blocked, not bufferable",,,
+,"f, n, d, d/f+4, 1+2",,Cutting Coppa/Hellsweep,"l, m","16,25",18~19 (21~),-17,KND,KND,,,Disable 2nd hit if 1st blocked,,,https://gfycat.com/DeterminedWarpedCatfish
+,"f, n, d, d/f+1+2",,Granchi Canon,m (TC),25,15(18~),-10,KND,KND,,Wall bounce,"Wallbounce, not bufferable",,,https://gfycat.com/TintedVeneratedEuropeanfiresalamander
+,"f, n, d, d/f+1+2, *",,,m (TC),35,24(27~),-7,KND,KND,,Wall bounce,,,,
+,f+1,,,h,7,10,+1,+8,+8,,,,,,
+,d/b+1,,Crouch Jab,Sm (TC),5,10s cs4~,-5,+6,+6,,,"High Crush 4F, Ends in FC, Input F to recover standing",,,
+,u/b or u or u/f+1,u[bf]?1,Jumping Knuckle,m (TJ),12,18 js9~,-8,+3,+3,,,Low Crush 9F,,,
+,u/b or u+2,ub?2,Hook,h,17,15~16,-12~-11,+9~+10g,+9~+10g,,,,,,
+,u/f+2,,10 Hit Combo (1),h,9,20,-4,+7,+7,,,,,,
+,u/b+4,,Rising Toekick,m (TJ),11,15~17,-19~-17,-8~-6,-8~-6,,,Low Crush 9F,,,
+,"u/f, n+4",,Delayed Hopkick,m,25,"23(29,35) js9~33",-11(-13),Launch (JG?),Launch (JG?),,,Low Crush 9F,,,
+,FC+1,,Crouch Jab,Sm (TC),5,10s cs1~,-5,+6,+6,,,"High Crush 4F, Ends in FC, Input F to recover standing",,,
+,FC+d/b or d+2,fcdb?2,Crouch Straight,Sm (TC),8,11s cs1~,-4,+7,+7,,,"High Crush 4F, Ends in FC",,,
+,FC+d/b or d+3,fcdb?3,Low Kick,l (TC),12,16s cs1~,-17,-3,-3,,,"High Crush 4F, Ends in FC",,,
+,FC+d/f+3,,Crouch Spin Kick,l (TC),12,16s cs1~,-17,-3,-3,,,"High Crush 4F, Ends in FC",,,
+,FC+4,,Crouch Chin Kick,l (TC),10,12s cs1~,-15,-4,-4,,,"High Crush 4F, Ends in FC",,,
+,SS+1,,,h,7,10(11~),+1,+8,+8,,,,,,
+,SS+2,,,h,8,10(11~),0,+6,+6,,,,,,
+,SS+3,,,h,14,18~19 (19~),-9~-8,-4~-3,-4~-3,,,,,,
+,SS+4,,,h,15,13(14~),-9,+7,Launch (JG?),,,,,,
+,BT 1 or 2,bt[12],Spin Knuckle Jab,h,15,8,-8,+3,+3,,,,,,
+,BT 3 or 4,bt[34],Spin Kick,h,25,10,-8,KND,KND,,,,,,
+,BT d+1,,Crouch Spin Knuckle,Sm,10,10s cs1~,-2,+9,+9,,,"High Crush 1F, Ends in FC",,"CS 1F, To crouching after moving",
+,BT d+3 or 4,btd[34],,l,12,10s cs1~,-11,+3,+3,,,,,,
+THROWS,Command,regexp,Name/Nickname,Hit level,Damage,Speed,Opp. Position,Post-tech frames,Post-tech Position,Total Frames,,Notes,Needs Trans,Engrish Notes,gfycat
+,1+3,,Quarter Deck,h,35,12F,"Side switch, FDFT",-3,,,,"1_2 break, can add f input for range (15F)",,Long Range Throw,https://gfycat.com/FarLimitedCaecilian
+,2+4,,Cooler Shaker,h,35,12F,"Counterclockwise, FUFT",-3,Clockwise,,,"1_2 break, can add f input for range (15F)",,Long Range Throw,https://gfycat.com/HelpfulForkedCollardlizard
+,Left Throw,,Corkscrew,h,40(20),,FDFA,-3,,,,"1 break, Extra damage on wall hit",,"Wall Juggle hit, Damage () is wall damage",https://gfycat.com/DisloyalWatchfulGraysquirrel
+,Right Throw,,Eye Opener,h,40,,FUFT,-3,,,,2 break,,,https://gfycat.com/MetallicClumsyHind
+,Back Throw,,Déglacer Throw,h,50(60),,FDFA,,,,,"No break, Extra damage on wall hit",,"Wall Juggle hit, Damage () is wall damage",https://gfycat.com/HugeWetBandicoot
+,"f,f+1+2",,Flying Cask,h,30,12F,"Launch, FDFA",-6,,,,"1+2 break, fall damage unless hit before landing, can techroll",,Damage is on landing,https://gfycat.com/PaltryNextKomododragon
+,"FC d/f,d,d/f+1+2",,Sparkling Death,h,30,11F,Same position,-6,,,,+5F on hit,,Wall Stun,https://gfycat.com/TenseLargeGalapagoshawk
+,f+1+3,,,,,15,,,,,,,,,https://gfycat.com/CreamyDaringKakarikis
+,f+2+4,,,,,15,,,,,,,,,https://gfycat.com/HarshHandyBoubou
+IGNORE,,,,,,,,,,,,,,,
+,Command,Move Name,Hit Level,dmg,start-up,block,NH,CH,total,Notes,,,,,
+,"u/f+1+2, F",Cracker Tariata (1) to SB,M,15,,-3,'+5,'+5,,"JS 13F, Delayable, S2 patch・New Move",,,,,
+,"u/f+1+2, B",Cracker Tariata (1) to RSB,M,15,,,,,,"JS 13F, Delayable, S2 patch・New Move",,,,,
+,"b, B+3+4, D/B",Grater Langouste to Cancel,,,,,,,42,To crouching after moving,,,,,https://gfycat.com/BountifulRemoteEmperorshrimp
+,"f, f, f+3",Perfect Slash,M,30,20F,'+9G,D,D,,"JS 3F, Meaty 6F",,,,,
+,"f, f, f+3+4",Supersize Missile,M,27,26F,'+8G,D,D,,"JS 15F, Meaty 8F in actualy",,,,,
+,During Charging 1+2,Charging to Crouching,SP,,,,,,105,"To Charging, To crouching after moving",,,,,
+,During Charging 4,Suicre Tile,UB(H),42,73F,D,-,D,,"JS, Damage is under the influence of charging",,,,,
+,"b, b, u/b with back against wall",Wall Jumping Attack to BT,M,21,36F,'+2,D,D,,"To Back toward, Air Status 5F, Invincibility during 8 to24F",,,,,
+,BT d+3 or d+4,Crouch Spin Kick,L,12,10F,-11,'+3,'+3,,"CS 1F, To crouching after moving",,,,,
+,f+3+4,Spinner Ball,SP,,,,,,48,"CS 8F, To crouching after moving, Cost 25F",,,,,
+,"f, n, d, d/f+1+2 (Hold)",Granchi Canon (Hold),M,35,24F,-7,D,D,,"WB, Not bufferable, Start-up 27F in actualy, S2 patch・Causes Wall Bounce on hit.",,,,,
+,During Rage d/f+1+2,Rage Art,"M,Th",55,20F,-22,Th,Th,,Guard Point 8F,,,,,
+,During Rage f+2+3,Rage Drive,"M,M","27,16",26F,'+2C,D,D,,"JS 15F, Block force to crouching, S2 patch・Command changed from ・Damage changed from 27,20 to 27,16.・Active frames of 1st hit increased by 2F.・Opponent farther away on hit of 1st hit.",,,,,
+,"During Rage f+2+3, F",Rage Drive to SB,"M,M,SP","27,16",,'+12C,D,D,,"JS 15F, Block force to crouching, S2 patch・Moves from Spinner Ball come out faster by 3F.・Changed from +9F to +12F on block.",,,,,
+IGNORE,,,,,,,,,,,,,,,
+,in rage f+2+3,"m (TJ), m (TJ)","27,16",26~33a 86~87s (29~) 1js15~ 2js14~,+2~+3s,KND(KND),KND(KND),Rage drive,,,,,,,
+,"in rage f+2+3, f","m (TJ), m (TJ), (Special) (TC)(BAL)","27,16s",26~33 86~87 (29~) 115~ 214~,+12~+13s,KND(KND),KND(KND),Rage art,,,,,,,
+,"d/f+1, 1+2","m, m","13,25",14~15,-12,KND,KND,,,,,,,,
+,"u/f+1+2, f (BAL)",m (TJ) (BAL),15,16~18 js13~,?,?,?,,,,,,,,
+,"u/f+1+2, B (REV BAL)",m (TJ) (REV BALL),15,16~18 js13~,?,?,?,,,,,,,,
+,"Back against wall b, b, u/b",m,21,36 js5 pc8~24,+2,KND,KND,,,,,,,,
+,,,,,,,,,,,,,,,
+,1,h,7,10,+1,+8,+8,,,,,,,,
+,2,h,8,10,0,+6,+6,,,,,,,,
+,3,h,14,18~19,-9~-8,-4~-3,-4~-3,,,,,,,,
+,4,h,15,13,-9,+7,Launch (JG?),,,,,,,,
+,f+2,h,12,12,-8,+3,+3,,,,,,,,
+,f+3,m,18,21~27,-4~+2,0~+6s,+8~+14s,,,,,,,,
+,f+4,h,20,16~17,-6~-5,KND,KND(Throw),"Homing, Tail spin",,,,,,,
+,d/f+1,m,13,14~15,-3~-2,+5~+6,+5~+6,,,,,,,,
+,d/f+2,m,14,15~16,-8~-7,+3~+4a,Launch (JG?),,,,,,,,
+,d/f+3,m,14,18,-7,+4,+4,,,,,,,,
+,d/f+4,m,16,13~14,-9~-8,+2~+3,+2~+3,,,,,,,,
+,d+1,m,18,18~19s,-11~-10,+5~+6s,KND,,,,,,,,
+,d+2,m,12,15,-9,+2,+2,,,,,,,,
+,d+3,l (TC),14,19s cs6~,-18~-17,-7~-6,-7~-6,,,,,,,,
+,d+4,l,11,16,-12,-1,-1,,,,,,,,
+,d/b+2,m,17,14,-8,+6,+6,,,,,,,,
+,d/b+3,l,17,20,-12,+2,+14g,,,,,,,,
+,d/b+4,l (TC),15,24~25 cs6~,-12~-11,-1~0,-1~0,,,,,,,,
+,b+1,m,15,17~19,-9~-7,+4~+6s,+4~+6s,,,,,,,,
+,b+2,m,10,13~14,-5~-4,+6~+7,+6~+7,,,,,,,,
+,b+3,m,20,17~18,-15~-14,KND,uKZD,,,,,,,,
+,b+4,m,15,15,-7,+4,+4,,,,,,,,
+,"u/f+2, 3","h, l","9, 9",20,-20,-9,-9,,,,,,,,
+,"u/f+2, 3, 3+4","h, l, mm","9, 9, 10, 10",20,-5,+6,+6,,,,,,,,
+,u/b+3,mm (TJ),"14,20","15~16, 24~26 js13~",-15~-13,Launch,Launch,,,,,,,,
+,u/b+3 (First hit only),m (TJ),14,15~16 js13~,-24~-23,Launch (JG?),Launch (JG?),,,,,,,,
+,u/b+3 (Second hit only),m (TJ),20,24~26 js13~,-15~-13,Launch (JG?),Launch (JG?),,,,,,,,
+,u+3,m (TJ),20,20 js9~,-13,KND,KND,,,,,,,,
+,u/f+3,m (TJ),20,20 js9~,-13,Launch (JG?),Launch (JG?),,,,,,,,
+,u or u/f+4,m (TJ),14,25~27 js15~,-9~-7,0~+2,0~+2,,,,,,,,
+,WS+1,m,11,15~17,-11~-9,0~+2,0~+2,,,,,,,,
+,WS+2,m,10,14,-7,+4,+4,,,,,,,,
+,WS+3,h,17,17~18,-8~-7,-3~-2,-3~-2,,,,,,,,
+,WS+4,m,16,11~12,-6~-5,+5~+6,+5~+6,,,,,,,,
+,BT d+2,m,17,15~16,-9~-8,KND,CS,,,,,,,,
