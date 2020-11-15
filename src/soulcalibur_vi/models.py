@@ -62,7 +62,7 @@ class Move(models.Model):
 class SpecialStance(models.Model):
     name = models.CharField(max_length=30)
     character = models.ForeignKey('Character', on_delete=models.CASCADE)
-    abbreviation = models.CharField(max_length=30, unique=True)
+    abbreviation = models.CharField(max_length=30)
 
     def __str__(self):
         return self.character.name + "\'s " + self.name + " - (" + self.abbreviation + ")"
@@ -74,9 +74,9 @@ class Section(models.Model):
         return self.name
 
 class SpecialState(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=50)
     character = models.ForeignKey('Character', on_delete=models.CASCADE)
-    abbreviation = models.CharField(max_length=30, unique=True)
+    abbreviation = models.CharField(max_length=30)
 
     def __str__(self):
         return self.name + " - (" + self.abbreviation + ")"
