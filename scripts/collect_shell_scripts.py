@@ -35,10 +35,9 @@ entry.save()
 
 # script to test provide_section
 from soulcalibur_vi.management.commands.collect import get_section
-from soulcalibur_vi.models import Character, SpecialStance, Section
-current_character = Character.objects.get(slug_source = 'astaroth')
-get_section('SC :1::A::A:', current_character)
-
+from soulcalibur_vi.models import Character, SpecialStance, Section, SpecialState
+current_character = Character.objects.get(slug_source = 'amy')
+#get_section('WRP BP :A:', current_character)
 
 
 
@@ -66,6 +65,7 @@ notes = move.notes
 
 
 # shell script to drop Move entries for characters with failure in them
+# hard-code the slug-source
 from soulcalibur_vi.models import Character, Move
 character = Character.objects.get(name="Inferno")
 moves = Move.objects.filter(character=character)
@@ -73,7 +73,7 @@ moves.delete()
 
 
 
-# shell script to test when get_section fails:
+# shell script to test when save_move fails:
 from soulcalibur_vi.management.commands.collect import get_section, save_move
 from soulcalibur_vi.models import Character, SpecialStance, Section, Move, SpecialState
 current_character = Character.objects.get(slug_source = 'groh')
@@ -83,7 +83,7 @@ save_move({'type': 'fd6row', 'atk': 'Guard', 'cmd': ':G:', 'lvl': 'n/a', 'dmg': 
 # shell script to retrieve Moves without a section
 # hard-code the slug-source
 from soulcalibur_vi.models import Character, SpecialStance, Section, Move, SpecialState
-current_character = Character.objects.get(slug_source = 'xianghua')
+current_character = Character.objects.get(slug_source = 'cervantes')
 moves = Move.objects.filter(section=None)
 moves_character = Move.objects.filter(character=current_character, section=None)
 sections = Section.objects.all()

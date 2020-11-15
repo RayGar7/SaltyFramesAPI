@@ -27,9 +27,14 @@ class Command(BaseCommand):
                 print("{} is not a valid argument".format(character))
                 raise CommandError
             else:
+
                 print("character name ok")
                 self.collect_one(character)
                 self.stdout.write(self.style.SUCCESS('Every move was collected like a boss'))
+
+                # check if there were any Move entries left without a section after running collect
+                self.check_moves(character)
+
         except Exception:
             raise CommandError('collect failed')
 
@@ -71,8 +76,6 @@ class Command(BaseCommand):
         print(raw)
         
 
-        #section = self.get_section(command=raw.get('cmd'), character=character)
-
         if (self.get_section(command=raw.get('cmd'), character=character)):
             section = self.get_section(command=raw.get('cmd'), character=character)
         else:
@@ -102,6 +105,18 @@ class Command(BaseCommand):
         move.save()
         print('Successfully saved the move entry into the database')
 
+    def check_moves(self, character):
+        current_character = Character.objects.get(slug_source = character)
+        moves = Move.objects.filter(character=current_character, section=None)
+        
+        if (moves):
+            print("there are some Moves without a section that were collected")
+            for move in moves():
+                print("- " , move)
+        else:
+            print("There are no Moves without a section that were collected")
+
+
     # todo: need to account for if a character has RE in the notes
     def get_section(self, command, character):
         # get every stance for the character
@@ -109,12 +124,13 @@ class Command(BaseCommand):
         stance_codes = []
         for stance in stances:
             stance_codes.append(stance.abbreviation) 
-       
+        
         # get every special state for the character
         states = SpecialState.objects.filter(character__name = character.name)
         state_codes = []
         for state in states:
-            state_codes.append(state.abbreviation)         
+            state_codes.append(state.abbreviation) 
+
 
         result = None
         result_section = None
@@ -138,7 +154,7 @@ class Command(BaseCommand):
         if (re.search("(Run)|(\:\(\d\)\:)", command)): 
             result = "8-way run"
         for stance in stance_codes:
-            if (re.search("^" + stance, command)):
+            if (re.search("^(" + stand + ")*" + stance, command)):
                 result = "special move"
                 break
         if (re.search("(throw)|(A\+G)", command)):
@@ -150,8 +166,5 @@ class Command(BaseCommand):
         
         if (result):
             result_section = Section.objects.get(name=result)
-        else:
-            result_section = None
 
         return result_section
-
