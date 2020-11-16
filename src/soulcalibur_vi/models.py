@@ -21,12 +21,11 @@ class Character(models.Model):
     def __str__(self):
         return self.name
 
-    # todo: make a signal that when a character is first saved into the database it sets the slug_source field
 
 
 
 class Move(models.Model):
-    character = models.ForeignKey('Character', on_delete=models.CASCADE)
+    character = models.ForeignKey('Character', on_delete=models.CASCADE, related_name='move_character')
 
     # always credit the providers of the data
     source = models.CharField(max_length=30, default='8WayRun')
