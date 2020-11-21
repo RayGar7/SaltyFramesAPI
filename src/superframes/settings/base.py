@@ -42,8 +42,6 @@ INSTALLED_APPS = [
 
     #local
     'accounts',
-    'updates',
-    'status',
     'tekken_7',
     'soulcalibur_vi',
 ]
