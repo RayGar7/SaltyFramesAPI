@@ -18,3 +18,4 @@ class CharacterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Character
         fields = ('name', 'version', 'date_time_version', 'move_character') 
+

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'accounts',
     'tekken_7',
     'soulcalibur_vi',
+    'status',
 ]
 
 MIDDLEWARE = [
