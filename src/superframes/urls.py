@@ -16,13 +16,11 @@ Including another URLconf
 from django.urls import path, re_path, include
 from django.contrib import admin
 
-from rest_framework_jwt.views import obtain_jwt_token
-
 
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
     re_path(r'^api/auth/', include(('accounts.api.urls', 'api-auth'), namespace='api-auth')),
     re_path(r'^api/user/', include(('accounts.api.user.urls', 'api-user'), namespace='api-user')),
-    re_path(r'^soulcalibur_vi/', include(('soulcalibur_vi.urls', 'soulcalibur_vi'), namespace='soulcalibur_vi')),
-    re_path(r'^api/auth/jwt/$', obtain_jwt_token),
+    re_path(r'^api/soulcalibur_vi/', include(('soulcalibur_vi.urls', 'soulcalibur_vi'), namespace='soulcalibur_vi')),
+    re_path(r'^api/status/', include(('status.api.urls', 'status'), namespace='api-status')),
 ]
