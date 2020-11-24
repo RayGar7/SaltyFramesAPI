@@ -1,5 +1,5 @@
 # Data security
-src/superframes/settings/local.py
+src/saltyframes/settings/local.py
 
 # created by virtualenv automatically
 # *
@@ -7,8 +7,8 @@ bin/
 include/
 pip-selfcheck.json
 static-server/media-root/status/cfe/
-scripts/superframes_pure_api.py
-scripts/superframes_rest_framework_api.py
+scripts/saltyframes_pure_api.py
+scripts/saltyframes_rest_framework_api.py
 
 # Django #
 *.log
