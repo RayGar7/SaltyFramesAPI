@@ -9,7 +9,7 @@ class Character(models.Model):
     # game version
     version = models.IntegerField(null=True, blank=True)
 
-    # when the character was added to the database (my database - the Superframes database)
+    # when the character was added to the database (my database - the Saltyframes database)
     date_time_db_entry = models.DateTimeField(auto_now=True)
 
     # when the character's frame data was updated by the source

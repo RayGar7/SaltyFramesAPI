@@ -8,7 +8,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ),
-    'DEFAULT_PAGINATION_CLASS': 'superframes.restconf.pagination.SuperframesPagination',
+    'DEFAULT_PAGINATION_CLASS': 'saltyframes.restconf.pagination.SaltyframesPagination',
     'DEFAULT_FILTER_BACKENDS': (
             'rest_framework.filters.SearchFilter',
             'rest_framework.filters.OrderingFilter',

@@ -2,7 +2,7 @@ from rest_framework import pagination
 
 
 
-class SuperframesPagination(pagination.LimitOffsetPagination): #PageNumberPagination):
+class SaltyframesPagination(pagination.LimitOffsetPagination): #PageNumberPagination):
     #page_size   =  20
     default_limit   = 10
     max_limit       = 20
