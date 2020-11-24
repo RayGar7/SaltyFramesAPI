@@ -22,5 +22,5 @@ urlpatterns = [
     re_path(r'^api/auth/', include(('accounts.api.urls', 'api-auth'), namespace='api-auth')),
     re_path(r'^api/user/', include(('accounts.api.user.urls', 'api-user'), namespace='api-user')),
     re_path(r'^api/soulcalibur_vi/', include(('soulcalibur_vi.urls', 'soulcalibur_vi'), namespace='soulcalibur_vi')),
-    #re_path(r'^api/status/', include(('status.api.urls', 'status'), namespace='api-status')),
+    re_path(r'^api/status/', include(('status.api.urls', 'status'), namespace='api-status')),
 ]
