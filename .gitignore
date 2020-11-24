@@ -1,5 +1,7 @@
 # Data security
 src/saltyframes/settings/local.py
+scripts/saltyframes_pure_api.py
+scripts/saltyframes_rest_framework_api.py
 
 # created by virtualenv automatically
 # *
@@ -7,8 +9,6 @@ bin/
 include/
 pip-selfcheck.json
 static-server/media-root/status/cfe/
-scripts/saltyframes_pure_api.py
-scripts/saltyframes_rest_framework_api.py
 
 # Django #
 *.log
@@ -17,7 +17,6 @@ scripts/saltyframes_rest_framework_api.py
 __pycache__
 db.sqlite3
 media
-migrations
 
 # Backup files # 
 *.bak 
