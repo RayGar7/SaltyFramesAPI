@@ -134,9 +134,9 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files", "static-root")
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATIC_URL = '/static/'
+STATIC_URL = '/static-server/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')
+    os.path.join(BASE_DIR,'static-server')
 ]
 
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static-server', 'media-root') # '/Users/cfe/dev/restapi/'
