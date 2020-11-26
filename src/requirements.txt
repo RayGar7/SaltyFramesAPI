@@ -8,6 +8,7 @@ contextlib2==0.6.0.post1
 cryptography==2.1.4
 distlib==0.3.0
 Django==1.11.29
+django-crispy-forms==1.9.0
 djangorestframework==3.9.4
 djangorestframework-jwt==1.11.0
 enum34==1.1.10
@@ -22,6 +23,7 @@ lazy-object-proxy==1.5.1
 pathlib2==2.3.5
 Pillow==6.2.2
 pipenv==2018.11.26
+psycopg2-binary==2.8.6
 pycrypto==2.6.1
 pygobject==3.26.1
 PyJWT==1.7.1
