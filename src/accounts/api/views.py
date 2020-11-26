@@ -26,7 +26,7 @@ class AuthAPIView(APIView):
         if request.user.is_authenticated:
             return Response({'detail': 'You are already authenticated'}, status=400)
         data = request.data
-        username = data.get('username') # username or email address
+        username = data.get('username') 
         password = data.get('password')
         qs = User.objects.filter(
                 Q(username__iexact=username)|
@@ -43,6 +43,7 @@ class AuthAPIView(APIView):
         return Response({"detail": "Invalid credentials"}, status=401)
 
 
+# TODO: send email via sendgrid
 class RegisterAPIView(generics.CreateAPIView):
     queryset                = User.objects.all()
     serializer_class        = UserRegisterSerializer
@@ -50,39 +51,5 @@ class RegisterAPIView(generics.CreateAPIView):
 
     def get_serializer_context(self, *args, **kwargs):
         return {"request": self.request}
-
-
-
-
-# class RegisterAPIView(APIView):
-#     permission_classes      = [permissions.AllowAny]
-#     def post(self, request, *args, **kwargs):
-#         if request.user.is_authenticated():
-#             return Response({'detail': 'You are already registered and are authenticated.'}, status=400)
-#         data = request.data
-#         username        = data.get('username') # username or email address
-#         email           = data.get('username')
-#         password        = data.get('password')
-#         password2       = data.get('password2')
-#         qs = User.objects.filter(
-#                 Q(username__iexact=username)|
-#                 Q(email__iexact=username)
-#             )
-#         if password != password2:
-#             return Response({"password": "Password must match."}, status=401)
-#         if qs.exists():
-#             return Response({"detail": "This user already exists"}, status=401)
-#         else:
-#             user = User.objects.create(username=username, email=email)
-#             user.set_password(password)
-#             user.save()
-#             # payload = jwt_payload_handler(user)
-#             # token = jwt_encode_handler(payload)
-#             # response = jwt_response_payload_handler(token, user, request=request)
-#             # return Response(response, status=201)
-#             return Response({'detail': "Thank you for registering. Please verify your email."}, status=201)
-#         return Response({"detail": "Invalid Request"}, status=400)
-
-
 
 
