@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # third party
     'rest_framework',
+    'whitenoise.runserver_nostatic',
 
     #local
     'accounts',
