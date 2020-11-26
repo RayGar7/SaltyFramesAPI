@@ -1,1 +1,1 @@
-web: gunicorn mvp_landing.wsgi
+web: gunicorn saltyframes.wsgi
