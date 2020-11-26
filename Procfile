@@ -1,1 +1,1 @@
-web: gunicorn saltyframes.wsgi
+web: gunicorn saltyframes.wsgi --log-file -
