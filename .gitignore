@@ -8,7 +8,6 @@ scripts/saltyframes_rest_framework_api.py
 bin/
 include/
 pip-selfcheck.json
-static-server/media-root/status/cfe/
 
 # Django #
 *.log
