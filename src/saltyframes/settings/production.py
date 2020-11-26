@@ -21,7 +21,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', None)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://salty-frames.herokuapp.com/']
+ALLOWED_HOSTS = ['salty-frames.herokuapp.com']
 
 APPEND_SLASH = True
 
