@@ -10,6 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
+import environ
+
+env = environ.Env()
+# reading .env file
+environ.Env.read_env()
+
+
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -19,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', None)
+SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -39,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # third party
     'rest_framework',
+    'rest_framework.authtoken',
+    'whitenoise.runserver_nostatic',
 
     #local
     'accounts',
@@ -46,6 +55,8 @@ INSTALLED_APPS = [
     'soulcalibur_vi',
     'status',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -55,6 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'saltyframes.urls'
@@ -83,9 +95,9 @@ WSGI_APPLICATION = 'saltyframes.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME', ''),
-        'USER': os.environ.get('DB_USER', ''),
-        'PASSWORD': os.environ.get('DB_PASSWORD', ''),
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -129,7 +141,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files", "static-root")
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_URL = '/static-server/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static-server')
+]
 
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static-server', 'media-root') # '/Users/cfe/dev/restapi/'
 MEDIA_URL = '/media/'
