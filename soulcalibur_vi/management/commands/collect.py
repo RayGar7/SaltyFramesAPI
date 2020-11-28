@@ -72,17 +72,17 @@ class Command(BaseCommand):
                 i += 1
 
     def save_move(self, raw, character):
-        # sample: {'type': 'fd6row', 'atk': 'Laurier Cutter', 'cmd': ':A:', 'lvl': ':H:', 'dmg': '8', 'imp': '12', 'grd': '-6', 'hit': '2', 'cnt': '2'}
+        # sample: raw = {'type': 'fd6row', 'atk': 'Laurier Cutter', 'cmd': ':A:', 'lvl': ':H:', 'dmg': '8', 'imp': '12', 'grd': '-6', 'hit': '2', 'cnt': '2'}
         print(raw)
         
+        # if (self.get_section(command=raw.get('cmd'), character=character)):
+        #     section = self.get_section(command=raw.get('cmd'), character=character)
+        # else:
+        #     section = None
 
-        if (self.get_section(command=raw.get('cmd'), character=character)):
-            section = self.get_section(command=raw.get('cmd'), character=character)
-        else:
-            section = None
+        section = self.get_section(command=raw.get('cmd'), character=character) or None
 
-        print("Section: ")
-        print(section)
+        print("Section: ", section)
 
         move = Move(character = character, 
         source = "8WayRun",
@@ -111,13 +111,14 @@ class Command(BaseCommand):
         
         if (moves):
             print("there are some Moves without a section that were collected")
-            for move in moves():
+            for move in moves:
                 print("- " , move)
         else:
             print("There are no Moves without a section that were collected")
 
 
     # todo: need to account for if a character has RE in the notes
+    # note to other devs: this is a hard function to read, it also uses some very specific business logic from 8wayrun
     def get_section(self, command, character):
         # get every stance for the character
         stances = SpecialStance.objects.filter(character__name = character.name)
