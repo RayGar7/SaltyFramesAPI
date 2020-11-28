@@ -1,7 +1,8 @@
 # Data security
-src/saltyframes/settings/local.py
-scripts/saltyframes_pure_api.py
-scripts/saltyframes_rest_framework_api.py
+saltyframes/settings/local.py
+~/saltyframes_pure_api.py
+~saltyframes_rest_framework_api.py
+/home/ray/Dev/sf/saltyframes/scripts/saltyframes_pure_api.py
 
 # created by virtualenv automatically
 # *
@@ -17,8 +18,8 @@ share/
 __pycache__
 db.sqlite3
 media
-src/live-static-files
-src/static-server
+live-static-files
+static-server
 
 # Backup files # 
 *.bak 
