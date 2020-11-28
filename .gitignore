@@ -17,8 +17,6 @@ share/
 __pycache__
 db.sqlite3
 media
-live-static-files
-static-server
 
 # Backup files # 
 *.bak 
