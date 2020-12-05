@@ -1,0 +1,6 @@
+<h1>Soulcalibur VI API</h1>
+<ul>
+{% for character in characters %}
+    <li><a href="characters-api/{{ character.id }}/">{{ character.name }}</a></li>
+{% endfor %}
+</ul>
