@@ -19,7 +19,7 @@ class Command(BaseCommand):
             characters = Character.objects.all()
             slugs = []
             for character_db in characters:
-                slugs.append(character_db.slug_source)
+                slugs.append(character_db.slug)
             print("fetched {} characters".format(len(slugs)))
 
 
@@ -55,7 +55,7 @@ class Command(BaseCommand):
             print('200 - Successfully requested frame data')
 
             # get Character
-            current_character = Character.objects.get(slug_source = character)
+            current_character = Character.objects.get(slug = character)
 
             # used to check duplicity
             #todo: we need to use querysets for this
@@ -106,7 +106,7 @@ class Command(BaseCommand):
         print('Successfully saved the move entry into the database')
 
     def check_moves(self, character):
-        current_character = Character.objects.get(slug_source = character)
+        current_character = Character.objects.get(slug = character)
         moves = Move.objects.filter(character=current_character, section=None)
         
         if (moves):

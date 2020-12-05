@@ -16,6 +16,17 @@ class CharacterView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = CharacterSerializer
     queryset = Character.objects.all()
 
+    def get(self, request, *args, **kwargs):
+        print(self)
+        print(request)
+        print(args)
+        print(kwargs)
+        return self.retrieve(request, *args, **kwargs)
+
+class CharacterRetrieveView(generics.RetrieveAPIView):
+    serializer_class = CharacterSerializer
+    queryset = Character.objects.all()
+
 
 class MoveListView(generics.ListCreateAPIView):
     queryset = Move.objects.all()
