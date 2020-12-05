@@ -6,5 +6,5 @@ def home(request):
     characters = Character.objects.all()
     print(characters)
 
-    context = {'characters': characters}
+    context = {'characters': characters, 'title': 'Soulcalibur VI API'}
     return render(request, 'soulcalibur_vi/home.html', context)
