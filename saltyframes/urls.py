@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.urls import path, re_path, include
 from django.contrib import admin
+from . import views
 
 
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
+    path('', views.index, name='index'),
     #re_path(r'^api/auth/', include(('accounts.api.urls', 'api-auth'), namespace='api-auth')),      # only for testing
     re_path(r'^soulcalibur_vi/', include(('soulcalibur_vi.urls', 'soulcalibur_vi'), namespace='soulcalibur_vi')),
 ]

@@ -4,10 +4,10 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;            
-    background: #2a9df4;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #2a9df4  , #1167b1);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #2a9df4  , #1167b1 ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        
+    background: #00172D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #00172D,  #000B18);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #00172D, #000B18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
     color: #c5c6c7;
     padding-top: 50px;
     padding-bottom: 50px;
