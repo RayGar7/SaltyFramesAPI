@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ title }}{% endblock title %}
+
+{% block base_head %}
+    <link rel='stylesheet' href='{% static "css/home.css" %}' >
+{% endblock %}
+
+{% block content %}
+    <div class="col-12 col-md-10 mb-3 mx-auto">
+        <div>
+            <h1>Salty Frames</h1>
+        </div>
+        <hr class="col-12 col-md-10 mb-3 mx-auto" style="background-color: #0288D1;">
+        <div class="col-12 col-md-10 mb-3 mx-auto">
+            <div class="card games-card">
+                <a href="{% url 'soulcalibur_vi:home' %}" class="games">
+                    <div class="card-body games-card-body">Soulcalibur VI</div>
+                </a>
+            </div>
+        </div> 
+        <div class="col-12 col-md-10 mb-3 mx-auto">
+            <div class="card games-card">
+                <a href="#" class="games">
+                    <div class="card-body games-card-body">Tekken 7 (coming next)</div>
+                </a>
+            </div>
+        </div> 
+    </div>
+
+{% endblock content %}
+

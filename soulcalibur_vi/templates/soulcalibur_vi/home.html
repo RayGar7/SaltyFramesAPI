@@ -1,6 +1,26 @@
-<h1>Soulcalibur VI API</h1>
-<ul>
-{% for character in characters %}
-    <li><a href="characters-api/{{ character.id }}/">{{ character.name }}</a></li>
-{% endfor %}
-</ul>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ title }}{% endblock title %}
+
+{% block base_head %}
+  <link rel='stylesheet' href='{% static "css/sc-home.css" %}' >
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h1>Soulcalibur VI API</h1>
+    </div>
+    <hr class="col-12 col-md-10 mb-3 mx-auto" style="background-color: #0288D1;">
+    <div class="flex-container col-12 col-md-10 mb-3 mx-auto">
+        {% for character in characters %}
+            <div class="card mx-auto">
+                <a href="characters-api/{{ character.id }}/">
+                    <div class="card-header">{{ character.name }}</div>
+                    <div class="card-body">
+                        <div class="card-title">Last updated: {{ character.date_time_version|date:"SHORT_DATE_FORMAT" }} </div>
+                    </div>
+                </a>       
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

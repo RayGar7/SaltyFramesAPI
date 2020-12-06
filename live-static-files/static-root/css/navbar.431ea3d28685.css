@@ -1,0 +1,56 @@
+nav {
+    margin-top: 0px;
+}
+.navbar {
+    border-top: 2px solid #2a9df4;
+    border-bottom: 2px solid #2a9df4;
+    background: #2a9df4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #2a9df4  , #1167b1);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #0288D1 , #039BE5  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    text-transform: uppercase;
+}
+
+
+.nav-link {
+    color: white;
+}
+.nav-link:focus {
+    color: #F5F5F5;
+    text-shadow: 0px 0px 2px white;
+}
+/*mobile only*/
+.navbar-toggler {
+    border: 2px solid white; 
+    border-radius: 15%; 
+    color: white;
+}
+.navbar-toggler-icon {
+    width: 90%;
+    height: 90%;
+    position: 0;
+    padding: 0;
+}
+
+/*PC only*/
+@media screen and (min-width: 992px) {
+    #navigation {
+        margin: 0 !important;
+    }
+    .navbar {
+        padding: 0;
+        height: 70px;
+    }
+    .nav-link {
+        text-decoration: none;
+        color: #F5F5F5;
+        /*display: inline-block;*/
+        font-size: 22px;
+        transition: color 0.25s ease-in-out, text-shadow 0.5s ease-in-out;
+    }
+    .nav-link:hover {
+        color: white;
+        text-decoration: none;
+        text-shadow: 0px 0px 2px white;
+    }
+}

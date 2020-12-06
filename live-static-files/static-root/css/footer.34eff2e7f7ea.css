@@ -1,0 +1,71 @@
+/* Mobile first */
+footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;            
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    color: #c5c6c7;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-top: 1px solid #404040;
+}
+.footer-links {
+    padding: 1%;
+    margin: 1%;
+    font-size: 2em; /* mobile only */
+}
+.footer-links {
+    transition: color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
+}
+.footer-links:hover {
+    color: white;
+    text-shadow: 0px 0px 3px white;
+    text-decoration: none;
+}
+.fa-envelope {
+    color: green;
+}
+.dev-logo {
+    color: #00acee;
+}
+
+/*PC only*/
+@media screen and (min-width: 992px) {
+    /* footer */
+    .footer-links {
+        font-size: 4em;
+        color: white;
+    }
+    .fab, 
+    .fas,
+    .fa {
+        color: white;
+    }
+    .fa-envelope {
+        transition: color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
+    }
+    .fa-envelope:hover {
+        color: green;
+        text-shadow: 0px 0px 3px green;
+    }
+    .dev-logo {
+        transition: color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
+    }
+    .dev-logo:hover {
+        text-decoration: none;
+        color: #00acee;
+        text-shadow: 0px 0px 3px #00acee;
+    }
+    .fa-twitter {
+        transition: color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
+    }
+    .fa-twitter:hover {
+        text-decoration: none;
+        color: #00acee;
+        text-shadow: 0px 0px 3px #00acee;
+    }
+}
