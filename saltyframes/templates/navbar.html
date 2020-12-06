@@ -1,0 +1,27 @@
+{% load static %}
+
+{% block base_head %}
+  <link rel='stylesheet' href='{% static "css/navbar.css" %}' >
+{% endblock %}
+
+<nav id="navigation" class="navbar navbar-expand-lg mb-3">
+  <div class='container'>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'soulcalibur_vi:home' %}">Soulcalibur VI <span class="sr-only">(current)</span></a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" href="#">Tekken 7 (coming next) <span class="sr-only">(current)</span></a>
+        </li> 
+      </ul>
+    </div>
+  </div>
+</nav>
