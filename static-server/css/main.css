@@ -11,12 +11,18 @@ body {
     display: none;
 } 
 
-.card {
-    border: 2px solid #643b36;
+.games-card {
+    border: 2px solid #0288D1;
     margin-right: 0;
     margin-left: 0;
     margin-bottom: 10px;
     padding-bottom: 10px;
+    font-weight: bold;
+    color: gainsboro;
+    background-color: #414345;
+}
+.games-card-body {
+    background-color: #414345;
 }
 #footer {
     height: 0;
@@ -26,7 +32,17 @@ body {
 
 h1 {
     text-align: center;
+    color: #0288D1;
 }
+
+a.games {
+    color: #0288D1;
+}
+
+a.games:hover {
+    text-decoration: none;
+}
+
 
 
 /*PC only*/
@@ -37,10 +53,10 @@ h1 {
     }
     /*body*/
     .card {
-        padding: 25px 50px 75px;
+        padding: 10px 50px 10px 50px;
         margin-right: 5%;
         margin-left: 5%;
-        margin-bottom: 40px;
+        font-size: 1.5em;
     }
 
     #about-us-img {

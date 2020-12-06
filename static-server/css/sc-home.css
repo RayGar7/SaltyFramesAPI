@@ -1,0 +1,50 @@
+.card {
+    padding: 0px !important;
+    border: 2px solid #0288D1;
+    font-weight: bolder;
+}
+.card-header {
+    border-bottom: 1px solid #0288D1;
+    background-color: #0288D1;
+    color: white;
+}
+.card-body {
+    background-color: white;
+}
+.card-title {
+    background-color: white;
+}
+
+a {
+    color: #0288D1;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #0288D1;
+}
+.flex-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.flex-container > div {
+  margin: 10px;
+  padding: 20px;
+  flex-basis: 33%;
+  min-width: 100%;
+} 
+
+/*PC only*/
+@media screen and (min-width: 992px) {
+    .flex-container {
+        flex-flow: row wrap;
+    }
+    .flex-container > div {
+        margin: 10px;
+        padding: 20px;
+        flex-basis: 33%;
+        min-width: 33%;
+    } 
+}
