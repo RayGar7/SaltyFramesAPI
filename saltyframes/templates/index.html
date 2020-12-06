@@ -9,26 +9,24 @@
 {% block content %}
     <div class="col-12 col-md-10 mb-3 mx-auto">
         <div>
-            <h1><a href="#">Salty Frames</a></h1>
+            <h1>Salty Frames</h1>
         </div>
-        <hr class="col-12 col-md-10 mb-3 mx-auto" style="background-color: #3ca59d;">
-        <ul>
-            <div class="col-12 col-md-10 mb-3 mx-auto">
-                <div class="card ">
-                    <div class="card-body">
-                        <li><a href="#">Soulcalibur VI</a></li>
-                    </div>
-                </div>
-            </div>    
-        </ul>
-        <ul>
-            <div class="col-12 col-md-10 mb-3 mx-auto">
-                <div class="card ">
-                    <div class="card-body">
-                        <li><a href="#">Tekken 7 (coming next)</a></li>
-                    </div>
-                </div>
-            </div>    
-        </ul>
+        <hr class="col-12 col-md-10 mb-3 mx-auto" style="background-color: #0288D1;">
+        <div class="col-12 col-md-10 mb-3 mx-auto">
+            <div class="card games-card">
+                <a href="{% url 'soulcalibur_vi:home' %}" class="games">
+                    <div class="card-body games-card-body">Soulcalibur VI</div>
+                </a>
+            </div>
+        </div> 
+        <div class="col-12 col-md-10 mb-3 mx-auto">
+            <div class="card games-card">
+                <a href="#" class="games">
+                    <div class="card-body games-card-body">Tekken 7 (coming next)</div>
+                </a>
+            </div>
+        </div> 
     </div>
+
 {% endblock content %}
+
