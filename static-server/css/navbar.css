@@ -4,10 +4,9 @@ nav {
 .navbar {
     border-top: 2px solid #2a9df4;
     border-bottom: 2px solid #2a9df4;
-    background: #2a9df4;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #2a9df4  , #1167b1);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #2a9df4  , #1167b1 ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+    background: #0288D1;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #0288D1  , #039BE5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #0288D1 , #039BE5  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     text-transform: uppercase;
 }
 
