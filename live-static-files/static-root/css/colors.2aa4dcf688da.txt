@@ -1,0 +1,10 @@
+dark blues:
+#00172D
+#000B18
+
+Light blues:
+#0288D1
+#039BE5
+
+dark gray:
+#414345
