@@ -1,5 +1,9 @@
 
 /*global*/
+* {
+    font-family: 'Didact Gothic', sans-serif;
+}
+
 body {
     color: white;    
     background: #232526;  /* fallback for old browsers */
@@ -33,6 +37,7 @@ body {
 h1 {
     text-align: center;
     color: #0288D1;
+    font-family: 'Palanquin', sans-serif;
 }
 
 a.games {

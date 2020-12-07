@@ -1,0 +1,59 @@
+.card {
+    padding: 0px !important;
+    border: 2px solid #00172D;
+    font-weight: bolder;
+    border-radius: 10px;
+    margin: 10px;
+}
+.card-header {
+    border-bottom: 1px solid #00172D;    
+    background: #00172D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #00172D,  #000B18);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #00172D, #000B18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #039BE5;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    border-radius: 10px;
+}
+.card-body {
+    background-color: gainsboro;
+    border-radius: 10px;
+}
+.card-title {
+    background-color: gainsboro;
+    border-radius: 10px;
+}
+
+a {
+    color: #0288D1;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #0288D1;
+}
+.flex-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.flex-container > div {
+  margin: 10px;
+  padding: 20px;
+  flex-basis: 33%;
+  min-width: 100%;
+} 
+
+/*PC only*/
+@media screen and (min-width: 992px) {
+    .flex-container {
+        flex-flow: row wrap;
+    }
+    .flex-container > div {
+        margin: 10px;
+        padding: 20px;
+        flex-basis: 33%;
+        min-width: 33%;
+    } 
+}
