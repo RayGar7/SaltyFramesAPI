@@ -72,7 +72,7 @@ ROOT_URLCONF = 'saltyframes.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'saltyframes/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -165,3 +165,23 @@ import dj_database_url
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 DATABASES['default']['CONN_MAX_AGE'] = 500
+
+
+
+
+# # Linode
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORES = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# LINODE_BUCKET
+# LINODE_BUCKET_REGION
+# LINODE_BUCKET_ACCESS_KEY
+# LINODE_BUCKET_SECRET_KEY
+
+# AWS_S3_ENDPOINT_URL = 'https://' #??
+# AWS_ACCESS_KEY_ID = LINODE_BUCKET_ACCESS_KEY
+# AWS_SECRET_ACCESS_KEY = LINODE_BUCKET_SECRET_KEY
+# AWS_S3_REGION_NAME = LINODE_BUCKET_REGION
+# AWS_S3_USE_SSL = True
+# AWS_STORAGE_BUCKET_NAME = LINODE_BUCKET
+
