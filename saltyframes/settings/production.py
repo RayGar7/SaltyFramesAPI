@@ -136,7 +136,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files", "static-root")
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static-server/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static-server')
@@ -170,18 +169,18 @@ DATABASES['default']['CONN_MAX_AGE'] = 500
 
 
 # # Linode
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# STATICFILES_STORES = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-# LINODE_BUCKET
-# LINODE_BUCKET_REGION
-# LINODE_BUCKET_ACCESS_KEY
-# LINODE_BUCKET_SECRET_KEY
+LINODE_BUCKET = 'saltyframes'
+LINODE_BUCKET_REGION = 'us-east-1'
+LINODE_BUCKET_ACCESS_KEY = 'V124HJO6CA0VQCNQSA4Q'
+LINODE_BUCKET_SECRET_KEY = 'Ty9Go1N3GxEhEvNyPTDquEFNhssKj3rnSyL66sK9'
 
-# AWS_S3_ENDPOINT_URL = 'https://' #??
-# AWS_ACCESS_KEY_ID = LINODE_BUCKET_ACCESS_KEY
-# AWS_SECRET_ACCESS_KEY = LINODE_BUCKET_SECRET_KEY
-# AWS_S3_REGION_NAME = LINODE_BUCKET_REGION
-# AWS_S3_USE_SSL = True
-# AWS_STORAGE_BUCKET_NAME = LINODE_BUCKET
+AWS_S3_ENDPOINT_URL = f'https://{LINODE_BUCKET_REGION}.linodeobjects.com' #??
+AWS_ACCESS_KEY_ID = LINODE_BUCKET_ACCESS_KEY
+AWS_SECRET_ACCESS_KEY = LINODE_BUCKET_SECRET_KEY
+AWS_S3_REGION_NAME = LINODE_BUCKET_REGION
+AWS_S3_USE_SSL = True
+AWS_STORAGE_BUCKET_NAME = LINODE_BUCKET
 
