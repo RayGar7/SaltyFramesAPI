@@ -65,8 +65,8 @@ class Command(BaseCommand):
             for res in response.json():
                 if (res.get('type') == 'fd6row'):
                     print("{} - type check ok".format(i))
-                    command = res.get('cmd')
-                    if command not in commands:
+                    command = res.get('cmd') or None        # some res entries won't have a cmd, which means bad data
+                    if command and command not in commands:
                         commands.append(command)
                         self.save_move(raw=res, character=current_character)
                 i += 1

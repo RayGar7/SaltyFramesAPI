@@ -36,9 +36,9 @@ class Move(models.Model):
 
     base_damage = models.CharField(max_length=30, null=True, blank=True)
 
-    attack_name = models.CharField(max_length=60, null=True, blank=True)
+    attack_name = models.CharField(max_length=100, null=True, blank=True)
 
-    command = models.CharField(max_length=60, null=False, blank=False)
+    command = models.CharField(max_length=100, null=False, blank=False)
 
     soulcharge_chip_damage = models.CharField(max_length=30, null=True, blank=True)
 
