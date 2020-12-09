@@ -174,7 +174,7 @@ class Command(BaseCommand):
                 break
 
         # throws are very simple, if they say "throw or if the input is A+G it's a throw"
-        if (re.search("(throw)|(A\+G)", command)):
+        if (re.search("(throw)|(A\+G)", command, re.IGNORECASE)):
             section = "throw"
         # RE is similiar to a throw    
         if (re.search("(\:RE\:)|(B\+G)", command)):
