@@ -157,7 +157,7 @@ class Command(BaseCommand):
 
         # dual button attacks are similar to horizontanl, vertical and kick attacks 
         # but they are combinations of A,B,K and G but not A+G or B+G or A+B+K
-        if (re.search("(A\+B)|(B\+K)|(\:a-small\:\:\+\:\:b-small\:)", command)):
+        if (re.search("(A\+B)|(B\+K)|(\:a-small\:\:\+\:\:b-small\:)|(A\+K)", command)):
             section = "dual button attack"
 
         # 8 way run refers to moving in any of the 8 directions in the game
