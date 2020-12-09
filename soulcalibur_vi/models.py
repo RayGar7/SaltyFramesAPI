@@ -7,7 +7,7 @@ class Character(models.Model):
     name = models.CharField(max_length=30, unique=True)
 
     # game version
-    version = models.IntegerField(null=True, blank=True)
+    version = models.FloatField(null=True, blank=True)
 
     # when the character was added to the database (my database - the Saltyframes database)
     date_time_db_entry = models.DateTimeField(auto_now=True)
@@ -36,13 +36,13 @@ class Move(models.Model):
 
     base_damage = models.CharField(max_length=30, null=True, blank=True)
 
-    attack_name = models.CharField(max_length=60, null=True, blank=True)
+    attack_name = models.CharField(max_length=100, null=True, blank=True)
 
-    command = models.CharField(max_length=60, null=False, blank=False)
+    command = models.CharField(max_length=100, null=False, blank=False)
 
     soulcharge_chip_damage = models.CharField(max_length=30, null=True, blank=True)
 
-    height_level = models.CharField(max_length=30, null=True, blank=True)
+    height_level = models.CharField(max_length=100, null=True, blank=True)
 
     recovery_on_guard = models.CharField(max_length=30, null=True, blank=True) # will need client side convesion to integer for features like font coloring
 
