@@ -163,7 +163,7 @@ class Command(BaseCommand):
         # 8 way run refers to moving in any of the 8 directions in the game
         # in the commands it in the form :(d): where d is a digit and digits represent directions (see "directions" under "Basic Controls" here: 
         # https://8wayrun.com/wiki/controls-and-inputs/)
-        if (re.search("(Run)|(\:\(\d\)\:)", command)): 
+        if (re.search("(Run)|(\:\(\d\)\:)", command, re.IGNORECASE)): 
             section = "8-way run"
 
         # characters can be in "stances" when a stance is required to do a move, that move is a special move
@@ -177,7 +177,7 @@ class Command(BaseCommand):
         if (re.search("(throw)|(A\+G)", command, re.IGNORECASE)):
             section = "throw"
         # RE is similiar to a throw    
-        if (re.search("(\:RE\:)|(B\+G)", command)):
+        if (re.search("(\:RE\:)|(B\+G)|(RE)", command, re.IGNORECASE)):
             section = "reversal attack"
         # gauge attacks are similar to throws and RE's
         if (re.search("(\:SC\:)|(\:A\+B\+K\:)|(SC)", command)):
