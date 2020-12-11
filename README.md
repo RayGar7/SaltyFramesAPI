@@ -22,8 +22,24 @@ I'm using Linode. The reasons:
 
 -Linode is available for ($0.02/GB) as opposed to Google Cloud's ($.02/GB) and AWS's ($.022/GB). As a matter of fact, I used to use AWS S3 but was being charged too much.
 
-You may use your own computing cloud architecture. You would then use saltyframes/settings/base.py and modify or delete the following code.:
-code here.
+You may use your own computing cloud architecture. You would then use saltyframes/settings/base.py and modify or delete the following code. If you also want to use
+Linode (which I highly recommend) then you would set these environment variables on your .env file:
+
+# # Linode
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+LINODE_BUCKET = env('LINODE_BUCKET')
+LINODE_BUCKET_REGION = env('LINODE_BUCKET_REGION')
+LINODE_BUCKET_ACCESS_KEY = env('LINODE_BUCKET_ACCESS_KEY')
+LINODE_BUCKET_SECRET_KEY = env('LINODE_BUCKET_SECRET_KEY')
+
+AWS_S3_ENDPOINT_URL = f'https://{LINODE_BUCKET_REGION}.linodeobjects.com'
+AWS_ACCESS_KEY_ID = LINODE_BUCKET_ACCESS_KEY
+AWS_SECRET_ACCESS_KEY = LINODE_BUCKET_SECRET_KEY
+AWS_S3_REGION_NAME = LINODE_BUCKET_REGION
+AWS_S3_USE_SSL = True
+AWS_STORAGE_BUCKET_NAME = LINODE_BUCKET
 
 
 

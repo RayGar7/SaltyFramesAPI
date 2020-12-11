@@ -1,5 +1,6 @@
 # Data security
 saltyframes/settings/local.py
+saltyframes/settings/production.py
 ~/saltyframes_pure_api.py
 ~saltyframes_rest_framework_api.py
 
