@@ -1,4 +1,4 @@
-<h1>Salty Frames</h1>
+<h1 align="center">Salty Frames</h1>
 <p align="center">
     <img src="https://img.shields.io/github/issues/RayGar7/SaltyFramesAPI" alt="Build">
 </p
@@ -7,15 +7,14 @@
     <a href="#overview">Overview</a>
     <a href="#installation">Installation</a>
     <a href="#usage">Usage</a>
-    <a href="#features">Features</a>
     <a href="#issues">Issues</a>
     <a href="#license">License</a>
     <a href="#license">Acknowledgements</a>
 </p>
 
-<h2>Overview</h2>
+<h2 align="center">Overview</h2>
 <hr>
-<p>
+<p align="center">
 Salty Frames is a fighting game frame data application. While there are many frame data 
 application in the market, my implementation is designed to be pragmatic in the sense that
 updates to the data are as automated as possible. From my experience, other developers and myself included have struggled with data changing very oftenly and when we're dealing with frame data we're dealing with many entries per character so it is not feasible for a single developer to update data manually on his or her own.
@@ -26,9 +25,9 @@ Salty Frames also provides an API for other users to create their own frame data
 </p>
 
 
-<h2>Installation</h2>
+<h2 align="center">Installation</h2>
 <hr>
-<p>
+<p align="center">
 Create a virtual environment.
 In that virtual environment run
 pip install -r requirements.txt
@@ -43,34 +42,28 @@ Enter the super user details and you're up to speed.
 
 
 
-<h2>Usage</h2>
+<h2 align="center">Usage</h2>
 <hr>
-<p>
+<p align="center">
 
 </p>
 
 
-<h2>Features</h2>
+<h2 align="center">Issues</h2>
 <hr>
-<p>
+<p align="center">
 
 </p>
 
-<h2>Issues</h2>
+<h2 align="center">License</h2>
 <hr>
-<p>
+<p align="center">
 
 </p>
 
-<h2>License</h2>
+<h2 align="center">Acknowledgements</h2>
 <hr>
-<p>
-
-</p>
-
-<h2>Acknowledgements</h2>
-<hr>
-<p>
+<p align="center">
 There are several people I have to thank for making this possible.
 
 Coding for Entrpreneurs - a virtual academy centered around Django projects. I learned Django, the Django Rest Framework, Linode, Heroku and other tools with his tutorial series's.
