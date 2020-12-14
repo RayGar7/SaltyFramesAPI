@@ -15,25 +15,27 @@
 <h2 align="center">Overview</h2>
 <hr>
 <p align="center">
-Salty Frames is a fighting game frame data application. While there are many frame data 
-application in the market, my implementation is designed to be pragmatic in the sense that
+Salty Frames is a fighting game frame data application. While there are many applications of these kind in the market, my implementation is designed to be pragmatic in the sense that
 updates to the data are as automated as possible. From my experience, other developers and myself included have struggled with data changing very oftenly and when we're dealing with frame data we're dealing with many entries per character so it is not feasible for a single developer to update data manually on his or her own.
 
-One solution is to collect the data with an automation tool. For instance, my frame data for Soulcalibur is pulled from 8 Way Run - a wiki where approved users can enter frame data. (I have received permission to do this with the condition that I save the data into my own database which I have). That is what I mean by collecting the data. This is a common procedure for data mining projects. Every time the data changes, which I can tell by saving a timestamp into my models for each character, I re-collect the data. Granted it would be more efficient to edit only the rows in my database that have been modified by the 8 Way Run editors. See Issue #12. Pragmatically, I want to be able to manage this frame data app with as little effort as possible to abide by my other obligations. So I want to make updates whenever needed with as little overhead of my own as possible. 
+<p>
+One solution is to collect the data with an automation tool. For instance, my frame data for Soulcalibur is pulled from 8 Way Run - a wiki where approved users can enter frame data. (I have received permission to do this with the condition that I save the data into my own database which I have). That is what I mean by collecting the data. This is a common procedure for data mining projects. Every time the data changes, which I can tell by saving a timestamp into my models for each character, I re-collect the data.
 
-Salty Frames also provides an API for other users to create their own frame data apps. From my experience the community that likes these kind of video games has a lot of developers they all have their own frameworks, tools and takes on the frame data genre. Currently, I'm not allowing just anybody to use my API. Only one other developer who I've known before making this project. The API is provided thanks to the Django Rest Framework or DRF. That is why you can see the generic views on some of the API endpoints made by the DRF.
+Salty Frames also provides an API for other users to create their own frame data apps. From my experience the community that likes these kind of video games has a lot of developers and they all have their own frameworks, tools and takes on the frame data genre. Only one other developer who I've known before making this project. The API is provided thanks to the Django Rest Framework or DRF. That is why you can see the generic views on some of the API endpoints made by the DRF.
 </p>
 
 
 <h2 align="center">Installation</h2>
 <hr>
 <p align="center">
-Create a virtual environment.
+Create a virtual environment of your choice.
 In that virtual environment run
+<addr>
 pip install -r requirements.txt
+</addr>
 This will install all of the requirements that I installed to bring this app to its current state.
 
-Next, as any other Django project run
+Next, as a typical Django project run:
 python manage.py migrate
 python manage.py runserver
 python manage.py createsuperuser
