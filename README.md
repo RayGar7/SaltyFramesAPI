@@ -7,9 +7,8 @@
     <a href="#overview">Overview</a>
     <a href="#installation">Installation</a>
     <a href="#usage">Usage</a>
-    <a href="#issues">Issues</a>
     <a href="#license">License</a>
-    <a href="#license">Acknowledgements</a>
+    <a href="#acknowledgements">Acknowledgements</a>
 </p>
 
 <h2 align="center">Overview</h2>
@@ -20,7 +19,7 @@
 
 <h2 align="center">Installation</h2>
 <hr>
-Git clone the latest commit on `master` or download the ZIP file and unzip it somewhere you like. Create a virtual environment of your choice. <br>In that virtual environment run
+Git clone the latest commit on the master branch or download the ZIP file and unzip it somewhere you like. Create a virtual environment of your choice. <br>In that virtual environment, navigate to the directory that contains manage.py and run
 
 ```
 pip install -r requirements.txt
@@ -42,25 +41,18 @@ python manage.py createsuperuser
 
 Enter your desired super user details and you're up to speed.
 
-
-
 <h2 align="center">Usage</h2>
 <hr>
-<p>
+Navigate to the official production link:
+https://www.saltyframes.com
 
-</p>
+And there you can navigate to the Soulcalibur VI section to choose a character whose frame data you want to see. You'll notice that the templates are generic views. This is to serve as a stand-in while I finish all of the backend aspects of the project and the presentation logic would have to be developed with a frontend tool. See issue #13.
 
-
-<h2 align="center">Issues</h2>
-<hr>
-<p>
-
-</p>
 
 <h2 align="center">License</h2>
 <hr>
 <p>
-
+This project is intentionally unlicensed. It is a proprietary software governed by US copyright law. While you may look at the code, you are not allowed to replicate or redistribute it in any way, in whole or in part. Github TOS says that you can view this repository and fork it, but that doesn't necesarily make it open source. Copyright (C) Ray Garcia. I grant other developers redestribution rights on a case by case basis.
 </p>
 
 <h2 align="center">Acknowledgements</h2>
@@ -70,29 +62,13 @@ Enter your desired super user details and you're up to speed.
 Salty Frames
 
 
-Django:
+Django - the backend framework:
 django software foundation
 
 
-Django REST API:
+Django REST API - a third party framework for creating RESTful API's:
 https://www.django-rest-framework.org/
 
 
-Coding For Entrpreneurs:
-tutorials and guides with Django.
-
-
-Static Files:
-I'm using Linode. The reasons:
-
--Store Critical Data: Object storage is the best choice for data that doesn’t change often. Store backup files, database dumps, logs, and massive data sets. All accessible over the Internet via a URL.
-
--High Availabilty: Linode Object Storage is highly available and durable. Objects are replicated across servers so they’re always accessible even if one of the servers goes offline.
-
--Linode is available for ($0.02/GB) as opposed to Google Cloud's ($.02/GB) and AWS's ($.022/GB). As a matter of fact, I used to use AWS S3 but was being charged too much.
-
-You may use your own computing cloud architecture. You would then use saltyframes/settings/base.py and modify or delete the following code. If you also want to use
-Linode (which I highly recommend) then you would set these environment variables on your .env file:
-
-
-
+Linode - for static files:
+https://www.linode.com/
