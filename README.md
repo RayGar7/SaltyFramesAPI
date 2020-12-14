@@ -21,21 +21,13 @@
 <h2 align="center">Installation</h2>
 <hr>
 Create a virtual environment of your choice. <br>In that virtual environment run <br><br>
-```
-pip install -r requirements.txt
-```
+```pip install -r requirements.txt```
 <br><br>This will install all of the requirements that I installed to bring this app to its current state. <br><br>Next, as a typical Django project run: <br><br>
-```
-python manage.py migrate
-```
+```python manage.py migrate```
 <br><br>
-```
-python manage.py runserver
-```
+```python manage.py runserver```
 <br><br>
-```
-python manage.py createsuperuser
-```
+```python manage.py createsuperuser```
 <br><br>Enter your desired super user details and you're up to speed.
 
 
