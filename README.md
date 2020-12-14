@@ -20,7 +20,7 @@
 
 <h2 align="center">Installation</h2>
 <hr>
-Create a virtual environment of your choice. <br>In that virtual environment run
+Git clone the latest commit on `master` or download the ZIP file and unzip it somewhere you like. Create a virtual environment of your choice. <br>In that virtual environment run
 
 ```
 pip install -r requirements.txt
