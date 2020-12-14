@@ -20,7 +20,7 @@
 <h2 align="center">Architecture</h2>
 <hr>
 <p align="center">
-![alt text](https://raw.githubusercontent.com/RayGar7/SaltyFramesAPI/master/architecture-diagram.jpg?token=AOQLBPYWCP4ZCPWKMYGE42K724RF4)
+![alt text](architecture-diagram.jpg)
 </p>
 <p>Explanation: the raw data is the data that I'm pulling from the web. Be it 8 Way Run, or wherever else I would need to. My Django project is designed to pull the data from the web with the Python request module. Then with Django's model API, I save the data into my PostgreSQL database so that I may refer to the data whenever I need to use it. This is assuming no bad data, which there is a lot of. Once I have the data in my own database, I use the Django REST Framework to pass the data in the form of a RESTful API. The client can be REACT Native, Angular, REACT or with pure Django (though the latter it can be argued that it's more efficient to pull data straight from the model API). This architecture can replicated with a different stack.
 
