@@ -5,6 +5,7 @@
 >
 <p align="center">
     <a href="#overview">Overview</a>
+    <a href="#architecture">Architecture</a>
     <a href="#installation">Installation</a>
     <a href="#usage">Usage</a>
     <a href="#license">License</a>
@@ -16,6 +17,12 @@
 <p>Salty Frames is a fighting game frame data application. While there are many applications of these kind in the market, my implementation is designed to be pragmatic in the sense that updates to the data are as automated as possible. From my experience, other developers and myself included have struggled with data changing very oftenly and when we're dealing with frame data we're dealing with many entries per character so it is not feasible for a single developer to update data manually on his or her own. One solution is to collect the data with an automation tool. For instance, my frame data for Soulcalibur is pulled from 8 Way Run - a wiki where approved users can enter frame data. (I have received permission to do this with the condition that I save the data into my own database which I have). That is what I mean by collecting the data. This is a common procedure for data mining projects. Every time the data changes, which I can tell by saving a timestamp into my models for each character, I re-collect the data. <br> Salty Frames also provides an API for other users to create their own frame data apps. From my experience the community that likes these kind of video games has a lot of developers and they all have their own frameworks, tools and takes on the frame data genre. Only one other developer who I've known before making this project. The API is provided thanks to the Django Rest Framework or DRF. That is why you can see the generic views on some of the API endpoints made by the DRF.
 </p>
 
+<h2 align="center">Architecture</h2>
+<hr>
+<p align="center">
+![alt text](https://raw.githubusercontent.com/RayGar7/SaltyFramesAPI/master/architecture-diagram.jpg?token=AOQLBP6CLXYCSST3LFIQWTS724QC4)
+</p>
+<p>Explanation: the raw data is the data that I'm pulling from the web. Be it 8 Way Run, or wherever else I would need to. My Django project is designed to pull the data from the web with the Python request module. Then with Django's model API, I save the data into my PostgreSQL database so that I may refer to the data whenever I need to use it. This is assuming no bad data, which there is a lot of. Once I have the data in my own database, I use the Django REST Framework to pass the data in the form of a RESTful API. The client can be REACT Native, Angular, REACT or with pure Django (though the latter it can be argued that it's more efficient to pull data straight from the model API). This architecture can replicated with a different stack.
 
 <h2 align="center">Installation</h2>
 <hr>
