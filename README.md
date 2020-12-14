@@ -69,13 +69,16 @@ This project is intentionally unlicensed. It is a proprietary software governed 
 Salty Frames
 
 
-Django - the backend framework:
-django software foundation
+Django - the backend framework:<br>
+the Django Software Foundation
 
 
-Django REST API - a third party framework for creating RESTful API's:
+Django REST API - a third party framework for creating RESTful API's:<br>
 https://www.django-rest-framework.org/
 
 
-Linode - for static files:
+Linode - for static files:<br>
 https://www.linode.com/
+
+Heroku:<br>
+a cloud service for hosting web applications. 
