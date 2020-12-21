@@ -1,8 +1,7 @@
 <h1 align="center">Salty Frames</h1>
 <p align="center">
     <img src="https://img.shields.io/github/issues/RayGar7/SaltyFramesAPI" alt="Build">
-</p
->
+</p>
 <p align="center">
     <a href="#overview">Overview</a>
     <a href="#architecture">Architecture</a>
@@ -22,7 +21,11 @@
 <p align="center">
 <img src="architecture-diagram.jpg" width="350" title="hover text">
 </p>
-<p>Explanation: the raw data is the data that I'm pulling from the web. Be it 8 Way Run, or wherever else I would need to. My Django project is designed to pull the data from the web with the Python request module. Then with Django's model API, I save the data into my PostgreSQL database so that I may refer to the data whenever I need to use it. This is assuming no bad data, which there is a lot of. Once I have the data in my own database, I use the Django REST Framework to pass the data in the form of a RESTful API. The client can be REACT Native, Angular, REACT or with pure Django (though the latter it can be argued that it's more efficient to pull data straight from the model API). This architecture can replicated with a different stack.
+<p>Explanation: the raw data is the data that I'm pulling from the web. Be it 8 Way Run, or wherever else I would need to. My Django project is designed to pull the data from the web with the Python request module. Then with Django's model API, I save the data into my PostgreSQL database so that I may refer to the data whenever I need to use it. This is assuming no bad data, which there is a lot of. Once I have the data in my own database, I use the Django REST Framework to pass the data in the form of a RESTful API. The client can be REACT Native, Angular, REACT or with pure Django (though the latter it can be argued that it's more efficient to pull data straight from the model API). This architecture can replicated with a different stack.</p>
+<p align="center">
+<img src="db_design.png" width="350" title="hover text">
+</p>
+<p>Explanation: the raw data is the data that I'm pulling from the web. Be it 8 Way Run, or wherever else I would need to. My Django project is designed to pull the data from the web with the Python request module. Then with Django's model API, I save the data into my PostgreSQL database so that I may refer to the data whenever I need to use it. This is assuming no bad data, which there is a lot of. Once I have the data in my own database, I use the Django REST Framework to pass the data in the form of a RESTful API. The client can be REACT Native, Angular, REACT or with pure Django (though the latter it can be argued that it's more efficient to pull data straight from the model API). This architecture can replicated with a different stack.</p>
 
 <h2 align="center">Installation</h2>
 <hr>
@@ -59,7 +62,7 @@ And there you can navigate to the Soulcalibur VI section to choose a character w
 <h2 align="center">License</h2>
 <hr>
 <p>
-This project is intentionally unlicensed. It is a proprietary software governed by US copyright law. While you may look at the code, you are not allowed to replicate or redistribute it in any way, in whole or in part. Github TOS says that you can view this repository and fork it, but that doesn't necesarily make it open source. Copyright (C) Ray Garcia. I grant other developers redestribution rights on a case by case basis.
+This project is intentionally unlicensed. It is a proprietary software governed by US copyright law with strong copyleft. While you may look at the code, you are not allowed to replicate or redistribute it in any way, in whole or in part. Github TOS says that you can view this repository and fork it, as I set it to public but that doesn't necesarily make it open source. Copyright (C) Ray Garcia. I reserve the right to grant other developers redistribution rights on a case-by-case basis.
 </p>
 
 <h2 align="center">Acknowledgements</h2>
