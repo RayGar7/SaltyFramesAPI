@@ -27,7 +27,7 @@
 </p>
 <p>Explanation: This database was designed for the Soulcalibur VI section. The Character table is the starting point to the architecture. In this app there will be around 30 characters because in the game that's how many there actually are, though there may be more in the future. Intuitively, a character has many moves, typically around 60-100. So it's a one-to-many relationship. The Moves table is actually the "meat" ofthe app. WE can think of a Section as a category. In every Soulcalibur game, there is a command list that lists the inputs of the moves for every character in the game's pause menus. The moves are separated as Horizontal, Vertical, Kicks, Dual-Buton Attacks and so on. More info here: https://8wayrun.com/wiki/editing-guide/#sectioning . This is a one-to-many relationship from the Section view. A move can only be assigned one section but there are 9 sections that can be assigned. A Special Stance is an in-game mechanic where a Move can only be performed if the character is in that stance. A move can have 0 or one stances. Special states work similarily, except that they work independently of stances.
 
-To fit everything in one image, many columns have been left out of the diagram. Actually, this is what one of the models looks like:
+To fit everything in one image, a lot of information has been left out of the diagram. Actually, this is what one of the models looks like:
 
 ```
 class Character(models.Model):
