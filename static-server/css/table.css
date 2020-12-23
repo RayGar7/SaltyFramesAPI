@@ -1,30 +1,12 @@
 a {
-    color: #0288D1;
+    color: white;
 }
 
 a:hover {
-    text-decoration: none;
-    color: #0288D1;
+    text-decoration: underline;
+    color: white;
 }
-/*
-tr {
-	padding-top: 130px;
-	margin-top: 130px;
-	padding-bottom: 100px;
-	margin-bottom: 100px;
-} 
-*/
-/*
-tbody {
-	padding-top: 20px;
-	margin-top: 100px;
-	padding-bottom: 80px;
-	margin-bottom: 100px;
-    font-size: 0.83em;
-}
-*/
 
-/*Each table will get use most of this file's CSS, but for specific colors they will have use <style> tags from their own file*/
 table {
     /*font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;*/
     border-collapse: collapse;
@@ -34,47 +16,15 @@ table {
     text-align: center;
 }
 
-table td, table th {
-    border: 1px solid #ddd;
-}
-
-table tr:nth-child(even){
-    background-color: black !important;
-    background: #0288D1;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #0288D1  , #039BE5);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #0288D1 , #039BE5  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-table tr:hover {
-    background-color: black !important;
-    background: #0288D1;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #0288D1  , #039BE5);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #0288D1 , #039BE5  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
 table th {
-    /*  padding-top: 12px;
-    padding-bottom: 12px;*/
     text-align: center;
-    background-color: white;
     color: white;
-}
-
-table th {
     background: #0288D1;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #0288D1  , #039BE5);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #0288D1 , #039BE5  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.primary-color {
-    color: white;
-    font-weight: bold;
-}
 
-td[colspan="11"] {
-     background-color: #FF0000;
-}
-
-td[colspan] {
+.move {
     color: white; 
     background: #4d4d4d;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #4d4d4d, #3e3e3e);  /* Chrome 10-25, Safari 5.1-6 */
@@ -82,9 +32,23 @@ td[colspan] {
     font-weight: normal;
 }  
 
+.move:nth-child(even) {
+    background-color: black !important;
+    background: #6f6f6f !important;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #4D4D4D, #5C5C5C) !important;  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #4D4D4D, #5C5C5C) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.move:hover {
+    background-color: black !important;
+    background: #5C5C5C !important;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #7A7A7A  , #898989) !important;  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #7A7A7A , #898989) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 /*mobile only*/
 table td, table th {
-    border-color: white;
+    border: 1px solid white !important;
     padding: 1px !important;
 }
   
