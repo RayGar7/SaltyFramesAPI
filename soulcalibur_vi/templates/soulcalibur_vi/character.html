@@ -182,8 +182,8 @@
         <td colspan="1">{{ move.recovery_on_hit }}</td>
         <td colspan="1">{{ move.recovery_on_counter_hit }}</td>
         <td colspan="1">{{ move.base_damage }}</td>
-        <td colspan="1">{{ move.guard_burst_damage }}</td>
-        <td colspan="1">{{ move.notes }}</td>
+        <td colspan="1">{{ move.guard_burst_damage|default:"-" }}</td>
+        <td colspan="1">{{ move.notes }}{{ move.notes|default:"-" }}</td>
     </tr>
     {% endfor %}    
     </tr>
