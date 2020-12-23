@@ -6,7 +6,90 @@ a:hover {
     text-decoration: none;
     color: #0288D1;
 }
+/*
+tr {
+	padding-top: 130px;
+	margin-top: 130px;
+	padding-bottom: 100px;
+	margin-bottom: 100px;
+} 
+*/
+/*
+tbody {
+	padding-top: 20px;
+	margin-top: 100px;
+	padding-bottom: 80px;
+	margin-bottom: 100px;
+    font-size: 0.83em;
+}
+*/
 
+/*Each table will get use most of this file's CSS, but for specific colors they will have use <style> tags from their own file*/
+table {
+    /*font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;*/
+    border-collapse: collapse;
+    width: 100%;
+    color: black;
+    overflow-x: auto;
+    text-align: center;
+}
+
+table td, table th {
+    border: 1px solid #ddd;
+    padding: 10% 0;
+}
+
+table tr { 
+    padding: 5% 0;
+    background-color: #ffffff;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table tr:hover {background-color: #ddd;}
+
+table th {
+    /*  padding-top: 12px;
+    padding-bottom: 12px;*/
+    text-align: center;
+    background-color: white;
+    color: white;
+}
+
+table th {
+    background: #0288D1;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #0288D1  , #039BE5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #0288D1 , #039BE5  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.primary-color {
+    color: white;
+    font-weight: bold;
+}
+
+td[colspan="11"] {
+     background-color: #FF0000;
+}
+
+td[colspan] {
+    color: white; 
+    background: #4d4d4d;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #4d4d4d, #3e3e3e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #4d4d4d, #3e3e3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-weight: normal;
+    /*padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 1.5em;% */
+}
+
+/* .character-tables {
+    padding-top: 0px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    overflow: auto;
+} */
+  
+  
+  
 /*PC only*/
 @media screen and (min-width: 992px) {
 

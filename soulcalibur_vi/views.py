@@ -9,15 +9,10 @@ def home(request):
     return render(request, 'soulcalibur_vi/home.html', context)
 
 
-# def character_view(request):
-#     print(request)
-#     return HttpResponse(r"hello")
-#     #character = Character.objects.get(source="")
-
 def detail(request, slug):
     character = Character.objects.get(slug = slug)
-    sections = Section.objects.all().order_by('id')
-    moves = Move.objects.filter(character=character)
+    sections = Section.objects.all().order_by('id')     # order_by('id') is a trick I use to order objects in the ordder they were saved
+    moves = Move.objects.filter(character=character).order_by('id')
     #print(len(moves))
 
     # create a dictionary of arrays to create a frame data table, separated by the character's sections
