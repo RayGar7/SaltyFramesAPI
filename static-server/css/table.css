@@ -1,0 +1,13 @@
+a {
+    color: #0288D1;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #0288D1;
+}
+
+/*PC only*/
+@media screen and (min-width: 992px) {
+
+}

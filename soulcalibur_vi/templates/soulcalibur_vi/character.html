@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ title }}{% endblock title %}
+
+{% block base_head %}
+<link rel='stylesheet' href='{% static "css/table.css" %}' >
+{% endblock %}
+
+{% block content %}
+<div>
+    <h1>{{ name }}</h1>
+</div>
+<hr class="col-10 col-md-10 mb-3 mx-auto" style="background-color: #0288D1;">
+<table id="first-table" class="table table-condensed" style="background-color: white;">
+    <tr>
+        <th colspan="11">Table 1 Name</th>
+    </tr>
+    <tr>
+        <th colspan="1">Move</th>
+        <th colspan="1">Command</th>
+        <th colspan="1">Level</th>
+        <th colspan="1">IMP</th>
+        <th colspan="1">GRD</th>
+        <th colspan="1">HIT</th>
+        <th colspan="1">CH</th>
+        <th colspan="1">DMG</th>
+        <th colspan="1">Attr</th>
+        <th colspan="1">Notes</th>
+    </tr>
+    <tr class="other-color-row">
+        <td>Row Names</td>
+        <td>Col 1 Name</td>
+    </tr>
+    <tr>
+        <td>Row Identifier 1</td>
+        <td>value 1</td>
+    </tr>
+    <tr>
+        <td>Row Identifier 2</td>
+        <td>value 1</td>
+    </tr>
+    <tr>
+        <td>Row Identifier 3</td>
+        <td>value 1</td>
+    </tr>
+    <tr>
+        <td colspan="11">Table 2 Name</td>
+    </tr>
+    <tr class="other-color-row">
+        <td>Row Names</td>
+        <td>Col 1 Name</td>
+    </tr>
+    <tr>
+        <td>Row Identifier 1</td>
+        <td>value 1</td>
+    </tr>
+    <tr>
+        <td>Row Identifier 2</td>
+        <td>value 1</td>
+    </tr>
+    <tr>
+        <td>Row Identifier 3</td>
+        <td>value 1</td>
+    </tr>
+</table>
+
+{% endblock content %}
