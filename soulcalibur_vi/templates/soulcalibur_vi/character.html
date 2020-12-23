@@ -12,55 +12,172 @@
 </div>
 <hr class="col-10 col-md-10 mb-3 mx-auto" style="background-color: #0288D1;">
 <table id="first-table" class="table table-condensed" style="background-color: white;">
-    <tr>
-        <th colspan="11">Table 1 Name</th>
+    <tr class="other-color-row">
+        <td colspan="1">Move</td>
+        <td colspan="1">Command</td>
+        <td colspan="1">Level</td>
+        <td colspan="1">IMP</td>
+        <td colspan="1">GRD</td>
+        <td colspan="1">HIT</td>
+        <td colspan="1">CH</td>
+        <td colspan="1">DMG</td>
+        <td colspan="1">GB</td>
+        <td colspan="1">Notes</td>
     </tr>
+    <!-- TABLES -->
+    <tr class="other-color-row">
+        <th colspan="11">HORIZONTAL ATTACKS</th>
+    </tr>
+    {% for move in horizontal_table %}
     <tr>
-        <th colspan="1">Move</th>
-        <th colspan="1">Command</th>
-        <th colspan="1">Level</th>
-        <th colspan="1">IMP</th>
-        <th colspan="1">GRD</th>
-        <th colspan="1">HIT</th>
-        <th colspan="1">CH</th>
-        <th colspan="1">DMG</th>
-        <th colspan="1">Attr</th>
-        <th colspan="1">Notes</th>
+        <th colspan="1">{{ move.attack_name }}</th>
+        <th colspan="1">{{ move.command }}</th>
+        <th colspan="1">{{ move.height_level }}</th>
+        <th colspan="1">{{ move.frames_to_impact }}</th>
+        <th colspan="1">{{ move.recovery_on_guard }}</th>
+        <th colspan="1">{{ move.recovery_on_hit }}</th>
+        <th colspan="1">{{ move.recovery_on_counter_hit }}</th>
+        <th colspan="1">{{ move.base_damage }}</th>
+        <th colspan="1">{{ move.guard_burst_damage }}</th>
+        <th colspan="1">{{ move.notes }}</th>
+    {% endfor %}    
     </tr>
     <tr class="other-color-row">
-        <td>Row Names</td>
-        <td>Col 1 Name</td>
+        <th colspan="11">VERICAL ATTACKS</th>
     </tr>
+    {% for move in vertical_table %}
     <tr>
-        <td>Row Identifier 1</td>
-        <td>value 1</td>
-    </tr>
-    <tr>
-        <td>Row Identifier 2</td>
-        <td>value 1</td>
-    </tr>
-    <tr>
-        <td>Row Identifier 3</td>
-        <td>value 1</td>
-    </tr>
-    <tr>
-        <td colspan="11">Table 2 Name</td>
+        <th colspan="1">{{ move.attack_name }}</th>
+        <th colspan="1">{{ move.command }}</th>
+        <th colspan="1">{{ move.height_level }}</th>
+        <th colspan="1">{{ move.frames_to_impact }}</th>
+        <th colspan="1">{{ move.recovery_on_guard }}</th>
+        <th colspan="1">{{ move.recovery_on_hit }}</th>
+        <th colspan="1">{{ move.recovery_on_counter_hit }}</th>
+        <th colspan="1">{{ move.base_damage }}</th>
+        <th colspan="1">{{ move.guard_burst_damage }}</th>
+        <th colspan="1">{{ move.notes }}</th>
+    {% endfor %}    
     </tr>
     <tr class="other-color-row">
-        <td>Row Names</td>
-        <td>Col 1 Name</td>
+        <th colspan="11">KICK ATTACKS</th>
     </tr>
+    {% for move in kick_table %}
     <tr>
-        <td>Row Identifier 1</td>
-        <td>value 1</td>
+        <th colspan="1">{{ move.attack_name }}</th>
+        <th colspan="1">{{ move.command }}</th>
+        <th colspan="1">{{ move.height_level }}</th>
+        <th colspan="1">{{ move.frames_to_impact }}</th>
+        <th colspan="1">{{ move.recovery_on_guard }}</th>
+        <th colspan="1">{{ move.recovery_on_hit }}</th>
+        <th colspan="1">{{ move.recovery_on_counter_hit }}</th>
+        <th colspan="1">{{ move.base_damage }}</th>
+        <th colspan="1">{{ move.guard_burst_damage }}</th>
+        <th colspan="1">{{ move.notes }}</th>
+    {% endfor %}    
     </tr>
-    <tr>
-        <td>Row Identifier 2</td>
-        <td>value 1</td>
+    <tr class="other-color-row">
+        <th colspan="11">DUAL BUTTON ATTACKS</th>
     </tr>
+    {% for move in dual_button_table %}
     <tr>
-        <td>Row Identifier 3</td>
-        <td>value 1</td>
+        <th colspan="1">{{ move.attack_name }}</th>
+        <th colspan="1">{{ move.command }}</th>
+        <th colspan="1">{{ move.height_level }}</th>
+        <th colspan="1">{{ move.frames_to_impact }}</th>
+        <th colspan="1">{{ move.recovery_on_guard }}</th>
+        <th colspan="1">{{ move.recovery_on_hit }}</th>
+        <th colspan="1">{{ move.recovery_on_counter_hit }}</th>
+        <th colspan="1">{{ move.base_damage }}</th>
+        <th colspan="1">{{ move.guard_burst_damage }}</th>
+        <th colspan="1">{{ move.notes }}</th>
+    {% endfor %}    
+    </tr>
+    <tr class="other-color-row">
+        <th colspan="11">8 WAY RUN</th>
+    </tr>
+    {% for move in 8_way_run_table %}
+    <tr>
+        <th colspan="1">{{ move.attack_name }}</th>
+        <th colspan="1">{{ move.command }}</th>
+        <th colspan="1">{{ move.height_level }}</th>
+        <th colspan="1">{{ move.frames_to_impact }}</th>
+        <th colspan="1">{{ move.recovery_on_guard }}</th>
+        <th colspan="1">{{ move.recovery_on_hit }}</th>
+        <th colspan="1">{{ move.recovery_on_counter_hit }}</th>
+        <th colspan="1">{{ move.base_damage }}</th>
+        <th colspan="1">{{ move.guard_burst_damage }}</th>
+        <th colspan="1">{{ move.notes }}</th>
+    {% endfor %}    
+    </tr>
+    <tr class="other-color-row">
+        <th colspan="11">SPECIAL MOVES</th>
+    </tr>
+    {% for move in special_move_table %}
+    <tr>
+        <th colspan="1">{{ move.attack_name }}</th>
+        <th colspan="1">{{ move.command }}</th>
+        <th colspan="1">{{ move.height_level }}</th>
+        <th colspan="1">{{ move.frames_to_impact }}</th>
+        <th colspan="1">{{ move.recovery_on_guard }}</th>
+        <th colspan="1">{{ move.recovery_on_hit }}</th>
+        <th colspan="1">{{ move.recovery_on_counter_hit }}</th>
+        <th colspan="1">{{ move.base_damage }}</th>
+        <th colspan="1">{{ move.guard_burst_damage }}</th>
+        <th colspan="1">{{ move.notes }}</th>
+    {% endfor %}    
+    </tr>
+
+    <tr class="other-color-row">
+        <th colspan="11">THROWS</th>
+    </tr>
+    {% for move in throw_table %}
+    <tr>
+        <th colspan="1">{{ move.attack_name }}</th>
+        <th colspan="1">{{ move.command }}</th>
+        <th colspan="1">{{ move.height_level }}</th>
+        <th colspan="1">{{ move.frames_to_impact }}</th>
+        <th colspan="1">{{ move.recovery_on_guard }}</th>
+        <th colspan="1">{{ move.recovery_on_hit }}</th>
+        <th colspan="1">{{ move.recovery_on_counter_hit }}</th>
+        <th colspan="1">{{ move.base_damage }}</th>
+        <th colspan="1">{{ move.guard_burst_damage }}</th>
+        <th colspan="1">{{ move.notes }}</th>
+    {% endfor %}    
+    </tr>
+    <tr class="other-color-row">
+        <th colspan="11">REVERSAL ATTACKS</th>
+    </tr>
+    {% for move in reversal_attack_table %}
+    <tr>
+        <th colspan="1">{{ move.attack_name }}</th>
+        <th colspan="1">{{ move.command }}</th>
+        <th colspan="1">{{ move.height_level }}</th>
+        <th colspan="1">{{ move.frames_to_impact }}</th>
+        <th colspan="1">{{ move.recovery_on_guard }}</th>
+        <th colspan="1">{{ move.recovery_on_hit }}</th>
+        <th colspan="1">{{ move.recovery_on_counter_hit }}</th>
+        <th colspan="1">{{ move.base_damage }}</th>
+        <th colspan="1">{{ move.guard_burst_damage }}</th>
+        <th colspan="1">{{ move.notes }}</th>
+    {% endfor %}    
+    </tr>
+    <tr class="other-color-row">
+        <th colspan="11">GAUGE ATTACKS</th>
+    </tr>
+    {% for move in gauge_attack_table %}
+    <tr>
+        <th colspan="1">{{ move.attack_name }}</th>
+        <th colspan="1">{{ move.command }}</th>
+        <th colspan="1">{{ move.height_level }}</th>
+        <th colspan="1">{{ move.frames_to_impact }}</th>
+        <th colspan="1">{{ move.recovery_on_guard }}</th>
+        <th colspan="1">{{ move.recovery_on_hit }}</th>
+        <th colspan="1">{{ move.recovery_on_counter_hit }}</th>
+        <th colspan="1">{{ move.base_damage }}</th>
+        <th colspan="1">{{ move.guard_burst_damage }}</th>
+        <th colspan="1">{{ move.notes }}</th>
+    {% endfor %}    
     </tr>
 </table>
 
