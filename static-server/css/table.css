@@ -84,14 +84,13 @@ td[colspan] {
 
 /*mobile only*/
 table td, table th {
-    border-color: gainsboro;
+    border-color: white;
     padding: 1px !important;
 }
   
 /*PC only*/
 @media screen and (min-width: 992px) {
     table td, table th {
-        border-color: white;
         padding: 10px !important;
     }
 }

@@ -30,16 +30,16 @@
     </tr>
     {% for move in horizontal_table %}
     <tr>
-        <td colspan="1">{{ move.attack_name }}</td>
-        <td colspan="1">{{ move.command }}</td>
-        <td colspan="1">{{ move.height_level }}</td>
-        <td colspan="1">{{ move.frames_to_impact }}</td>
-        <td colspan="1">{{ move.recovery_on_guard }}</td>
-        <td colspan="1">{{ move.recovery_on_hit }}</td>
-        <td colspan="1">{{ move.recovery_on_counter_hit }}</td>
-        <td colspan="1">{{ move.base_damage }}</td>
-        <td colspan="1">{{ move.guard_burst_damage }}</td>
-        <td colspan="1">{{ move.notes }}</td>
+        <td colspan="1">{{ move.attack_name|default:"-" }}</td>
+        <td colspan="1">{{ move.command|default:"-" }}</td>
+        <td colspan="1">{{ move.height_level|default:"-" }}</td>
+        <td colspan="1">{{ move.frames_to_impact|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_guard|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_hit|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_counter_hit|default:"-" }}</td>
+        <td colspan="1">{{ move.base_damage|default:"-" }}</td>
+        <td colspan="1">{{ move.guard_burst_damage|default:"-" }}</td>
+        <td colspan="1">{{ move.notes|default:"-"|truncatechars:31 }}</td>
     </tr>
     {% endfor %}    
     <tr class="other-color-row">
@@ -47,16 +47,16 @@
     </tr>
     {% for move in vertical_table %}
     <tr>
-        <td colspan="1">{{ move.attack_name }}</td>
-        <td colspan="1">{{ move.command }}</td>
-        <td colspan="1">{{ move.height_level }}</td>
-        <td colspan="1">{{ move.frames_to_impact }}</td>
-        <td colspan="1">{{ move.recovery_on_guard }}</td>
-        <td colspan="1">{{ move.recovery_on_hit }}</td>
-        <td colspan="1">{{ move.recovery_on_counter_hit }}</td>
-        <td colspan="1">{{ move.base_damage }}</td>
-        <td colspan="1">{{ move.guard_burst_damage }}</td>
-        <td colspan="1">{{ move.notes }}</td>
+        <td colspan="1">{{ move.attack_name|default:"-" }}</td>
+        <td colspan="1">{{ move.command|default:"-" }}</td>
+        <td colspan="1">{{ move.height_level|default:"-" }}</td>
+        <td colspan="1">{{ move.frames_to_impact|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_guard|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_hit|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_counter_hit|default:"-" }}</td>
+        <td colspan="1">{{ move.base_damage|default:"-" }}</td>
+        <td colspan="1">{{ move.guard_burst_damage|default:"-" }}</td>
+        <td colspan="1">{{ move.notes|default:"-"|truncatechars:31 }}</td>
     </tr>
     {% endfor %}    
     </tr>
@@ -65,16 +65,16 @@
     </tr>
     {% for move in kick_table %}
     <tr>
-        <td colspan="1">{{ move.attack_name }}</td>
-        <td colspan="1">{{ move.command }}</td>
-        <td colspan="1">{{ move.height_level }}</td>
-        <td colspan="1">{{ move.frames_to_impact }}</td>
-        <td colspan="1">{{ move.recovery_on_guard }}</td>
-        <td colspan="1">{{ move.recovery_on_hit }}</td>
-        <td colspan="1">{{ move.recovery_on_counter_hit }}</td>
-        <td colspan="1">{{ move.base_damage }}</td>
-        <td colspan="1">{{ move.guard_burst_damage }}</td>
-        <td colspan="1">{{ move.notes }}</td>
+        <td colspan="1">{{ move.attack_name|default:"-" }}</td>
+        <td colspan="1">{{ move.command|default:"-" }}</td>
+        <td colspan="1">{{ move.height_level|default:"-" }}</td>
+        <td colspan="1">{{ move.frames_to_impact|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_guard|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_hit|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_counter_hit|default:"-" }}</td>
+        <td colspan="1">{{ move.base_damage|default:"-" }}</td>
+        <td colspan="1">{{ move.guard_burst_damage|default:"-" }}</td>
+        <td colspan="1">{{ move.notes|default:"-"|truncatechars:31 }}</td>
     </tr>
     {% endfor %}    
     </tr>
@@ -83,16 +83,16 @@
     </tr>
     {% for move in dual_button_table %}
     <tr>
-        <td colspan="1">{{ move.attack_name }}</td>
-        <td colspan="1">{{ move.command }}</td>
-        <td colspan="1">{{ move.height_level }}</td>
-        <td colspan="1">{{ move.frames_to_impact }}</td>
-        <td colspan="1">{{ move.recovery_on_guard }}</td>
-        <td colspan="1">{{ move.recovery_on_hit }}</td>
-        <td colspan="1">{{ move.recovery_on_counter_hit }}</td>
-        <td colspan="1">{{ move.base_damage }}</td>
-        <td colspan="1">{{ move.guard_burst_damage }}</td>
-        <td colspan="1">{{ move.notes }}</td>
+        <td colspan="1">{{ move.attack_name|default:"-" }}</td>
+        <td colspan="1">{{ move.command|default:"-" }}</td>
+        <td colspan="1">{{ move.height_level|default:"-" }}</td>
+        <td colspan="1">{{ move.frames_to_impact|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_guard|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_hit|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_counter_hit|default:"-" }}</td>
+        <td colspan="1">{{ move.base_damage|default:"-" }}</td>
+        <td colspan="1">{{ move.guard_burst_damage|default:"-" }}</td>
+        <td colspan="1">{{ move.notes|default:"-"|truncatechars:31 }}</td>
     </tr>
     {% endfor %}    
     </tr>
@@ -101,16 +101,16 @@
     </tr>
     {% for move in 8_way_run_table %}
     <tr>
-        <td colspan="1">{{ move.attack_name }}</td>
-        <td colspan="1">{{ move.command }}</td>
-        <td colspan="1">{{ move.height_level }}</td>
-        <td colspan="1">{{ move.frames_to_impact }}</td>
-        <td colspan="1">{{ move.recovery_on_guard }}</td>
-        <td colspan="1">{{ move.recovery_on_hit }}</td>
-        <td colspan="1">{{ move.recovery_on_counter_hit }}</td>
-        <td colspan="1">{{ move.base_damage }}</td>
-        <td colspan="1">{{ move.guard_burst_damage }}</td>
-        <td colspan="1">{{ move.notes }}</td>
+        <td colspan="1">{{ move.attack_name|default:"-" }}</td>
+        <td colspan="1">{{ move.command|default:"-" }}</td>
+        <td colspan="1">{{ move.height_level|default:"-" }}</td>
+        <td colspan="1">{{ move.frames_to_impact|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_guard|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_hit|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_counter_hit|default:"-" }}</td>
+        <td colspan="1">{{ move.base_damage|default:"-" }}</td>
+        <td colspan="1">{{ move.guard_burst_damage|default:"-" }}</td>
+        <td colspan="1">{{ move.notes|default:"-"|truncatechars:31 }}</td>
     </tr>
     {% endfor %}    
     </tr>
@@ -119,16 +119,16 @@
     </tr>
     {% for move in special_move_table %}
     <tr>
-        <td colspan="1">{{ move.attack_name }}</td>
-        <td colspan="1">{{ move.command }}</td>
-        <td colspan="1">{{ move.height_level }}</td>
-        <td colspan="1">{{ move.frames_to_impact }}</td>
-        <td colspan="1">{{ move.recovery_on_guard }}</td>
-        <td colspan="1">{{ move.recovery_on_hit }}</td>
-        <td colspan="1">{{ move.recovery_on_counter_hit }}</td>
-        <td colspan="1">{{ move.base_damage }}</td>
-        <td colspan="1">{{ move.guard_burst_damage }}</td>
-        <td colspan="1">{{ move.notes }}</td>
+        <td colspan="1">{{ move.attack_name|default:"-" }}</td>
+        <td colspan="1">{{ move.command|default:"-" }}</td>
+        <td colspan="1">{{ move.height_level|default:"-" }}</td>
+        <td colspan="1">{{ move.frames_to_impact|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_guard|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_hit|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_counter_hit|default:"-" }}</td>
+        <td colspan="1">{{ move.base_damage|default:"-" }}</td>
+        <td colspan="1">{{ move.guard_burst_damage|default:"-" }}</td>
+        <td colspan="1">{{ move.notes|default:"-"|truncatechars:31 }}</td>
     </tr>
     {% endfor %}    
     </tr>
@@ -138,16 +138,16 @@
     </tr>
     {% for move in throw_table %}
     <tr>
-        <td colspan="1">{{ move.attack_name }}</td>
-        <td colspan="1">{{ move.command }}</td>
-        <td colspan="1">{{ move.height_level }}</td>
-        <td colspan="1">{{ move.frames_to_impact }}</td>
-        <td colspan="1">{{ move.recovery_on_guard }}</td>
-        <td colspan="1">{{ move.recovery_on_hit }}</td>
-        <td colspan="1">{{ move.recovery_on_counter_hit }}</td>
-        <td colspan="1">{{ move.base_damage }}</td>
-        <td colspan="1">{{ move.guard_burst_damage }}</td>
-        <td colspan="1">{{ move.notes }}</td>
+        <td colspan="1">{{ move.attack_name|default:"-" }}</td>
+        <td colspan="1">{{ move.command|default:"-" }}</td>
+        <td colspan="1">{{ move.height_level|default:"-" }}</td>
+        <td colspan="1">{{ move.frames_to_impact|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_guard|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_hit|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_counter_hit|default:"-" }}</td>
+        <td colspan="1">{{ move.base_damage|default:"-" }}</td>
+        <td colspan="1">{{ move.guard_burst_damage|default:"-" }}</td>
+        <td colspan="1">{{ move.notes|default:"-"|truncatechars:31 }}</td>
     </tr>
     {% endfor %}    
     </tr>
@@ -156,16 +156,16 @@
     </tr>
     {% for move in reversal_attack_table %}
     <tr>
-        <td colspan="1">{{ move.attack_name }}</td>
-        <td colspan="1">{{ move.command }}</td>
-        <td colspan="1">{{ move.height_level }}</td>
-        <td colspan="1">{{ move.frames_to_impact }}</td>
-        <td colspan="1">{{ move.recovery_on_guard }}</td>
-        <td colspan="1">{{ move.recovery_on_hit }}</td>
-        <td colspan="1">{{ move.recovery_on_counter_hit }}</td>
-        <td colspan="1">{{ move.base_damage }}</td>
-        <td colspan="1">{{ move.guard_burst_damage }}</td>
-        <td colspan="1">{{ move.notes }}</td>
+        <td colspan="1">{{ move.attack_name|default:"-" }}</td>
+        <td colspan="1">{{ move.command|default:"-" }}</td>
+        <td colspan="1">{{ move.height_level|default:"-" }}</td>
+        <td colspan="1">{{ move.frames_to_impact|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_guard|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_hit|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_counter_hit|default:"-" }}</td>
+        <td colspan="1">{{ move.base_damage|default:"-" }}</td>
+        <td colspan="1">{{ move.guard_burst_damage|default:"-" }}</td>
+        <td colspan="1">{{ move.notes|default:"-"|truncatechars:31 }}</td>
     </tr>
     {% endfor %}    
     </tr>
@@ -174,16 +174,16 @@
     </tr>
     {% for move in gauge_attack_table %}
     <tr>
-        <td colspan="1">{{ move.attack_name }}</td>
-        <td colspan="1">{{ move.command }}</td>
-        <td colspan="1">{{ move.height_level }}</td>
-        <td colspan="1">{{ move.frames_to_impact }}</td>
-        <td colspan="1">{{ move.recovery_on_guard }}</td>
-        <td colspan="1">{{ move.recovery_on_hit }}</td>
-        <td colspan="1">{{ move.recovery_on_counter_hit }}</td>
-        <td colspan="1">{{ move.base_damage }}</td>
+        <td colspan="1">{{ move.attack_name|default:"-" }}</td>
+        <td colspan="1">{{ move.command|default:"-" }}</td>
+        <td colspan="1">{{ move.height_level|default:"-" }}</td>
+        <td colspan="1">{{ move.frames_to_impact|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_guard|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_hit|default:"-" }}</td>
+        <td colspan="1">{{ move.recovery_on_counter_hit|default:"-" }}</td>
+        <td colspan="1">{{ move.base_damage|default:"-" }}</td>
         <td colspan="1">{{ move.guard_burst_damage|default:"-" }}</td>
-        <td colspan="1">{{ move.notes }}{{ move.notes|default:"-" }}</td>
+        <td colspan="1">{{ move.notes|default:"-"|truncatechars:10 }}</td>
     </tr>
     {% endfor %}    
     </tr>
