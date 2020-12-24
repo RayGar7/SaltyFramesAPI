@@ -33,7 +33,7 @@ hr {
     background-color: #414345;
 }
 #footer {
-    height: 0;
+    height: 10vh;
     margin: 0;
     padding: 0;
 }
@@ -74,6 +74,6 @@ a.games:hover {
 
     /*footer*/
     footer {
-        padding-top: 50px;
+        padding-top: 25px;
     }
 }

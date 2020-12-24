@@ -108,3 +108,8 @@ https://www.linode.com/
 
 Heroku:<br>
 a cloud service for hosting web applications. 
+
+###Specific Issues/Bugs
+Getting the table headers to stick to the top:
+https://stackoverflow.com/questions/21168521/table-fixed-header-and-scrollable-body
+
