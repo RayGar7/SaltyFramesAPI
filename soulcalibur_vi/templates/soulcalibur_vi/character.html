@@ -186,7 +186,26 @@
                 <td colspan="1">{{ move.guard_burst_damage|default:"-" }}</td>
                 <td colspan="3">{{ move.notes|default:"-"|truncatechars:10 }}</td>
             </tr>
-            {% endfor %}    
+            {% endfor %}
+            {% if sectionless_table %}
+                <tr class="other-color-row">
+                    <th colspan="12">CATEGORY FAILED</th>
+                </tr>
+                {% for move in sectionless_table %}
+                <tr class="move">
+                    <td colspan="1">{{ move.attack_name|default:"-" }}</td>
+                    <td colspan="1">{{ move.command|default:"-" }}</td>
+                    <td colspan="1">{{ move.height_level|default:"-" }}</td>
+                    <td colspan="1">{{ move.frames_to_impact|default:"-" }}</td>
+                    <td colspan="1">{{ move.recovery_on_guard|default:"-" }}</td>
+                    <td colspan="1">{{ move.recovery_on_hit|default:"-" }}</td>
+                    <td colspan="1">{{ move.recovery_on_counter_hit|default:"-" }}</td>
+                    <td colspan="1">{{ move.base_damage|default:"-" }}</td>
+                    <td colspan="1">{{ move.guard_burst_damage|default:"-" }}</td>
+                    <td colspan="3">{{ move.notes|default:"-"|truncatechars:10 }}</td>
+                </tr>
+                {% endfor %}    
+            {% endif %}
         </tbody>
     </table>
 </div>

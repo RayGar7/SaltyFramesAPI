@@ -19,10 +19,14 @@ def detail(request, slug):
     moves_table = {}
     for i in range(0, 9):
         moves_table[sections[i].name] = []
+    moves_table['sectionless_table'] = []
 
 
     for move in moves:
-        moves_table[move.section.name].append(move)
+        if (move.section):
+            moves_table[move.section.name].append(move)
+        else:
+            moves_table['sectionless_table'].append(move)
     
     # for debugging: if len(moves) matches this next number, you did it right
     #print(len(moves_table[sections[0].name]) + len(moves_table[sections[1].name]) + len(moves_table[sections[2].name]) + len(moves_table[sections[3].name]) + len(moves_table[sections[4].name]) + len(moves_table[sections[5].name]) + len(moves_table[sections[6].name]) + len(moves_table[sections[7].name]) + len(moves_table[sections[8].name]))
@@ -39,7 +43,7 @@ def detail(request, slug):
         "throw_table": moves_table.get("throw"),
         "reversal_attack_table": moves_table.get("reversal attack"),
         "gauge_attack_table": moves_table.get("gauge attack"),
+        "sectionless_table": moves_table.get("sectionless_table"),
         "name": character.name
     }
-    print(context.keys())
     return render(request, 'soulcalibur_vi/character.html', context)
