@@ -7,13 +7,34 @@ a:hover {
     color: white;
 }
 
+.tableFixHead { 
+    overflow-y: auto; 
+    height: 65vh; 
+}
+.tableFixHead thead th { 
+    position: sticky; 
+    top: 0; 
+}
+/* Borders (if you need them) */
+.tableFixHead,
+.tableFixHead td {
+  box-shadow: inset 1px -1px white;
+}
+.tableFixHead th {
+  box-shadow: inset 1px 1px white, 0 1px white;
+}
+
 table {
     /*font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;*/
     border-collapse: collapse;
     width: 100%;
     color: black;
-    overflow-x: auto;
+    /*overflow-x: auto;*/
     text-align: center;
+}
+
+.table {
+    margin-bottom: 0 !important;
 }
 
 table th {
@@ -47,10 +68,10 @@ table th {
 }
 
 /*mobile only*/
-table td, table th {
+/* table td, table th {
     border: 1px solid white !important;
     padding: 1px !important;
-}
+} */
   
 /*PC only*/
 @media screen and (min-width: 992px) {
