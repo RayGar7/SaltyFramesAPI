@@ -9,17 +9,20 @@ a:hover {
 
 .tableFixHead { 
     overflow-y: auto; 
-    height: 65vh; 
+    height: 100%; 
 }
+
 .tableFixHead thead th { 
     position: sticky; 
     top: 0; 
 }
+
 /* Borders (if you need them) */
 .tableFixHead,
 .tableFixHead td {
   box-shadow: inset 1px -1px white;
 }
+
 .tableFixHead th {
   box-shadow: inset 1px 1px white, 0 1px white;
 }
@@ -28,7 +31,6 @@ table {
     /*font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;*/
     border-collapse: collapse;
     width: 100%;
-    color: black;
     /*overflow-x: auto;*/
     text-align: center;
 }
@@ -68,14 +70,25 @@ table th {
 }
 
 /*mobile only*/
-/* table td, table th {
-    border: 1px solid white !important;
-    padding: 1px !important;
-} */
+table {
+    font-size: 0.75rem;
+}
+
+.table td, .table th {
+    padding: 5px 3px;
+}
   
 /*PC only*/
 @media screen and (min-width: 992px) {
     table td, table th {
         padding: 10px !important;
+    }
+    .table {
+        padding-left: 10vw;
+        padding-right: 10vw;
+
+    }
+    table {
+        font-size: 1.0rem;
     }
 }

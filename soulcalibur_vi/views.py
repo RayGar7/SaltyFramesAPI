@@ -46,4 +46,4 @@ def detail(request, slug):
         "sectionless_table": moves_table.get("sectionless_table"),
         "name": character.name
     }
-    return render(request, 'soulcalibur_vi/character.html', context)
+    return render(request, 'soulcalibur_vi/character-detail.html', context)
