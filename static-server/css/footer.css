@@ -3,19 +3,18 @@ footer {
     position: relative;
     left: 0;
     bottom: 0;
-    width: 100%;            
+    width: 100%; 
+    margin: 0;
+    padding: 0;
     background: #00172D;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #00172D,  #000B18);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #00172D, #000B18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #c5c6c7;
-    padding-top: 10px;
-    padding-bottom: 10px;
     border-top: 1px solid #404040;
 }
 .footer-links {
     padding: 1%;
     margin: 1%;
-    font-size: 2em; /* mobile only */
 }
 .footer-links {
     transition: color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
@@ -30,6 +29,11 @@ footer {
 }
 .dev-logo {
     color: #00acee;
+}
+
+/* mobile only */
+.footer-links {
+    font-size: 2em;
 }
 
 /*PC only*/

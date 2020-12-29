@@ -1,4 +1,3 @@
-
 /*global*/
 * {
     font-family: 'Didact Gothic', sans-serif;
@@ -10,6 +9,15 @@ body {
     background: -webkit-linear-gradient(to top, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
+}
+
+#page-container {
+    position: relative;
+    min-height: 90vh;
+}
+
+#content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
 }
 
 hr {
@@ -32,11 +40,6 @@ hr {
 .games-card-body {
     background-color: #414345;
 }
-#footer {
-    height: 10vh;
-    margin: 0;
-    padding: 0;
-}
 
 h1 {
     text-align: center;
@@ -53,7 +56,7 @@ a.games:hover {
 }
 
 /* mobile only */
-#home-container {
+#content-wrap {
     height: 90vh;
     padding: 0;
 }
@@ -68,9 +71,10 @@ a.games:hover {
     }
     /*body*/
 
-    #home-container {
+    #content-wrap {
         height: 85vh;
         padding-top: 50px;
+        padding-bottom: 50px;
         padding-left: 10vw;
         padding-right: 10vw;
     }
@@ -83,10 +87,5 @@ a.games:hover {
 
     #about-us-img {
         margin-bottom: 100px;
-    }
-
-    /*footer*/
-    footer {
-        padding-top: 25px;
     }
 }

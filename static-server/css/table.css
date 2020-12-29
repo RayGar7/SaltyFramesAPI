@@ -1,44 +1,39 @@
 a {
     color: white;
 }
-
 a:hover {
     text-decoration: underline;
     color: white;
 }
-
 .tableFixHead { 
     overflow-y: auto; 
     height: 100%; 
 }
-
 .tableFixHead thead th { 
     position: sticky; 
     top: 0; 
 }
-
 /* Borders (if you need them) */
 .tableFixHead,
 .tableFixHead td {
   box-shadow: inset 1px -1px white;
 }
-
 .tableFixHead th {
   box-shadow: inset 1px 1px white, 0 1px white;
 }
-
 table {
-    /*font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;*/
     border-collapse: collapse;
-    width: 100%;
-    /*overflow-x: auto;*/
+    table-layout: fixed;
+    overflow-x: auto;
     text-align: center;
 }
-
+table td {
+    word-wrap: break-word;         /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
+}
 .table {
     margin-bottom: 0 !important;
 }
-
 table th {
     text-align: center;
     color: white;
@@ -46,7 +41,6 @@ table th {
     background: -webkit-linear-gradient(to top, #0288D1  , #039BE5);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #0288D1 , #039BE5  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
 .move {
     color: white; 
     background: #4d4d4d;  /* fallback for old browsers */
@@ -54,30 +48,29 @@ table th {
     background: linear-gradient(to top, #4d4d4d, #3e3e3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     font-weight: normal;
 }  
-
 .move:nth-child(even) {
     background-color: black !important;
     background: #6f6f6f !important;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #4D4D4D, #5C5C5C) !important;  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #4D4D4D, #5C5C5C) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
 .move:hover {
     background-color: black !important;
     background: #5C5C5C !important;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #7A7A7A  , #898989) !important;  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #7A7A7A , #898989) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
 /*mobile only*/
 table {
     font-size: 0.75rem;
 }
-
+.table {
+    width: auto !important;
+}
 .table td, .table th {
     padding: 5px 3px;
 }
-  
+ 
 /*PC only*/
 @media screen and (min-width: 992px) {
     table td, table th {
@@ -90,5 +83,6 @@ table {
     }
     table {
         font-size: 1.0rem;
+        width: 100%;
     }
 }

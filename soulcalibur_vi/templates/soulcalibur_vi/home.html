@@ -3,10 +3,11 @@
 {% block title %}{{ title }}{% endblock title %}
 
 {% block base_head %}
-  <link rel='stylesheet' href='{% static "css/gridview.css" %}' >
+<link rel='stylesheet' href='{% static "css/gridview.css" %}' >
 {% endblock %}
 
 {% block content %}
+<div id="content-head">
     <div>
         <h1>Soulcalibur VI</h1>
     </div>
@@ -24,4 +25,5 @@
             </div>
         {% endfor %}
     </div>
+</div>
 {% endblock content %}

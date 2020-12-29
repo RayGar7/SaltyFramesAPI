@@ -11,19 +11,21 @@
     <title>Salty Frames | {% block title %}{{ page_title|default:"Untitled Page" }}{% endblock title %}</title>
 
     {% include 'base/css.html' %}
-    {% block base_head %}{% endblock %} <!-- I don't remember what this does-->
+    {% block base_head %}{% endblock %} 
 
     <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
 </head>
 <body>
     {% include 'navbar.html' %}
-    <div class="container-fluid" id="home-container">
-        {% block content %}
-        
-        {% endblock content %}
-    </div>
+    <div id="page-container">
+        <div class="container-fluid" id="content-wrap">
+            {% block content %}
+            
+            {% endblock content %}
+        </div>
 
-    {% include 'base/footer.html' %}
-    {% include 'base/js.html' %}
+        {% include 'base/footer.html' %}
+        {% include 'base/js.html' %}
+    </div>
 </body>
 </html>

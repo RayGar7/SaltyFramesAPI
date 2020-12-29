@@ -1,13 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Character, Move, SpecialStance, Section, SpecialState
+from django import template
+
+register = template.Library()
 
 def home(request):
     characters = Character.objects.all().order_by('name')
 
     context = {'characters': characters, 'title': 'Soulcalibur VI API'}
     return render(request, 'soulcalibur_vi/home.html', context)
-
 
 def detail(request, slug):
     character = Character.objects.get(slug = slug)
