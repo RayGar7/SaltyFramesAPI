@@ -25,169 +25,29 @@
                 <th colspan="3">Notes</th>
             </tr>
         </thead>
-        <!-- TABLES -->
         <tbody>
-            <tr>
-                <th colspan="18">HORIZONTAL ATTACKS</th>
-            </tr>
-            {% for move in horizontal_table %}
-            <tr class="move">
-                <td colspan="3">{{ move.attack_name|default_if_none:"-" }}</td>
-                <td colspan="3">{{ move.command|default_if_none:"-"|newline:11 }}</td>
-                <td colspan="3">{{ move.height_level|default_if_none:"-"|newline:11 }}</td>
-                <td colspan="1">{{ move.frames_to_impact|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_guard|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_hit|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_counter_hit|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.base_damage|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.guard_burst_damage|default_if_none:"-" }}</td>
-                <td colspan="3">{{ move.notes|default_if_none:"-"|newline:11 }}</td>
-            </tr>
-            {% endfor %}    
-            <tr class="other-color-row">
-                <th colspan="18">VERTICAL ATTACKS</th>
-            </tr>
-            {% for move in vertical_table %}
-            <tr class="move">
-                <td colspan="3">{{ move.attack_name|default_if_none:"-" }}</td>
-                <td colspan="3">{{ move.command|default_if_none:"-"|newline:11 }}</td>
-                <td colspan="3">{{ move.height_level|default_if_none:"-"|newline:11 }}</td>
-                <td colspan="1">{{ move.frames_to_impact|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_guard|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_hit|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_counter_hit|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.base_damage|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.guard_burst_damage|default_if_none:"-" }}</td>
-                <td colspan="3">{{ move.notes|default_if_none:"-"|newline:11 }}</td>
-            </tr>
-            {% endfor %}    
-            </tr>
-            <tr class="other-color-row">
-                <th colspan="18">KICK ATTACKS</th>
-            </tr>
-            {% for move in kick_table %}
-            <tr class="move">
-                <td colspan="3">{{ move.attack_name|default_if_none:"-" }}</td>
-                <td colspan="3">{{ move.command|default_if_none:"-"|newline:11 }}</td>
-                <td colspan="3">{{ move.height_level|default_if_none:"-"|newline:11 }}</td>
-                <td colspan="1">{{ move.frames_to_impact|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_guard|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_hit|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_counter_hit|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.base_damage|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.guard_burst_damage|default_if_none:"-" }}</td>
-                <td colspan="3">{{ move.notes|default_if_none:"-"|newline:11 }}</td>
-            </tr>
-            {% endfor %}    
-            </tr>
-            <tr class="other-color-row">
-                <th colspan="18">DUAL BUTTON ATTACKS</th>
-            </tr>
-            {% for move in dual_button_table %}
-            <tr class="move">
-                <td colspan="3">{{ move.attack_name|default_if_none:"-" }}</td>
-                <td colspan="3">{{ move.command|default_if_none:"-"|newline:11 }}</td>
-                <td colspan="3">{{ move.height_level|default_if_none:"-"|newline:11 }}</td>
-                <td colspan="1">{{ move.frames_to_impact|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_guard|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_hit|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_counter_hit|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.base_damage|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.guard_burst_damage|default_if_none:"-" }}</td>
-                <td colspan="3">{{ move.notes|default_if_none:"-"|newline:11 }}</td>
-            </tr>
-            {% endfor %}    
-            </tr>
-            <tr class="other-color-row">
-                <th colspan="18">8-WAY RUN</th>
-            </tr>
-            {% for move in 8_way_run_table %}
-            <tr class="move">
-                <td colspan="3">{{ move.attack_name|default_if_none:"-" }}</td>
-                <td colspan="3">{{ move.command|default_if_none:"-"|newline:11 }}</td>
-                <td colspan="3">{{ move.height_level|default_if_none:"-"|newline:11 }}</td>
-                <td colspan="1">{{ move.frames_to_impact|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_guard|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_hit|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_counter_hit|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.base_damage|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.guard_burst_damage|default_if_none:"-" }}</td>
-                <td colspan="3">{{ move.notes|default_if_none:"-"|newline:11 }}</td>
-            </tr>
-            {% endfor %}    
-            </tr>
-            <tr class="other-color-row">
-                <th colspan="18">SPECIAL MOVES</th>
-            </tr>
-            {% for move in special_move_table %}
-            <tr class="move">
-                <td colspan="3">{{ move.attack_name|default_if_none:"-" }}</td>
-                <td colspan="3">{{ move.command|default_if_none:"-"|newline:11 }}</td>
-                <td colspan="3">{{ move.height_level|default_if_none:"-"|newline:11 }}</td>
-                <td colspan="1">{{ move.frames_to_impact|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_guard|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_hit|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_counter_hit|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.base_damage|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.guard_burst_damage|default_if_none:"-" }}</td>
-                <td colspan="3">{{ move.notes|default_if_none:"-"|newline:9 }}</td>
-            </tr>
-            {% endfor %}  
-
-            <tr class="other-color-row">
-                <th colspan="18">THROWS</th>
-            </tr>
-            {% for move in throw_table %}
-            <tr class="move">
-                <td colspan="3">{{ move.attack_name|default_if_none:"-" }}</td>
-                <td colspan="3">{{ move.command|default_if_none:"-"|newline:11 }}</td>
-                <td colspan="3">{{ move.height_level|default_if_none:"-"|newline:11 }}</td>
-                <td colspan="1">{{ move.frames_to_impact|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_guard|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_hit|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_counter_hit|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.base_damage|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.guard_burst_damage|default_if_none:"-" }}</td>
-                <td colspan="3">{{ move.notes|default_if_none:"-"|newline:11 }}</td>
-            </tr>
-            {% endfor %} 
-            <tr class="other-color-row">
-                <th colspan="18">REVERSAL ATTACKS</th>
-            </tr>
-            {% for move in reversal_attack_table %}
-            <tr class="move">
-                <td colspan="3">{{ move.attack_name|default_if_none:"-" }}</td>
-                <td colspan="3">{{ move.command|default_if_none:"-"|newline:11 }}</td>
-                <td colspan="3">{{ move.height_level|default_if_none:"-"|newline:11 }}</td>
-                <td colspan="1">{{ move.frames_to_impact|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_guard|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_hit|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_counter_hit|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.base_damage|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.guard_burst_damage|default_if_none:"-" }}</td>
-                <td colspan="3">{{ move.notes|default_if_none:"-"|newline:11 }}</td>
-            </tr>
-            {% endfor %}  
-            <tr class="other-color-row">
-                <th colspan="18">GAUGE ATTACKS</th>
-            </tr>
-            {% for move in gauge_attack_table %}
-            <tr class="move">
-                <td colspan="3">{{ move.attack_name|default_if_none:"-" }}</td>
-                <td colspan="3">{{ move.command|default_if_none:"-"|newline:11 }}</td>
-                <td colspan="3">{{ move.height_level|default_if_none:"-"|newline:11 }}</td>
-                <td colspan="1">{{ move.frames_to_impact|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_guard|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_hit|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.recovery_on_counter_hit|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.base_damage|default_if_none:"-" }}</td>
-                <td colspan="1">{{ move.guard_burst_damage|default_if_none:"-" }}</td>
-                <td colspan="3">{{ move.notes|default_if_none:"-"|newline:11 }}</td>
-            </tr>
+            {% for table in table_list %}
+                <tr>
+                    <th colspan="18">{{ table.table_name }}</th>
+                </tr>
+                {% for move in table.moves_list %}
+                    <tr class="move">
+                        <td colspan="3">{{ move.attack_name|default_if_none:"-" }}</td>
+                        <td colspan="3">{{ move.command|default_if_none:"-"|newline:11 }}</td>
+                        <td colspan="3">{{ move.height_level|default_if_none:"-"|newline:11 }}</td>
+                        <td colspan="1">{{ move.frames_to_impact|default_if_none:"-" }}</td>
+                        <td colspan="1">{{ move.recovery_on_guard|default_if_none:"-" }}</td>
+                        <td colspan="1">{{ move.recovery_on_hit|default_if_none:"-" }}</td>
+                        <td colspan="1">{{ move.recovery_on_counter_hit|default_if_none:"-" }}</td>
+                        <td colspan="1">{{ move.base_damage|default_if_none:"-" }}</td>
+                        <td colspan="1">{{ move.guard_burst_damage|default_if_none:"-" }}</td>
+                        <td colspan="3">{{ move.notes|default_if_none:"-"|newline:11 }}</td>
+                    </tr>
+                {% endfor %} 
             {% endfor %}
             {% if sectionless_table %}
                 <tr class="other-color-row">
-                    <th colspan="18">CATEGORY FAILED</th>
+                    <th colspan="18">CATEGORY UNKNOWN</th>
                 </tr>
                 {% for move in sectionless_table %}
                 <tr class="move">
