@@ -15,11 +15,12 @@
     <div class="flex-container col-12 col-md-10 mb-3 mx-auto">
         {% for character in characters %}
             <div class="card mx-auto">
-                <a href="characters-api/{{ character.id }}/">
+                <a href="{{ character.slug }}/">
                     <div class="card-header">{{ character.name }}</div>
                     <div class="card-body">
+                        <img src="{{ character.image.url }}">
                         <div class="card-title">Last updated: {{ character.date_time_version|date:"SHORT_DATE_FORMAT" }} </div>
-                        <div class="card-body"><a href="{{ character.slug }}/">View</a></div>
+                        <div class="card-body"><a href="characters-api/{{ character.id }}/">API View</a></div>
                     </div>
                 </a>       
             </div>
