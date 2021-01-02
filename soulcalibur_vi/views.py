@@ -19,7 +19,9 @@ def detail(request, slug):
 
     context = {
         "name": character.name,
-        "table_list": []
+        "image": character.image.url,
+        "table_list": [],
+        "title": character.name
     }
 
     for i in range(0, 9):
