@@ -34,7 +34,15 @@
                     <tr class="move">
                         <td colspan="3">{{ move.attack_name|default_if_none:"-" }}</td>
                         <td colspan="3">{{ move.command|default_if_none:"-"|newline:11 }}</td>
-                        <td colspan="3">{{ move.height_level|default_if_none:"-"|newline:11 }}</td>
+                        <td colspan="3">
+                            {% with move.height_level|height_level_to_image as image_static %}
+                            <img src="{% static image_static %}" class="notation" style="max-height: 2.0em; width: auto;">
+                            
+                            {% endwith %}
+
+
+
+                        </td>
                         <td colspan="1">{{ move.frames_to_impact|default_if_none:"-" }}</td>
                         <td colspan="1">{{ move.recovery_on_guard|default_if_none:"-" }}</td>
                         <td colspan="1">{{ move.recovery_on_hit|default_if_none:"-" }}</td>
@@ -53,7 +61,12 @@
                 <tr class="move">
                     <td colspan="3">{{ move.attack_name|default_if_none:"-" }}</td>
                     <td colspan="3">{{ move.command|default_if_none:"-"|newline:11 }}</td>
-                    <td colspan="3">{{ move.height_level|default_if_none:"-"|newline:11 }}</td>
+                    <td colspan="3">
+                        {% with move.height_level|height_level_to_image as image_static %}
+                        <img src="{% static image_static %}">
+                        
+                        {% endwith %}
+                    </td>
                     <td colspan="1">{{ move.frames_to_impact|default_if_none:"-" }}</td>
                     <td colspan="1">{{ move.recovery_on_guard|default_if_none:"-" }}</td>
                     <td colspan="1">{{ move.recovery_on_hit|default_if_none:"-" }}</td>
