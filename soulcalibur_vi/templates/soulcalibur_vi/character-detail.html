@@ -33,15 +33,24 @@
                 {% for move in table.moves_list %}
                     <tr class="move">
                         <td colspan="3">{{ move.attack_name|default_if_none:"-" }}</td>
-                        <td colspan="3">{{ move.command|default_if_none:"-"|newline:11 }}</td>
                         <td colspan="3">
-                            {% with move.height_level|height_level_to_image as image_static %}
-                            <img src="{% static image_static %}" class="notation" style="max-height: 2.0em; width: auto;">
-                            
+                        {% for command in move.command %}
+                            {% with command|command_to_image as image_static %}
+                                {% if command in allowable_images %}
+                                    <img src="{% static image_static %}" class="notation">
+                                {% else %}
+                                    {{ command }}
+                                {% endif %}
                             {% endwith %}
-
-
-
+                        {% endfor %}                            
+                        </td>
+                        <td colspan="3">
+                            {% for hl in move.height_level %}
+                                {% with hl|height_level_to_image as image_static %}
+                                    <img src="{% static image_static %}" class="notation">
+                                
+                                {% endwith %}
+                            {% endfor %}
                         </td>
                         <td colspan="1">{{ move.frames_to_impact|default_if_none:"-" }}</td>
                         <td colspan="1">{{ move.recovery_on_guard|default_if_none:"-" }}</td>
@@ -60,12 +69,23 @@
                 {% for move in sectionless_table %}
                 <tr class="move">
                     <td colspan="3">{{ move.attack_name|default_if_none:"-" }}</td>
-                    <td colspan="3">{{ move.command|default_if_none:"-"|newline:11 }}</td>
                     <td colspan="3">
-                        {% with move.height_level|height_level_to_image as image_static %}
-                        <img src="{% static image_static %}">
-                        
-                        {% endwith %}
+                        {% for command in move.command %}
+                            {% with command|command_to_image as image_static %}
+                                {% if command in allowable_images %}
+                                    <img src="{% static image_static %}" class="notation">
+                                {% else %}
+                                    {{ command }}
+                                {% endif %}
+                            {% endwith %}
+                        {% endfor %}
+                    </td>
+                    <td colspan="3">
+                        {% for hl in move.height_level %}
+                            {% with hl|height_level_to_image as image_static %}
+                                <img src="{% static image_static %}" class="notation">                            
+                            {% endwith %}
+                        {% endfor %}
                     </td>
                     <td colspan="1">{{ move.frames_to_impact|default_if_none:"-" }}</td>
                     <td colspan="1">{{ move.recovery_on_guard|default_if_none:"-" }}</td>
@@ -79,5 +99,6 @@
             {% endif %}
         </tbody>
     </table>
+
 </div>
 {% endblock content %}
