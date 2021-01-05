@@ -72,121 +72,92 @@ def command_to_image(value):
     
     base_dir = "img/sc-inputs/"
 
-    a = base_dir + "A.png"
-    b = base_dir + "B.png"
-    k = base_dir + "K.png"
-    g = base_dir + "G.png"
 
-    Ia = base_dir + "Ia.png"
-    Ib = base_dir + "Ib.png"
-    Ik = base_dir + "Ik.png"
-    Ig = base_dir + "Ig.png"
-
-    one = base_dir + "1.png"
-    two = base_dir + "2.png"
-    three = base_dir + "3.png"
-    four = base_dir + "4.png"
-    six = base_dir + "6.png"
-    seven = base_dir + "7.png"
-    eight = base_dir + "8.png"
-    nine = base_dir + "9.png"
-
-    Ione = base_dir + "I1.png"
-    Itwo = base_dir + "I2.png"
-    Ithree = base_dir + "I3.png"
-    Ifour = base_dir + "I4.png"
-    Isix = base_dir + "I6.png"
-    Iseven = base_dir + "I7.png"
-    Ieight = base_dir + "I8.png"
-    Inine = base_dir + "I9.png"
-
-    sc = base_dir + "SoulCharged.png"
 
 
     new_value = ""
-    i = 0
-    length = len(value)
-    while (i < length): 
-        if (value[i:i+3] == ":1:"):
-            new_value += one
-            i += 3
-        elif (value[i:i+3] == ":2:"):
-            new_value += two
-            i += 3
-        elif (value[i:i+3] == ":3:"):
-            new_value += three
-            i += 3
-        elif (value[i:i+3] == ":4:"):
-            new_value += four
-            i += 3
-        elif (value[i:i+3] == ":6:"):
-            new_value += six
-            i += 3
-        elif (value[i:i+3] == ":7:"):
-            new_value += seven
-            i += 3
-        elif (value[i:i+3] == ":8:"):
-            new_value += eight
-            i += 3
-        elif (value[i:i+3] == ":9:"):
-            new_value += nine
-            i += 3
 
-        elif (value[i:i+3] == ":A:"):
-            new_value += a
-            i += 3
-        elif (value[i:i+3] == ":B:"):
-            new_value += b
-            i += 3
-        elif (value[i:i+3] == ":K:"):
-            new_value += k
-            i += 3
-        elif (value[i:i+3] == ":G:"):
-            new_value += g
-            i += 3
+    my_dict = {
+        ":1:": base_dir + "1.png",
+        ":2:": base_dir + "2.png",
+        ":3:": base_dir + "3.png",
+        ":4:": base_dir + "4.png",
+        ":6:": base_dir + "6.png",
+        ":7:": base_dir + "7.png",
+        ":8:": base_dir + "8.png",
+        ":9:": base_dir + "9.png",
 
-        elif (value[i:i+5] == ":(A):"):
-            new_value += Ia
-            i += 5
-        elif (value[i:i+5] == ":(B):"):
-            new_value += Ib
-            i += 5
-        elif (value[i:i+5] == ":(K):"):
-            new_value += Ik
-            i += 5
-        elif (value[i:i+5] == ":(G):"):
-            new_value += Ig
-            i += 5
+        ":A:": base_dir + "A.png",
+        ":A": base_dir + "A.png",
+        "A:": base_dir + "A.png",
+        ":B:": base_dir + "B.png",
+        ":B": base_dir + "B.png",
+        "B:": base_dir + "B.png",
+        ":K:": base_dir + "K.png",
+        ":K": base_dir + "K.png",
+        "K:": base_dir + "K.png",
+        ":G:": base_dir + "G.png",
+        ":G": base_dir + "G.png",
+        "G:": base_dir + "G.png",
 
-        elif (value[i:i+5] == ":(1):"):
-            new_value += Ione
-            i += 5
-        elif (value[i:i+5] == ":(2):"):
-            new_value += Itwo
-            i += 5
-        elif (value[i:i+5] == ":(3):"):
-            new_value += Ithree
-            i += 5
-        elif (value[i:i+5] == ":(4):"):
-            new_value += Ifour
-            i += 5
-        elif (value[i:i+5] == ":(6):"):
-            new_value += Isix
-            i += 5
-        elif (value[i:i+5] == ":(7):"):
-            new_value += Iseven
-            i += 5
-        elif (value[i:i+5] == ":(8):"):
-            new_value += Ieight
-            i += 5
-        elif (value[i:i+5] == ":(9):"):
-            new_value += Inine
-            i += 5
+        ":(1):": base_dir + "I1.png",
+        ":(2):": base_dir + "I2.png",
+        ":(3):": base_dir + "I3.png",
+        ":(4):": base_dir + "I4.png",
+        ":(6):": base_dir + "I6.png",
+        ":(7):": base_dir + "I7.png",
+        ":(8):": base_dir + "I8.png",
+        ":(9):": base_dir + "I9.png",
 
-        else:
-            new_value += value[i]
-            i += 1
+        ":(A):": base_dir + "Ia.png",
+        ":(B):": base_dir + "Ib.png",
+        ":(K):": base_dir + "Ik.png",
+        ":(G):": base_dir + "Ig.png",
 
-    #print(new_value)
+        ":(A": base_dir + "Ia.png",
+        "A):": base_dir + "Ia.png",
+        ":(B": base_dir + "Ib.png",
+        "B):": base_dir + "Ib.png",
+        ":(K": base_dir + "Ik.png",
+        "K):": base_dir + "Ik.png",
+        ":(G": base_dir + "Ig.png",
+        "G):": base_dir + "Ig.png",
 
-    return new_value if len(new_value) else value
+        "FC": base_dir + "FC.png",
+        "WR": base_dir + "WR.png",
+        "BT": base_dir + "BT.png",
+
+        ":SC:": base_dir + "SoulCharged.png",
+        ":RE:": base_dir + "RE.png",
+
+        ":a:": base_dir + "Sa.png",
+        ":b:": base_dir + "Sb.png",
+        ":k:": base_dir + "Sk.png",
+        ":k": base_dir + "Sk.png",
+        ":g:": base_dir + "Sg.png",
+
+        ":a": base_dir + "Sa.png",
+        "a:": base_dir + "Sa.png",
+        ":b": base_dir + "Sb.png",
+        "b:": base_dir + "Sb.png",
+        ":k": base_dir + "Sk.png",
+        "k:": base_dir + "Sk.png",
+        ":g": base_dir + "Sg.png",
+        "g:": base_dir + "Sg.png",
+
+        ":aB:": base_dir + "M.png",
+        ":bA:": base_dir + "N.png",
+        ":kA:": base_dir + "O.png",
+        ":kB:": base_dir + "P.png",
+
+
+        "*": base_dir + "_notation.png",
+        "+": base_dir + "plus.png",
+    }
+
+    if (value in my_dict.keys()):
+        new_value = my_dict[value]
+    else:
+        new_value = value
+
+    return new_value

@@ -5,7 +5,21 @@ from django import template
 
 register = template.Library()
 
-allowable_images = [":1:", ":2:", ":3:", ":4:", ":6:", ":7:", ":8:", ":9:", ":A:", ":B:", ":K:", ":G:", ":(A):", ":(B):", ":(K):", ":(G):", ":(1):", ":(2):", ":(3):", ":(4):", ":(6):", ":(7):", ":(8):", ":(9):"]
+allowable_images = [
+    ":1:", ":2:", ":3:", ":4:", ":6:", ":7:", ":8:", ":9:",
+    ":A:", ":B:", ":K:", ":G:",  
+    ":A", "A:", ":B", "B:", ":K", "K:", ":G", "G:",
+    ":(1):", ":(2):", ":(3):", ":(4):", ":(6):", ":(7):", ":(8):", ":(9):",
+    ":(A):", ":(B):", ":(K):", ":(G):",
+    ":(A", "A):", ":(B", "B):", ":(K", "K):", ":(G", "G):",
+    "FC", "WR", "BT", 
+    "*", "+", 
+    #":A+B:", ":(A+B):", ":a+b:", ":B+K:", ":(B+K):", ":b+k:", ":B+G:", ":(B+G):", ":b+g:", ":A+G:", ":(A+G):", ":a+g:", ":A+B+K:", 
+    ":a:", ":b:", ":k:", ":g:",
+    ":a", "a:", ":b", "b:", ":k", "k:", ":g", "g:",
+    ":aB:", ":bA:", ":kA:", ":kB:",
+    ":SC:", ":RE:"
+]
 
 def home(request):
     characters = Character.objects.all().order_by('name')
@@ -15,7 +29,8 @@ def home(request):
 
 def detail(request, slug):
     character = Character.objects.get(slug = slug)
-    sections = Section.objects.all().order_by('id')     # order_by('id') is a trick I use to order objects in the ordder they were saved
+    # order_by('id') is a trick I use to order objects in the ordder they were saved
+    sections = Section.objects.all().order_by('id')     
     moves = Move.objects.filter(character=character).order_by('id')
     #print(len(moves))
 
@@ -85,18 +100,27 @@ def command_string_to_list(move):
     command_list = []
     i = 0
     while (i < len(value)):
-        if (i + 2 < len(value) and value[i:i+3] in allowable_images):
-            command_list.append(value[i:i+3])
-            i += 3
-        elif (i + 3 < len(value) and value[i:i+4] in allowable_images):
-            command_list.append(value[i:i+4])
-            i += 4
-        elif (i + 4 < len(value) and value[i:i+5] in allowable_images):
-            command_list.append(value[i:i+5])
-            i += 5
+        if (i + 6 < len(value) and value[i:i+7] in allowable_images):
+            command_list.append(value[i:i+7])
+            i += 7
         elif (i + 5 < len(value) and value[i:i+6] in allowable_images):
             command_list.append(value[i:i+6])
             i += 6
+        elif (i + 4 < len(value) and value[i:i+5] in allowable_images):
+            command_list.append(value[i:i+5])
+            i += 5
+        elif (i + 3 < len(value) and value[i:i+4] in allowable_images):
+            command_list.append(value[i:i+4])
+            i += 4
+        elif (i + 2 < len(value) and value[i:i+3] in allowable_images):
+            command_list.append(value[i:i+3])
+            i += 3
+        elif (i + 1 < len(value) and value[i:i+2] in allowable_images):
+            command_list.append(value[i:i+2])
+            i += 2
+        elif (value[i] in allowable_images):
+            command_list.append(value[i])
+            i += 1
         else:
             command_list.append(value[i])
             i += 1
