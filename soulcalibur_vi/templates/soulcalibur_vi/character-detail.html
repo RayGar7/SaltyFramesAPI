@@ -58,7 +58,7 @@
                         <td colspan="1">{{ move.recovery_on_counter_hit|default_if_none:"-" }}</td>
                         <td colspan="1">{{ move.base_damage|default_if_none:"-" }}</td>
                         <td colspan="1">{{ move.guard_burst_damage|default_if_none:"-" }}</td>
-                        <td colspan="3">{{ move.notes|default_if_none:"-"|newline:11 }}</td>
+                        <td colspan="3">{{ move.notes|default_if_none:"-" }}</td>
                     </tr>
                 {% endfor %} 
             {% endfor %}
@@ -93,7 +93,7 @@
                     <td colspan="1">{{ move.recovery_on_counter_hit|default_if_none:"-" }}</td>
                     <td colspan="1">{{ move.base_damage|default_if_none:"-" }}</td>
                     <td colspan="1">{{ move.guard_burst_damage|default_if_none:"-" }}</td>
-                    <td colspan="3">{{ move.notes|default_if_none:"-"|newline:11 }}</td>
+                    <td colspan="3">{{ move.notes|default_if_none:"-" }}</td>
                 </tr>
                 {% endfor %}    
             {% endif %}

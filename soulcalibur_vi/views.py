@@ -8,17 +8,21 @@ register = template.Library()
 allowable_images = [
     ":1:", ":2:", ":3:", ":4:", ":6:", ":7:", ":8:", ":9:",
     ":A:", ":B:", ":K:", ":G:",  
-    ":A", "A:", ":B", "B:", "B", ":K", "K:", ":G", "G:",
+    ":A", "A:", ":B", "B:", ":K", "K:", ":G", "G:",
     ":(1):", ":(2):", ":(3):", ":(4):", ":(6):", ":(7):", ":(8):", ":(9):",
     ":(A):", ":(B):", ":(K):", ":(G):",
     ":(A", "A):", ":(B", "B):", "(B)", ":(K", "K):", ":(G", "G):",
+    ":(A)", "(A):", "(A", "A)", ":(B)", "(B):", "(B", "B)", ":(K)", "(K):", "(K", "K)",  ":(G)", "(G):", "(G", "G)",
     "FC", "WR", "BT", "Run", "RUN",
-    "*", "+", "(tip)", "Left side throw", "Right side throw", "Back throw",
-    #":A+B:", ":(A+B):", ":a+b:", ":B+K:", ":(B+K):", ":b+k:", ":B+G:", ":(B+G):", ":b+g:", ":A+G:", ":(A+G):", ":a+g:", ":A+B+K:", 
+    "*", "+", ":+:", "(tip)", 
+    "Left side throw", "Right side throw", "Back throw", "Left Side Throw", "Right Side Throw", "Back Throw", 
+    ":a-small:", ":b-small:", ":k-small:", ":g-small:",
+    ":a-small", "a-small:", ":b-small", "b-small:", ":k-small", "k-small:", ":g-small", "g-small:",
     ":a:", ":b:", ":k:", ":g:",
     ":a", "a:", ":b", "b:", ":k", "k:", ":g", "g:",
     ":aB:", ":bA:", ":kA:", ":kB:",
-    ":SC:", ":RE:"
+    ":SC:", ":RE:", "RE",
+    ":M:", ":H:", ":L:", ":SM:", ":SH:", ":SL:",
 ]
 
 def home(request):
@@ -80,26 +84,39 @@ def detail(request, slug):
 
 
 def height_level_string_to_list(move):
-    value = move.height_level
-    height_level_list = []
-    i = 0
-    while (i < len(value)):
-        if (value[i] == ":" and value[i+2] == ":"):
-            height_level_list.append(value[i:i+3])
-            i += 3
-        elif (value[i] == ":" and value[i+3] == ":"):
-            height_level_list.append(value[i:i+4])
-            i += 4
-        else:
-            i += 1
+    if (move.height_level):
+        value = move.height_level
+        height_level_list = []
+        i = 0
+        while (i < len(value)):
+            if (i + 2 < len(value) and value[i:i+3] in allowable_images):
+                height_level_list.append(value[i:i+3])
+                i += 3
+            elif (i + 3 < len(value) and value[i:i+4] in allowable_images):
+                height_level_list.append(value[i:i+4])
+                i += 4
+            else:
+                i += 1
 
-    move.height_level = height_level_list
+        move.height_level = height_level_list
+    else:
+        move.height_level = []
 
 def command_string_to_list(move):
     value = move.command
     command_list = []
     i = 0
     while (i < len(value)):
+
+        #special case
+        if (i + 6 < len(value) and value[i:i+7] == ":A+B+K:"):
+            command_list.append(":A:")
+            command_list.append(":+:")
+            command_list.append(":B:")
+            command_list.append(":+:")
+            command_list.append(":K:")
+            i += 7
+
         if (i + 15 < len(value) and value[i:i+16] in allowable_images):
             command_list.append(value[i:i+16])
             i += 16
@@ -109,6 +126,12 @@ def command_string_to_list(move):
         elif (i + 9 < len(value) and value[i:i+10] in allowable_images):
             command_list.append(value[i:i+10])
             i += 10
+        elif (i + 8 < len(value) and value[i:i+9] in allowable_images):
+            command_list.append(value[i:i+9])
+            i += 9
+        elif (i + 7 < len(value) and value[i:i+8] in allowable_images):
+            command_list.append(value[i:i+8])
+            i += 8
         elif (i + 6 < len(value) and value[i:i+7] in allowable_images):
             command_list.append(value[i:i+7])
             i += 7
@@ -127,9 +150,12 @@ def command_string_to_list(move):
         elif (i + 1 < len(value) and value[i:i+2] in allowable_images):
             command_list.append(value[i:i+2])
             i += 2
+        elif (i >= len(value)):
+            break
         elif (value[i] in allowable_images):
             command_list.append(value[i])
             i += 1
+            #if this case happens it means that i was incremented in such a way that value[i] would raise IndexError
         else:
             command_list.append(value[i])
             i += 1

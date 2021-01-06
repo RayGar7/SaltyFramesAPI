@@ -93,7 +93,6 @@ def command_to_image(value):
         ":B:": base_dir + "B.png",
         ":B": base_dir + "B.png",
         "B:": base_dir + "B.png",
-        "B": base_dir + "B.png",
         ":K:": base_dir + "K.png",
         ":K": base_dir + "K.png",
         "K:": base_dir + "K.png",
@@ -117,16 +116,27 @@ def command_to_image(value):
 
         ":(A": base_dir + "Ia.png",
         "A):": base_dir + "Ia.png",
+        ":(A)": base_dir + "Ia.png",
+        "(A):": base_dir + "Ia.png",
         ":(B": base_dir + "Ib.png",
         "B):": base_dir + "Ib.png",
+        ":(B)": base_dir + "Ib.png",
+        "(B):": base_dir + "Ib.png",
         ":(K": base_dir + "Ik.png",
         "K):": base_dir + "Ik.png",
+        ":(K)": base_dir + "Ik.png",
+        "(K):": base_dir + "Ik.png",
         ":(G": base_dir + "Ig.png",
         "G):": base_dir + "Ig.png",
+        ":(G)": base_dir + "Ig.png",
+        "(G):": base_dir + "Ig.png",
 
         "Left side throw": base_dir + "left-side-throw.png",
         "Right side throw": base_dir + "right-side-throw.png",
-        "Back throw": base_dir + "back-side-throw.png",
+        "Back throw": base_dir + "back-throw.png",
+        "Left Side Throw": base_dir + "left-side-throw.png",
+        "Right Side Throw": base_dir + "right-side-throw.png",
+        "Back Throw": base_dir + "back-throw.png",
 
 
         "FC": base_dir + "FC.png",
@@ -140,19 +150,31 @@ def command_to_image(value):
 
         ":SC:": base_dir + "SoulCharged.png",
         ":RE:": base_dir + "RE.png",
+        "RE": base_dir + "RE.png",
+
+        ":a-small:": base_dir + "Sa.png",
+        ":a-small": base_dir + "Sa.png",
+        "a-small:": base_dir + "Sa.png",
+        ":b-small:": base_dir + "Sb.png",
+        ":b-small": base_dir + "Sb.png",
+        "b-small:": base_dir + "Sb.png",
+        ":k-small:": base_dir + "Sk.png",
+        ":k-small": base_dir + "Sk.png",
+        "k-small:": base_dir + "Sk.png",
+        ":g-small:": base_dir + "Sg.png",
+        ":g-small": base_dir + "Sg.png",
+        "g-small:": base_dir + "Sg.png",
 
         ":a:": base_dir + "Sa.png",
-        ":b:": base_dir + "Sb.png",
-        ":k:": base_dir + "Sk.png",
-        ":k": base_dir + "Sk.png",
-        ":g:": base_dir + "Sg.png",
-
         ":a": base_dir + "Sa.png",
         "a:": base_dir + "Sa.png",
+        ":b:": base_dir + "Sb.png",
         ":b": base_dir + "Sb.png",
         "b:": base_dir + "Sb.png",
+        ":k:": base_dir + "Sk.png",
         ":k": base_dir + "Sk.png",
         "k:": base_dir + "Sk.png",
+        ":g:": base_dir + "Sg.png",
         ":g": base_dir + "Sg.png",
         "g:": base_dir + "Sg.png",
 
@@ -164,6 +186,7 @@ def command_to_image(value):
 
         "*": base_dir + "_notation.png",
         "+": base_dir + "plus.png",
+        ":+:": base_dir + "plus.png",
     }
 
     if (value in my_dict.keys()):
