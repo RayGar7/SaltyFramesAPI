@@ -8,12 +8,12 @@ register = template.Library()
 allowable_images = [
     ":1:", ":2:", ":3:", ":4:", ":6:", ":7:", ":8:", ":9:",
     ":A:", ":B:", ":K:", ":G:",  
-    ":A", "A:", ":B", "B:", ":K", "K:", ":G", "G:",
+    ":A", "A:", ":B", "B:", "B", ":K", "K:", ":G", "G:",
     ":(1):", ":(2):", ":(3):", ":(4):", ":(6):", ":(7):", ":(8):", ":(9):",
     ":(A):", ":(B):", ":(K):", ":(G):",
-    ":(A", "A):", ":(B", "B):", ":(K", "K):", ":(G", "G):",
-    "FC", "WR", "BT", 
-    "*", "+", 
+    ":(A", "A):", ":(B", "B):", "(B)", ":(K", "K):", ":(G", "G):",
+    "FC", "WR", "BT", "Run", "RUN",
+    "*", "+", "(tip)", "Left side throw", "Right side throw", "Back throw",
     #":A+B:", ":(A+B):", ":a+b:", ":B+K:", ":(B+K):", ":b+k:", ":B+G:", ":(B+G):", ":b+g:", ":A+G:", ":(A+G):", ":a+g:", ":A+B+K:", 
     ":a:", ":b:", ":k:", ":g:",
     ":a", "a:", ":b", "b:", ":k", "k:", ":g", "g:",
@@ -100,7 +100,16 @@ def command_string_to_list(move):
     command_list = []
     i = 0
     while (i < len(value)):
-        if (i + 6 < len(value) and value[i:i+7] in allowable_images):
+        if (i + 15 < len(value) and value[i:i+16] in allowable_images):
+            command_list.append(value[i:i+16])
+            i += 16
+        elif (i + 14 < len(value) and value[i:i+15] in allowable_images):
+            command_list.append(value[i:i+15])
+            i += 15
+        elif (i + 9 < len(value) and value[i:i+10] in allowable_images):
+            command_list.append(value[i:i+10])
+            i += 10
+        elif (i + 6 < len(value) and value[i:i+7] in allowable_images):
             command_list.append(value[i:i+7])
             i += 7
         elif (i + 5 < len(value) and value[i:i+6] in allowable_images):
@@ -124,6 +133,6 @@ def command_string_to_list(move):
         else:
             command_list.append(value[i])
             i += 1
-    #print(command_list)
+    print(command_list)
 
     move.command = command_list

@@ -93,6 +93,7 @@ def command_to_image(value):
         ":B:": base_dir + "B.png",
         ":B": base_dir + "B.png",
         "B:": base_dir + "B.png",
+        "B": base_dir + "B.png",
         ":K:": base_dir + "K.png",
         ":K": base_dir + "K.png",
         "K:": base_dir + "K.png",
@@ -123,9 +124,19 @@ def command_to_image(value):
         ":(G": base_dir + "Ig.png",
         "G):": base_dir + "Ig.png",
 
+        "Left side throw": base_dir + "left-side-throw.png",
+        "Right side throw": base_dir + "right-side-throw.png",
+        "Back throw": base_dir + "back-side-throw.png",
+
+
         "FC": base_dir + "FC.png",
         "WR": base_dir + "WR.png",
         "BT": base_dir + "BT.png",
+        "Run": base_dir + "R.png",
+        "RUN": base_dir + "R.png",
+        "(tip)": base_dir + "tip.png",
+
+        "RUN": base_dir + "R.png",
 
         ":SC:": base_dir + "SoulCharged.png",
         ":RE:": base_dir + "RE.png",
