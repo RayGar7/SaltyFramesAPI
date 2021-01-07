@@ -132,11 +132,16 @@ def command_to_image(value):
         "(G):": base_dir + "Ig.png",
 
         "Left side throw": base_dir + "left-side-throw.png",
+        "Left side": base_dir + "left-side-throw.png",
+        "Left Side": base_dir + "left-side-throw.png",
         "Right side throw": base_dir + "right-side-throw.png",
         "Back throw": base_dir + "back-throw.png",
         "Left Side Throw": base_dir + "left-side-throw.png",
         "Right Side Throw": base_dir + "right-side-throw.png",
         "Back Throw": base_dir + "back-throw.png",
+
+        "Back": base_dir + "back.png",
+        "Air": base_dir + "vsMidair.png",
 
 
         "FC": base_dir + "FC.png",
@@ -145,6 +150,10 @@ def command_to_image(value):
         "Run": base_dir + "R.png",
         "RUN": base_dir + "R.png",
         "(tip)": base_dir + "tip.png",
+        "(Close Range)": base_dir + "closeHit.png",
+        "Close Range": base_dir + "closeHit.png",
+        "(Close range)": base_dir + "closeHit.png",
+        "Close range": base_dir + "closeHit.png",
 
         "RUN": base_dir + "R.png",
 
@@ -193,5 +202,7 @@ def command_to_image(value):
         new_value = my_dict[value]
     else:
         new_value = value
+
+    #print(new_value)
 
     return new_value

@@ -14,8 +14,9 @@ allowable_images = [
     ":(A", "A):", ":(B", "B):", "(B)", ":(K", "K):", ":(G", "G):",
     ":(A)", "(A):", "(A", "A)", ":(B)", "(B):", "(B", "B)", ":(K)", "(K):", "(K", "K)",  ":(G)", "(G):", "(G", "G)",
     "FC", "WR", "BT", "Run", "RUN",
-    "*", "+", ":+:", "(tip)", 
-    "Left side throw", "Right side throw", "Back throw", "Left Side Throw", "Right Side Throw", "Back Throw", 
+    "*", "+", ":+:", "(tip)", "(Close Range)",
+    "Left side throw", "Right side throw", "Back throw", "Left Side Throw", "Right Side Throw", "Back Throw", "Left Side", "Left side",
+    "Back", "Air",
     ":a-small:", ":b-small:", ":k-small:", ":g-small:",
     ":a-small", "a-small:", ":b-small", "b-small:", ":k-small", "k-small:", ":g-small", "g-small:",
     ":a:", ":b:", ":k:", ":g:",
@@ -123,6 +124,18 @@ def command_string_to_list(move):
         elif (i + 14 < len(value) and value[i:i+15] in allowable_images):
             command_list.append(value[i:i+15])
             i += 15
+        elif (i + 13 < len(value) and value[i:i+14] in allowable_images):
+            command_list.append(value[i:i+14])
+            i += 14
+        elif (i + 12 < len(value) and value[i:i+13] in allowable_images):
+            command_list.append(value[i:i+13])
+            i += 13
+        elif (i + 11 < len(value) and value[i:i+12] in allowable_images):
+            command_list.append(value[i:i+12])
+            i += 12
+        elif (i + 10 < len(value) and value[i:i+11] in allowable_images):
+            command_list.append(value[i:i+11])
+            i += 11
         elif (i + 9 < len(value) and value[i:i+10] in allowable_images):
             command_list.append(value[i:i+10])
             i += 10
@@ -159,6 +172,6 @@ def command_string_to_list(move):
         else:
             command_list.append(value[i])
             i += 1
-    print(command_list)
+    #print(command_list)
 
     move.command = command_list
