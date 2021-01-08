@@ -1,6 +1,10 @@
 th {
     text-transform: uppercase;
-}    
+}   
+.notation {
+    max-height: 2.0em;
+    width: auto;
+} 
 a {
     color: white;
 }

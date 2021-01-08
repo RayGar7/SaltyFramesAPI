@@ -33,15 +33,34 @@
                 {% for move in table.moves_list %}
                     <tr class="move">
                         <td colspan="3">{{ move.attack_name|default_if_none:"-" }}</td>
-                        <td colspan="3">{{ move.command|default_if_none:"-"|newline:11 }}</td>
-                        <td colspan="3">{{ move.height_level|default_if_none:"-"|newline:11 }}</td>
+                        <td colspan="3">
+                        {% for command in move.command %}
+                            {% with command|command_to_image as image_static %}
+                                {% if command in allowable_images %}
+                                    <img src="{% static image_static %}" class="notation">
+                                {% elif command in allowable_patterns %}
+                                    {{ command }}
+                                {% else %}
+                                    {{ command }}
+                                {% endif %}
+                            {% endwith %}
+                        {% endfor %}                            
+                        </td>
+                        <td colspan="3">
+                            {% for hl in move.height_level %}
+                                {% with hl|height_level_to_image as image_static %}
+                                    <img src="{% static image_static %}" class="notation">
+                                
+                                {% endwith %}
+                            {% endfor %}
+                        </td>
                         <td colspan="1">{{ move.frames_to_impact|default_if_none:"-" }}</td>
                         <td colspan="1">{{ move.recovery_on_guard|default_if_none:"-" }}</td>
                         <td colspan="1">{{ move.recovery_on_hit|default_if_none:"-" }}</td>
                         <td colspan="1">{{ move.recovery_on_counter_hit|default_if_none:"-" }}</td>
                         <td colspan="1">{{ move.base_damage|default_if_none:"-" }}</td>
                         <td colspan="1">{{ move.guard_burst_damage|default_if_none:"-" }}</td>
-                        <td colspan="3">{{ move.notes|default_if_none:"-"|newline:11 }}</td>
+                        <td colspan="3">{{ move.notes|default_if_none:"-" }}</td>
                     </tr>
                 {% endfor %} 
             {% endfor %}
@@ -52,19 +71,36 @@
                 {% for move in sectionless_table %}
                 <tr class="move">
                     <td colspan="3">{{ move.attack_name|default_if_none:"-" }}</td>
-                    <td colspan="3">{{ move.command|default_if_none:"-"|newline:11 }}</td>
-                    <td colspan="3">{{ move.height_level|default_if_none:"-"|newline:11 }}</td>
+                    <td colspan="3">
+                        {% for command in move.command %}
+                            {% with command|command_to_image as image_static %}
+                                {% if command in allowable_images %}
+                                    <img src="{% static image_static %}" class="notation">
+                                {% else %}
+                                    {{ command }}
+                                {% endif %}
+                            {% endwith %}
+                        {% endfor %}
+                    </td>
+                    <td colspan="3">
+                        {% for hl in move.height_level %}
+                            {% with hl|height_level_to_image as image_static %}
+                                <img src="{% static image_static %}" class="notation">                            
+                            {% endwith %}
+                        {% endfor %}
+                    </td>
                     <td colspan="1">{{ move.frames_to_impact|default_if_none:"-" }}</td>
                     <td colspan="1">{{ move.recovery_on_guard|default_if_none:"-" }}</td>
                     <td colspan="1">{{ move.recovery_on_hit|default_if_none:"-" }}</td>
                     <td colspan="1">{{ move.recovery_on_counter_hit|default_if_none:"-" }}</td>
                     <td colspan="1">{{ move.base_damage|default_if_none:"-" }}</td>
                     <td colspan="1">{{ move.guard_burst_damage|default_if_none:"-" }}</td>
-                    <td colspan="3">{{ move.notes|default_if_none:"-"|newline:11 }}</td>
+                    <td colspan="3">{{ move.notes|default_if_none:"-" }}</td>
                 </tr>
                 {% endfor %}    
             {% endif %}
         </tbody>
     </table>
+
 </div>
 {% endblock content %}

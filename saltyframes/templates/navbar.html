@@ -6,6 +6,13 @@
 
 <nav id="navigation" class="navbar navbar-expand-lg">
   <div class='container'>
+    <a class="navbar-brand" href="#">
+      {% if image %}
+      <img src="{{ image }}" alt="Your Current Character" style="max-height: 49px;">
+      {% else %}
+      <img src='{% static "img/saltie.png" %}' alt="Saltie the Pig" style="max-height: 49px;">
+      {% endif %}
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
     </button>

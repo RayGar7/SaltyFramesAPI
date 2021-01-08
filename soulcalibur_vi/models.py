@@ -18,6 +18,9 @@ class Character(models.Model):
     # every frame data page on the source for a character has a slug different from the name field. In the common case it's their first name in lower case but sometimes it's not
     slug = models.CharField(max_length=30, null=True, blank=True, unique=True)
 
+
+    image = models.FileField(upload_to="sc-characters", blank = True)  
+
     def __str__(self):
         return self.name
 

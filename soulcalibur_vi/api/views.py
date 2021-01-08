@@ -17,10 +17,6 @@ class CharacterView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Character.objects.all()
 
     def get(self, request, *args, **kwargs):
-        print(self)
-        print(request)
-        print(args)
-        print(kwargs)
         return self.retrieve(request, *args, **kwargs)
 
 class CharacterRetrieveView(generics.RetrieveAPIView):
