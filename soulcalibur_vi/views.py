@@ -110,9 +110,6 @@ def command_string_to_list(move, additional_patterns):
     value = move.command
     command_list = []
 
-    # for pattern in additional_patterns:
-    #     allowable_images.append(pattern)
-
 
     i = 0
     while (i < len(value)):
