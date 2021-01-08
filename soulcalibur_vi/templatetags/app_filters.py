@@ -31,6 +31,7 @@ def height_level_to_image(value):
     low = base_dir + "Low.png"
     spec_low = base_dir + "SpecLow.png"
     spec_mid = base_dir + "SpecMid.png"
+    spec_high = base_dir + "spechigh.png"
     ss = base_dir + "SS.png"
     gi = base_dir + "GI.png"
 
@@ -54,6 +55,9 @@ def height_level_to_image(value):
         elif (value[i:i+4] == ":SM:"):
             new_value += spec_mid
             i += 4
+        elif (value[i:i+4] == ":SH:"):
+            new_value += spec_high
+            i += 4
         elif (value[i:i+4] == ":GI:"):
             new_value += gi
             i += 4
@@ -71,9 +75,6 @@ def command_to_image(value):
     """ Converts the command string into an html formatted way of putting images inside the table cells """
     
     base_dir = "img/sc-inputs/"
-
-
-
 
     new_value = ""
 
@@ -142,8 +143,6 @@ def command_to_image(value):
 
         "Back": base_dir + "back.png",
         "Air": base_dir + "vsMidair.png",
-
-
         "FC": base_dir + "FC.png",
         "WR": base_dir + "WR.png",
         "BT": base_dir + "BT.png",
@@ -154,6 +153,7 @@ def command_to_image(value):
         "Close Range": base_dir + "closeHit.png",
         "(Close range)": base_dir + "closeHit.png",
         "Close range": base_dir + "closeHit.png",
+        "8WR": base_dir + "eightWayRun.png",
 
         "RUN": base_dir + "R.png",
 

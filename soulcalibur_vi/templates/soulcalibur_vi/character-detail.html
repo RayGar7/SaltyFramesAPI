@@ -38,6 +38,8 @@
                             {% with command|command_to_image as image_static %}
                                 {% if command in allowable_images %}
                                     <img src="{% static image_static %}" class="notation">
+                                {% elif command in allowable_patterns %}
+                                    {{ command }}
                                 {% else %}
                                     {{ command }}
                                 {% endif %}
