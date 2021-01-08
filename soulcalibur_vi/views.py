@@ -83,10 +83,7 @@ def detail(request, slug):
                 context['table_list'][8]['moves_list'].append(move)
         else:
             context['sectionless_table'].append(move)
-    
-    # for debugging: if len(moves) matches this next number, you did it right
-    #print(len(context['table_list'][0]['moves_list']) + len(context['table_list'][1]['moves_list']) + len(context['table_list'][2]['moves_list']) + len(context['table_list'][3]['moves_list']) + len(context['table_list'][4]['moves_list']) + len(context['table_list'][5]['moves_list']) + len(context['table_list'][6]['moves_list']) + len(context['table_list'][7]['moves_list']) + len(context['table_list'][8]['moves_list']) + len(context['sectionless_table']))
-
+            
     return render(request, 'soulcalibur_vi/character-detail.html', context)
 
 #helpers
@@ -190,6 +187,5 @@ def command_string_to_list(move, additional_patterns):
         else:
             command_list.append(value[i])
             i += 1
-    #print(command_list)
 
     move.command = command_list

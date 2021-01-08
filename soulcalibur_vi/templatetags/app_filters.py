@@ -203,6 +203,5 @@ def command_to_image(value):
     else:
         new_value = value
 
-    #print(new_value)
 
     return new_value
