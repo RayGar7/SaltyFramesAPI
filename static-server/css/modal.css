@@ -52,3 +52,37 @@
 .modal-button:focus {
     border: none;
 }
+
+.word-label { 
+    background-color: #0288D1;
+    color: white;
+    border-radius: 10%;
+    height: 40px;
+    max-width: 8%;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;       /* The same as your div height */
+}
+
+
+.column-flex-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.column-flex-container > div {
+    margin: 2%;
+    padding: 1px;
+    flex-basis: 50%;
+} 
+/*PC only*/
+@media screen and (min-width: 992px) {
+    .column-flex-container {
+        flex-flow: row wrap;
+    }
+    .column-flex-container > div {
+        margin: 2%;
+        padding: 1px;
+        flex-basis: 50%;
+    } 
+}

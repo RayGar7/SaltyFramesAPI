@@ -36,6 +36,50 @@ def home(request):
 
 def legend(request):
     base_dir = 'img/sc-inputs/'
+
+    columns = [
+        {
+            'label': "Move",
+            'message': mark_safe("English <strong>name</strong> of the move."),
+        },
+        {
+            'label': "Command",
+            'message': mark_safe("<strong>Input</strong> to execute move."),
+        },
+        {
+            'label': "Level",
+            'message': mark_safe("Describes the <strong>height level</strong> of the move."),
+        },
+        {
+            'label': "IMP",
+            'message': mark_safe("Frames to <strong>impact</strong> the amount of frames it takes a move to become active."),
+        },
+        {
+            'label': "DMG",
+            'message': mark_safe("<strong>Damage</strong> that will be dealt on hit."),
+        },
+        {
+            'label': "GRD",
+            'message': mark_safe("How many frames you will be in advantage or disadvantage if this move is <strong>blocked</strong>."),
+        },
+        {
+            'label': "Hit",
+            'message': mark_safe("How many frames you will be in advantage or disadvantage if this move <strong>hits</strong>."),
+        },
+        {
+            'label': "CH",
+            'message': mark_safe("How many frames you will be in advantage or disadvantage when landing a <strong>Counter Hit</strong>."),
+        },
+        {
+            'label': "GB",
+            'message': mark_safe("How much <strong>guard-burst damage</strong> the move will make."),
+        },
+        {
+            'label': "Notes",
+            'message': mark_safe("Additional <strong>Notes</strong>. Please note that the icon processing system hasn't been implemented in this version. That's why you will see notes with format like this: '	:GI::H::M: [8-20], +6 and 2 stacks towards Dark Legacy on successful GI' where the it is displayed in code separated by colons as opposed to using images. This will be fixed soon."),
+        },
+    ]
+
     inputs_without_images = [
         {
             'label': base_dir + '',
@@ -166,7 +210,7 @@ def legend(request):
         },
     ]
 
-    context = {'inputs': inputs, 'title': "Legend"}
+    context = {'inputs': inputs, 'columns': columns, 'title': "Legend"}
     return render(request, 'soulcalibur_vi/legend.html', context)
 
 def detail(request, slug):
