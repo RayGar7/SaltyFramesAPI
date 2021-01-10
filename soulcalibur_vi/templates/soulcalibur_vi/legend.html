@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ title }}{% endblock title %}
+
+{% block base_head %}
+<link rel='stylesheet' href='{% static "css/gridview.css" %}' >
+{% endblock %}
+
+{% block content %}
+<div id="content-head">
+    <div class="col-12 col-md-10 mb-3 mx-auto">
+        <div>
+
+            <div>
+                <h2>Table Columns</h2>
+            </div>
+            
+            <div>Move</div>
+            <p>English <strong>name</strong> of the move.</p>            
+        
+            <div>Command</div>
+            <p><strong>Input</strong> to execute move.</p>        
+        
+            <div>Level</div>
+            <p>Describes the <strong>height level</strong> of the move.</p>        
+        
+            <div>IMP</div>
+            <p>Frames to <strong>impact</strong> the amount of frames it takes a move to become active.</p>
+
+            <div>DMG</div>
+            <p><strong>Damage</strong> that will be dealt on hit.</p>        
+        
+            <div>GRD</div>
+            <p>How many frames you will be in advantage or disadvantage if this move is <strong>blocked</strong>.</p>        
+        
+            <div>Hit</div>
+            <p>How many frames you will be in advantage or disadvantage if this move <strong>hits</strong>.</p>        
+        
+            <div>CH</div>
+            <p>How many frames you will be in advantage or disadvantage when landing a <strong>Counter Hit</strong>.</p>
+        
+            <div>GB</div>
+            <p>How much <strong>guard-burst damage</strong> the move will make.</p>
+        
+            <div>Notes</div>
+            <p>Additional <strong>Notes</strong>. Please note that the icon processing system hasn't been implementedin this version. That's why you will see notes with format like this: "	:GI::H::M: [8-20], +6 and 2 stacks towards Dark Legacy on successful GI" where the it is displayed in code separated by colons as opposed to using images. This will be fixed soon.</p>
+        
+        </div>
+        <div>
+            <div>
+                <h2>Inputs</h2>
+            </div> 
+
+            {% for input in inputs %}
+                <div class="flex-container">
+                    {% with input.label as label %}
+                        <div><img src="{% static label %}" class="notation"></div>
+                    {% endwith %}
+                    <div><p>{{ input.message }}</p></div>
+                </div>   
+            {% endfor %}
+        </div>
+    
+    </div>
+</div>
+{% endblock content %}

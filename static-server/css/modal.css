@@ -1,0 +1,54 @@
+.bg-modal {
+    width: 99vw;
+    height: 99vh;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    display: none; 
+    justify-content: center; /*center horizontally*/
+    align-items: center ; /* center vertically */
+}
+
+.modal-content {
+    width: 80vw;;
+    height: 70vh;
+    background-color: white;
+    border:none; 
+    border-radius: 15px;
+    border: none;
+    padding: 15px;
+    position: relative;
+}
+
+#close {
+    position: absolute;
+    top: 5px;
+    right: 14px;
+    font-size:25px;
+    cursor: pointer;
+}
+
+.fa-window-close {
+    color: white !important;
+    border: none;
+}
+
+.skittles-button { 
+    border-radius: 50%; 
+    color: white;
+}
+
+#modal-button {
+    background-color: #FF9900;
+}
+
+#close-button {
+    background-color: #0288D1 !important;
+    padding: 0px 5px;
+    font-size: 0.9rem;
+}
+
+.modal-button:focus {
+    border: none;
+}
