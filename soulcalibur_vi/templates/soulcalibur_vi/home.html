@@ -4,8 +4,6 @@
 
 {% block base_head %}
 <link rel='stylesheet' href='{% static "css/gridview.css" %}' >
-<link rel='stylesheet' href='{% static "css/modal.css" %}' >
-<script src="{% static 'js/modal.js' %}" type="text/javascript"></script>
 {% endblock %}
 
 {% block content %}
@@ -15,18 +13,9 @@
     </div>
     <hr class="col-10 col-md-10 mb-3 mx-auto" style="background-color: #0288D1;">
 
-    <div class="tweekbutton" id="myBtn"><button class="skittles-button" id="modal-button"><i class="fa fa-key"></i></button></div>
-
-    <div class="bg-modal">
-      <div class="modal-content">
-        <div id="close"><button class="skittles-button" id="close-button"><i class="fa fa-times"></i></button></div>
-        <hr style="color:black">
-        <p>Hello I'm a modal</p>
-      </div>
+    <div class="col-12 col-md-10 mb-3 mx-auto">
+        <div>{% include 'soulcalibur_vi/key.html' %}</div>
     </div>
-
-
-
     <div class="flex-container col-12 col-md-10 mb-3 mx-auto">
         {% for character in characters %}
             <div class="card mx-auto">
@@ -41,151 +30,10 @@
             </div>
         {% endfor %}
     </div>
-    <hr class="col-12 col-md-10 mb-3 mx-auto" style="background-color: #0288D1;">
-    <div class="col-12 col-md-10 mb-3 mx-auto">
-        <div>
-
-            <div>
-                <h2>Table Columns</h2>
-            </div>
-            
-            <div>Move</div>
-            <p>English <strong>name</strong> of the move.</p>            
-        
-            <div>Command</div>
-            <p><strong>Input</strong> to execute move.</p>        
-        
-            <div>Level</div>
-            <p>Describes the <strong>height level</strong> of the move.</p>        
-        
-            <div>IMP</div>
-            <p>Frames to <strong>impact</strong> the amount of frames it takes a move to become active.</p>
-
-            <div>DMG</div>
-            <p><strong>Damage</strong> that will be dealt on hit.</p>        
-        
-            <div>GRD</div>
-            <p>How many frames you will be in advantage or disadvantage if this move is <strong>blocked</strong>.</p>        
-        
-            <div>Hit</div>
-            <p>How many frames you will be in advantage or disadvantage if this move <strong>hits</strong>.</p>        
-        
-            <div>CH</div>
-            <p>How many frames you will be in advantage or disadvantage when landing a <strong>Counter Hit</strong>.</p>
-        
-            <div>GB</div>
-            <p>How much <strong>guard-burst damage</strong> the move will make.</p>
-        
-            <div>Notes</div>
-            <p>Additional <strong>Notes</strong>. Please note that the icon processing system hasn't been implementedin this version. That's why you will see notes with format like this: "	:GI::H::M: [8-20], +6 and 2 stacks towards Dark Legacy on successful GI" where the it is displayed in code separated by colons as opposed to using images. This will be fixed soon.</p>
-        
-        </div>
-        <div>
-            <div>
-                <h2>Inputs</h2>
-            </div>
-            <div class="flex-container">
-                <div><img src='{% static "img/sc-inputs/6.png" %}' style="max-height: 49px;"></div>
-                <div><p>White arrows indicate which direction to <strong>press</strong>.</p></div>
-            </div>
-
-
-            <div class="flex-container">
-                <div><img src='{% static "img/sc-inputs/I6.png" %}' style="max-height: 49px;"></div>
-                <div><p>Black arrows indicate which direction to <strong>press twice</strong>.</p></div>
-            </div>
-
-            <div class="flex-container">
-                <div><img src='{% static "img/sc-inputs/A.png" %}' style="max-height: 49px;"></div>
-                <div><p><strong>Horizontal</strong> Attack.</p></div>
-            </div>            
-
-            <div></div>
-            <p><strong>Vertical</strong> Attack.</p>
-
-            <div></div>
-            <p><strong>Kick</strong> Attack Move.</p>
-
-            <div></div>
-            <p><strong>Guard</strong> Move.</p>
-
-            <div></div>
-            <p>Black letters will indicate which attack button to <strong>hold down</strong>.</p>
-
-            <div></div>
-            <p>When a button is shown <strong>small</strong> it should be <strong>pressed briefly</strong> before moving on to the next input.</p>
-
-            <div></div>
-            <p>When a small button is right next to a bug button it means the button is supposed to be pressed immediately.</p>
-
-            <div></div>
-            <p>A small button right next to a big button and small button next to a big button with some space in between are equivalent.</p>
-
-            <div></div>
-            <p>The asterisk stands for <strong>OR</strong>.</p>
-
-            <div></div>
-            <p>The underscore is used interchangeably with an asterisk.</p>
-            
-            <div></div>
-            <p>The plus will indicate when you have to press multiple inputs <strong>together</strong>.</p>
-
-            <div>C H</div>
-            <p>The move behaves differently on <strong>counter hit</strong>.</p>
-
-            <div></div>
-            <p>The move is performed during <strong>full crouch</strong>.</p>
-
-            <div></div>
-            <p>The move is performed while being <strong>back turned</strong>.</p>
-
-            <div></div>
-            <p>The move is performed <strong>while rising</strong> from a crouch.</p>
-
-            <div></div>
-            <p>The move is performed while <strong>running</strong>.</p>
-
-            <div></div>
-            <p>The move is performed while <strong>jumping</strong>.</p>
-
-            <div></div>
-            <p>Press next input <strong>during hit</strong> or activates <strong>on hit</strong>.</p>
-
-            <!--Press next input <strong>during guard or hit</strong> or activates <strong>on guard or hit</strong>.-->
-
-            <div></div>
-            <p>Move can only be executed while in <strong>Soul Charge</strong> mode.</p>
-
-            <!--Activates on successful <strong>Guard Impact</strong>.-->
-            
-            <div></div>
-            <p>Perform input after <strong>Reversal Edge Clash</strong>.</p>
-
-            <!--Input needs to be executed <strong>fast</strong>.-->
-
-
-            <div>:</div>
-            <p>Input needs to be a <strong>just input (input with exact timing)</strong>.</p>
-
-            <!--Activated when <strong>being hit while performing the move (revenge)</strong>.-->
-
-            <!--Versus a <strong>downed</strong> opponent.-->
-
-            <!--Versus a <strong>crouching</strong> opponent.-->
-
-            <div></div>
-            <p>Versus an <strong>airborne</strong> opponent.</p>
-
-            <div></div>
-            <p>During <strong>Eight-Way-Run</strong> movement.</p>
-
-            <!--Performed while being <strong>downed</strong>.-->
-
-            <!--Activated when the move connects <strong>close</strong>.-->
-
-            <!--Input the next button <strong>during motion</strong>(Geralt only)-->
-        </div>
     
-    </div>
+
+
+
+
 </div>
 {% endblock content %}
