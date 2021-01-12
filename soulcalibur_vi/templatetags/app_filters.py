@@ -1,6 +1,4 @@
 from django import template
-from datetime import date, timedelta
-from django.utils.safestring import mark_safe
 
 register = template.Library()
 

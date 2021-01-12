@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Character, Move, SpecialStance, Section, SpecialState
 from django import template
+from django.utils.safestring import mark_safe
 
 register = template.Library()
 
@@ -30,8 +31,24 @@ allowable_images = [
 def home(request):
     characters = Character.objects.all().order_by('name')
 
-    context = {'characters': characters, 'title': 'Soulcalibur VI API'}
+    key = get_key()
+
+    context = {
+        'characters': characters, 
+        'inputs': key['inputs'],
+        'columns': key['columns'],
+        'title': 'Soulcalibur VI API'
+    }
+
     return render(request, 'soulcalibur_vi/home.html', context)
+
+def legend(request):
+    key = get_key()
+
+    context = {'inputs': key['inputs'], 'columns': key['columns'], 'title': "Legend"}
+
+    return render(request, 'soulcalibur_vi/legend.html', context)
+
 
 def detail(request, slug):
     character = Character.objects.get(slug = slug)
@@ -87,6 +104,185 @@ def detail(request, slug):
     return render(request, 'soulcalibur_vi/character-detail.html', context)
 
 #helpers
+
+def get_key():
+    base_dir = 'img/sc-inputs/'
+
+    columns = [
+        {
+            'label': "Move",
+            'message': mark_safe("English <strong>name</strong> of the move."),
+        },
+        {
+            'label': "Command",
+            'message': mark_safe("<strong>Input</strong> to execute move."),
+        },
+        {
+            'label': "Level",
+            'message': mark_safe("Describes the <strong>height level</strong> of the move."),
+        },
+        {
+            'label': "IMP",
+            'message': mark_safe("Frames to <strong>impact</strong> the amount of frames it takes a move to become active."),
+        },
+        {
+            'label': "DMG",
+            'message': mark_safe("<strong>Damage</strong> that will be dealt on hit."),
+        },
+        {
+            'label': "GRD",
+            'message': mark_safe("How many frames you will be in advantage or disadvantage if this move is <strong>blocked</strong>."),
+        },
+        {
+            'label': "Hit",
+            'message': mark_safe("How many frames you will be in advantage or disadvantage if this move <strong>hits</strong>."),
+        },
+        {
+            'label': "CH",
+            'message': mark_safe("How many frames you will be in advantage or disadvantage when landing a <strong>Counter Hit</strong>."),
+        },
+        {
+            'label': "GB",
+            'message': mark_safe("How much <strong>guard-burst damage</strong> the move will make."),
+        },
+        {
+            'label': "Notes",
+            'message': mark_safe("Additional <strong>Notes</strong>. Please note that the icon processing system hasn't been implemented in this version. That's why you will see notes with format like this: '	:GI::H::M: [8-20], +6 and 2 stacks towards Dark Legacy on successful GI' where the it is displayed in code separated by colons as opposed to using images. This will be fixed soon."),
+        },
+    ]
+
+    inputs_without_images = [
+        {
+            'label': base_dir + '',
+            'message': mark_safe("Press next input <strong>during guard or hit</strong> or activates <strong>on guard or hit</strong>."),
+        },
+        {
+            'label': base_dir + '',
+            'message': mark_safe("Activates on successful <strong>Guard Impact</strong>."),
+        },
+        {
+            'label': base_dir + '',
+            'message': mark_safe("Input needs to be executed <strong>fast</strong>."),
+        },
+        {
+            'label': base_dir + '',
+            'message': mark_safe("Activated when <strong>being hit while performing the move (revenge)</strong>."),
+        },
+        {
+            'label': base_dir + '',
+            'message': mark_safe("Versus a <strong>downed</strong> opponent."),
+        },
+        {
+            'label': base_dir + '',
+            'message': mark_safe("Versus a <strong>crouching</strong> opponent."),
+        },
+        {
+            'label': base_dir + '',
+            'message': mark_safe("Performed while being <strong>downed</strong>."),
+        },
+        {
+            'label': base_dir + '',
+            'message': mark_safe("Activated when the move connects <strong>close</strong>."),
+        },
+        {
+            'label': base_dir + '',
+            'message': mark_safe("Input the next button <strong>during motion</strong>(Geralt only)"),
+        }
+    ]
+
+    inputs = [
+        {
+            'label': base_dir + '6.png',
+            'message': mark_safe("White arrows indicate which direction to <strong>press</strong>."),
+        },
+        {
+            'label': base_dir + 'I6.png',
+            'message': mark_safe("Black arrows indicate which direction to <strong>press twice</strong>."),
+        },
+        {
+            'label': base_dir + 'A.png',
+            'message': mark_safe("<strong>Horizontal</strong> Attack.</p>"),
+        },
+        {
+            'label': base_dir + 'B.png',
+            'message': mark_safe("<p><strong>Vertical</strong> Attack.</p>"),
+        },
+        {
+            'label': base_dir + 'K.png',
+            'message': mark_safe("<strong>Kick</strong> Attack Move."),
+        },
+        {
+            'label': base_dir + 'G.png',
+            'message': mark_safe("<strong>Guard</strong> Move."),
+        },
+        {
+            'label': base_dir + 'Ia.png',
+            'message': mark_safe("Black letters will indicate which attack button to <strong>hold down</strong>."),
+        },
+        {
+            'label': base_dir + 'Sa.png',
+            'message': mark_safe("When a button is shown <strong>small</strong> it should be <strong>pressed briefly</strong> before moving on to the next input."),
+        },
+        {
+            'label': base_dir + 'M.png',
+            'message': mark_safe("When a small button is right next to a big button it means the button is supposed to be pressed immediately. This is equivalent to a small button followed by a big button even if there is some spcae between them."),
+        },
+        {
+            'label': base_dir + '_notation.png',
+            'message': mark_safe("The asterisk stands for <strong>OR</strong>."),
+        },
+        {
+            'label': base_dir + 'AplusB.png',
+            'message': mark_safe("The plus will indicate when you have to press multiple inputs <strong>together</strong>."),
+        },
+        {
+            'label': base_dir + 'H.png',
+            'message': mark_safe("The move behaves differently on <strong>counter hit</strong>."),
+        },
+        {
+            'label': base_dir + 'FC.png',
+            'message': mark_safe("The move is performed during <strong>full crouch</strong>."),
+        },
+        {
+            'label': base_dir + 'BT.png',
+            'message': mark_safe("The move is performed while being <strong>back turned</strong>."),
+        },
+        {
+            'label': base_dir + 'WR.png',
+            'message': mark_safe("The move is performed <strong>while rising</strong> from a crouch."),
+        },
+        {
+            'label': base_dir + 'R.png',
+            'message': mark_safe("The move is performed while <strong>running</strong>."),
+        },
+        {
+            'label': base_dir + 'JMP.png',
+            'message': mark_safe("The move is performed while <strong>jumping</strong>."),
+        },
+        {
+            'label': base_dir + 'SoulCharged.png',
+            'message': mark_safe("Move can only be executed while in <strong>Soul Charge</strong> mode."),
+        },
+        {
+            'label': base_dir + 'RE.png',
+            'message': mark_safe("Perform input after <strong>Reversal Edge Clash</strong>."),
+        },
+        {
+            'label': base_dir + 'just.png',
+            'message': mark_safe("Input needs to be a <strong>just input (input with exact timing)</strong>."),
+        },
+        {
+            'label': base_dir + 'vsMidair.png',
+            'message': mark_safe("Versus an <strong>airborne</strong> opponent."),
+        },
+        {
+            'label': base_dir + 'eightWayRun.png',
+            'message': mark_safe("During <strong>Eight-Way-Run</strong> movement."),
+        },
+    ]
+
+    return {'columns': columns, 'inputs_without_images': inputs_without_images, 'inputs': inputs}
+
 def height_level_string_to_list(move):
     if (move.height_level):
         value = move.height_level
@@ -109,9 +305,6 @@ def height_level_string_to_list(move):
 def command_string_to_list(move, additional_patterns):
     value = move.command
     command_list = []
-
-    # for pattern in additional_patterns:
-    #     allowable_images.append(pattern)
 
 
     i = 0

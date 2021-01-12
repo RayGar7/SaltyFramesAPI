@@ -5,6 +5,7 @@ from .api import views as api_views
 app_name = 'soulcalibur_vi'
 urlpatterns = [
     path('', views.home, name='home'),
+    path('legend/', views.legend, name='legend'),
     #re_path(r'^characters/$', api_views.CharacterListView.as_view(), name='character_list'),
     #re_path(r'^characters/(?P<pk>\d+)/$', api_views.CharacterView.as_view(), name='character_detail'),
     #re_path(r'^moves/$', views.MoveListView.as_view(), name='move_list'),

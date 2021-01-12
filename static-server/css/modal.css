@@ -1,0 +1,89 @@
+.bg-modal {
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    display: none; 
+    justify-content: center; /*center horizontally*/
+    align-items: center ; /* center vertically */
+
+    overflow-y: auto;
+}
+.modal-content {
+    background-color: #000B18;
+    color: white;
+    border: 2px solid #0288D1; 
+    border-radius: 2.0rem;
+    padding: 15px;
+    position: relative;
+    overflow-y: auto;
+
+    width: 100%;
+    height: 100%;
+}
+#close {
+    position: absolute;
+    top: 5px;
+    right: 14px;
+    font-size:25px;
+    cursor: pointer;
+    background-color: #0288D1 !important;
+    padding: 0px 5px;
+    font-size: 0.9rem;
+}
+.fa-window-close {
+    color: white !important;
+    border: none;
+}
+.skittles-button { 
+    border-radius: 50%; 
+    color: white;
+}
+#myBtn {
+    background-color: #FF9900;
+}
+/* #close-button {
+    background-color: #0288D1 !important;
+    padding: 0px 5px;
+    font-size: 0.9rem;
+} */
+.word-label { 
+    background-color: #039BE5;
+    color: white;
+    border-radius: 2.0rem;
+    height: 40px;
+    width: 20vw;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;       /* The same as your div height */
+}
+.column-flex-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.column-flex-container > div {
+    margin: 2%;
+    padding: 1px;
+    flex-basis: 50%;
+} 
+/* mobile only */
+ .bg-modal {
+    width: 91vw;
+    height: 50vh;
+} 
+/*PC only*/
+@media screen and (min-width: 992px) {
+     .bg-modal {
+        width: 65vw;
+        height: 62vh;
+    } 
+    .column-flex-container {
+        flex-flow: row wrap;
+    }
+    .column-flex-container > div {
+        margin: 2%;
+        padding: 1px;
+        flex-basis: 50%;
+    } 
+}

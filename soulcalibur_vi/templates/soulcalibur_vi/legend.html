@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ title }}{% endblock title %}
+
+{% block base_head %}
+<link rel='stylesheet' href='{% static "css/gridview.css" %}' >
+<link rel='stylesheet' href='{% static "css/modal.css" %}' >
+{% endblock %}
+
+{% block content %}
+<div id="content-head" class="col-12 col-md-10 mb-3 mx-auto">
+    <div class="flex-container">
+        <h2>Table Columns</h2>
+    </div>
+    {% for column in columns %}
+        <div class="column-flex-container">
+            <div class="word-label">{{ column.label }}</div>
+            <div><p>{{ column.message }}</p></div>
+        </div>   
+    {% endfor %}
+    <div class="flex-container">
+        <h2>Inputs</h2>
+    </div> 
+
+    {% for input in inputs %}
+        <div class="flex-container">
+            {% with input.label as label %}
+                <div><img src="{% static label %}" class="notation"></div>
+            {% endwith %}
+            <div><p>{{ input.message }}</p></div>
+        </div>   
+    {% endfor %}
+</div>
+{% endblock content %}
