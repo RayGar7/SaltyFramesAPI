@@ -52,7 +52,7 @@
     color: white;
     border-radius: 2.0rem;
     height: 40px;
-    max-width: 8%;
+    width: 20vw;
     text-align: center;
     vertical-align: middle;
     line-height: 40px;       /* The same as your div height */
