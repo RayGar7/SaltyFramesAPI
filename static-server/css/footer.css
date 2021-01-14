@@ -5,7 +5,6 @@ footer {
     bottom: 0;
     width: 100%; 
     margin: 0;
-    padding: 0;
     background: #00172D;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #00172D,  #000B18);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #00172D, #000B18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -34,6 +33,11 @@ footer {
 /* mobile only */
 .footer-links {
     font-size: 2em;
+}
+
+.footer-p {
+    padding-right: 20vw;
+    padding-left: 20vw;
 }
 
 /*PC only*/

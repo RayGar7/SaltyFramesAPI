@@ -37,7 +37,7 @@ def home(request):
         'characters': characters, 
         'inputs': key['inputs'],
         'columns': key['columns'],
-        'title': 'Soulcalibur VI API'
+        'title': 'Soulcalibur VI'
     }
 
     return render(request, 'soulcalibur_vi/home.html', context)
