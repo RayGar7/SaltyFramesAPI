@@ -26,7 +26,10 @@ allowable_images = [
     ":a", "a:", ":b", "b:", ":k", "k:", ":g", "g:",
     ":aB:", ":bA:", ":kA:", ":kB:",
     ":SC:", ":RE:", "RE",
-    ":M:", ":H:", ":L:", ":SM:", ":SH:", ":SL:", ":TH:"
+]
+
+height_level_keys = [
+    ":M:", ":H:", ":L:", ":SM:", ":SH:", ":SL:", ":TH:", ":GI:", ":SS:"
 ]
 
 def home(request):
@@ -56,11 +59,8 @@ def detail(request, slug):
     character = Character.objects.get(slug = slug)
     sections = Section.objects.all().order_by('id')     
     moves = Move.objects.filter(character=character).order_by('id')
-    special_stances = SpecialStance.objects.filter(character=character)
-    special_stance_abbreviations = [special_stance.abbreviation for special_stance in special_stances]
-    special_states = SpecialState.objects.filter(character=character)
-    special_state_abbreviations = [special_state.abbreviation for special_state in special_states]
-    allowable_patterns = special_stance_abbreviations + special_state_abbreviations
+
+    allowable_patterns = get_allowable_patterns(character=character)
 
     context = {
         "name": character.name,
@@ -71,6 +71,7 @@ def detail(request, slug):
         #and I think this is part of the problem that is causing too much overhead.
         "allowable_images": allowable_images,
         "allowable_patterns": allowable_patterns,
+        "height_level_keys": height_level_keys,
     }
 
     for i in range(0, 9):
@@ -289,29 +290,39 @@ def get_key():
 
     return {'columns': columns, 'inputs_without_images': inputs_without_images, 'inputs': inputs}
 
-def height_level_string_to_list(move):
-    print(move.height_level)
-    value = move.height_level
 
+def get_allowable_patterns(character):
+    special_stances = SpecialStance.objects.filter(character=character)
+    special_stance_abbreviations = [special_stance.abbreviation for special_stance in special_stances]
+    special_states = SpecialState.objects.filter(character=character)
+    special_state_abbreviations = [special_state.abbreviation for special_state in special_states]
+    
+    return special_stance_abbreviations + special_state_abbreviations
+
+def height_level_string_to_list(move):
+    #print(move.height_level)
+    value = move.height_level
     if (value):
         height_level_list = []
         i = 0
         save_point = i
-        while (i < len(value)):
+        while (i < len(value) - 1):
             if (value[i] == ":"):
                 j = i + 1
-                while(j < len(value) and j > i):
-                    if (value[j] == ":" and value[i:j+1] in allowable_images):
+                while(j < len(value)):
+                    if (value[j] == ":"):
                         height_level_list.append(value[i:j+1])
                         i = j + 1
+                        save_point = i
+                        break
                     else:
                         j += 1
             else:
                 i += 1
                 if (i == len(value)):
-                    height_level_list.append(value[save_point: i])
-                    save_point = i
-
+                    height_level_list.append(value[save_point:i])
+                elif (value[i] == ":"):
+                    height_level_list.append(value[save_point:i])
         move.height_level = height_level_list
     else:
        move.height_level = ["-"]

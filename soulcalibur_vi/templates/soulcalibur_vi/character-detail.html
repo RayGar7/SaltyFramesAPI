@@ -49,7 +49,11 @@
                         <td colspan="3">
                             {% for hl in move.height_level %}
                                 {% with hl|height_level_to_image as image_static %}
-                                    <img src="{% static image_static %}" class="notation">
+                                    {% if hl in height_level_keys %}
+                                        <img src="{% static image_static %}" class="notation">
+                                    {% else %}
+                                        {{ hl }}
+                                    {% endif %}
                                 {% endwith %}
                             {% endfor %}
                         </td>
@@ -84,7 +88,11 @@
                     <td colspan="3">
                         {% for hl in move.height_level %}
                             {% with hl|height_level_to_image as image_static %}
-                                <img src="{% static image_static %}" class="notation">                            
+                                {% if hl in height_level_keys %}
+                                    <img src="{% static image_static %}" class="notation">                            
+                                {% else %}
+                                    {{ hl }}
+                                {% endif %}
                             {% endwith %}
                         {% endfor %}
                     </td>

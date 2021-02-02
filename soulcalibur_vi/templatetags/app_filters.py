@@ -32,6 +32,7 @@ def height_level_to_image(value):
     spec_high = base_dir + "spechigh.png"
     ss = base_dir + "SS.png"
     gi = base_dir + "GI.png"
+    th = base_dir + "TH.png"
 
 
     new_value = ""
@@ -60,6 +61,9 @@ def height_level_to_image(value):
             new_value += gi
             i += 4
         elif (value[i:i+4] == ":SS:"):
+            new_value += ss
+            i += 4
+        elif (value[i:i+4] == ":TH:"):
             new_value += ss
             i += 4
         else:
