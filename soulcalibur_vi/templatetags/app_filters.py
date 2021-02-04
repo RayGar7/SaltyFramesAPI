@@ -201,9 +201,6 @@ def command_to_image(value):
     }
 
     if (value in my_dict.keys()):
-        new_value = my_dict[value]
+        return my_dict[value]
     else:
-        new_value = value
-
-
-    return new_value
+        return value

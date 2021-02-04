@@ -36,10 +36,8 @@
                         <td colspan="3">
                         {% for command in move.command %}
                             {% with command|command_to_image as image_static %}
-                                {% if command in allowable_images %}
+                                {% if command in command_smilies %}
                                     <img src="{% static image_static %}" class="notation">
-                                {% elif command in allowable_patterns %}
-                                    {{ command }}
                                 {% else %}
                                     {{ command }}
                                 {% endif %}
@@ -49,7 +47,7 @@
                         <td colspan="3">
                             {% for hl in move.height_level %}
                                 {% with hl|height_level_to_image as image_static %}
-                                    {% if hl in height_level_keys %}
+                                    {% if hl in height_level_smilies %}
                                         <img src="{% static image_static %}" class="notation">
                                     {% else %}
                                         {{ hl }}
@@ -77,7 +75,7 @@
                     <td colspan="3">
                         {% for command in move.command %}
                             {% with command|command_to_image as image_static %}
-                                {% if command in allowable_images %}
+                                {% if command in command_smilies %}
                                     <img src="{% static image_static %}" class="notation">
                                 {% else %}
                                     {{ command }}
@@ -88,7 +86,7 @@
                     <td colspan="3">
                         {% for hl in move.height_level %}
                             {% with hl|height_level_to_image as image_static %}
-                                {% if hl in height_level_keys %}
+                                {% if hl in height_level_smilies %}
                                     <img src="{% static image_static %}" class="notation">                            
                                 {% else %}
                                     {{ hl }}

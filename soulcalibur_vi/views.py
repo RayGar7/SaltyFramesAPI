@@ -8,7 +8,7 @@ from icecream import ic
 register = template.Library()
 
 #these strings can be turned into images
-allowable_images = [
+command_smilies = [
     ":1:", ":2:", ":3:", ":4:", ":6:", ":7:", ":8:", ":9:",
     ":A:", ":B:", ":K:", ":G:",  
     ":A", "A:", ":B", "B:", ":K", "K:", ":G", "G:",
@@ -28,7 +28,8 @@ allowable_images = [
     ":SC:", ":RE:", "RE",
 ]
 
-height_level_keys = [
+# these too, but for the icon processing system to speed up performance they're separate from 
+height_level_smilies = [
     ":M:", ":H:", ":L:", ":SM:", ":SH:", ":SL:", ":TH:", ":GI:", ":SS:"
 ]
 
@@ -55,13 +56,13 @@ def legend(request):
 
 
 def detail(request, slug):
-
     character = Character.objects.get(slug = slug)
     sections = Section.objects.all().order_by('id')     
     moves = Move.objects.filter(character=character).order_by('id')
 
-    allowable_patterns = get_allowable_patterns(character=character)
+    allowable_patterns = get_allowable_patterns(character=character)        #perhaps I won't need this with the new way of processing icons
 
+    print(allowable_patterns)
     context = {
         "name": character.name,
         "image": character.image.url,
@@ -69,9 +70,9 @@ def detail(request, slug):
         "title": character.name,
         #this I feel is the wrong way to approach my issue at hand, I'm passing two lists for the template to verify how the input will function
         #and I think this is part of the problem that is causing too much overhead.
-        "allowable_images": allowable_images,
+        "command_smilies": command_smilies,
         "allowable_patterns": allowable_patterns,
-        "height_level_keys": height_level_keys,
+        "height_level_smilies": height_level_smilies,
     }
 
     for i in range(0, 9):
@@ -80,7 +81,9 @@ def detail(request, slug):
 
     for move in moves:
         #create a list of commands and height_levels from the respective strings so that I can use the for template tag on them
-        command_string_to_list(move=move, additional_patterns = allowable_patterns)
+        #print(move.command)
+        command_string_to_list(move=move)
+        #print(move.command)
         height_level_string_to_list(move=move)
 
         if (move.section):
@@ -93,6 +96,9 @@ def detail(request, slug):
 #helpers
 
 def assign_section(section, context, move):
+    #  don't do it like this anymore, instead use Move.objects.filter()
+
+
     if (section.name == "horizontal attack"):
         context['table_list'][0]['moves_list'].append(move)
     elif (section.name == "vertical attack"):
@@ -327,83 +333,116 @@ def height_level_string_to_list(move):
     else:
        move.height_level = ["-"]
 
-def command_string_to_list(move, additional_patterns):
+def command_string_to_list(move):
     value = move.command
     command_list = []
 
 
     i = 0
-    while (i < len(value)):
-
-        #special case
-        if (i + 6 < len(value) and value[i:i+7] == ":A+B+K:"):
-            command_list.append(":A:")
-            command_list.append(":+:")
-            command_list.append(":B:")
-            command_list.append(":+:")
-            command_list.append(":K:")
-            i += 7
-        elif (i + 8 < len(value) and value[i:i+9] == ":(A+B+K):"):
-            command_list.append(":(A):")
-            command_list.append(":+:")
-            command_list.append(":(B):")
-            command_list.append(":+:")
-            command_list.append(":(K):")
-            i += 9
-
-        if (i + 15 < len(value) and value[i:i+16] in allowable_images):
-            command_list.append(value[i:i+16])
-            i += 16
-        elif (i + 14 < len(value) and value[i:i+15] in allowable_images):
-            command_list.append(value[i:i+15])
-            i += 15
-        elif (i + 13 < len(value) and value[i:i+14] in allowable_images):
-            command_list.append(value[i:i+14])
-            i += 14
-        elif (i + 12 < len(value) and value[i:i+13] in allowable_images):
-            command_list.append(value[i:i+13])
-            i += 13
-        elif (i + 11 < len(value) and value[i:i+12] in allowable_images):
-            command_list.append(value[i:i+12])
-            i += 12
-        elif (i + 10 < len(value) and value[i:i+11] in allowable_images):
-            command_list.append(value[i:i+11])
-            i += 11
-        elif (i + 9 < len(value) and value[i:i+10] in allowable_images):
-            command_list.append(value[i:i+10])
-            i += 10
-        elif (i + 8 < len(value) and value[i:i+9] in allowable_images):
-            command_list.append(value[i:i+9])
-            i += 9
-        elif (i + 7 < len(value) and value[i:i+8] in allowable_images):
-            command_list.append(value[i:i+8])
-            i += 8
-        elif (i + 6 < len(value) and value[i:i+7] in allowable_images):
-            command_list.append(value[i:i+7])
-            i += 7
-        elif (i + 5 < len(value) and value[i:i+6] in allowable_images):
-            command_list.append(value[i:i+6])
-            i += 6
-        elif (i + 4 < len(value) and value[i:i+5] in allowable_images or value[i:i+5] in additional_patterns):
-            command_list.append(value[i:i+5])
-            i += 5
-        elif (i + 3 < len(value) and value[i:i+4] in allowable_images or value[i:i+4] in additional_patterns):
-            command_list.append(value[i:i+4])
-            i += 4
-        elif (i + 2 < len(value) and value[i:i+3] in allowable_images or value[i:i+3] in additional_patterns):
-            command_list.append(value[i:i+3])
-            i += 3
-        elif (i + 1 < len(value) and value[i:i+2] in allowable_images or value[i:i+2] in additional_patterns):
-            command_list.append(value[i:i+2])
-            i += 2
-        elif (i >= len(value)):
-            break
-        elif (value[i] in allowable_images):
+    save_point = 0
+    while (i < len(value) - 1):
+        if (value[i] == ":" and not (value[i+1] == ":" or value[i+1] == " ")):
+            j = i + 1
+            while(j < len(value)):
+                if (value[j] == ":"):
+                    command_list.append(value[i:j+1])
+                    i = j + 1
+                    save_point = i
+                    break
+                else:
+                    j += 1
+        elif (value[i] == ":" and (value[i+1] == ":" or value[i+1] == " ")):
             command_list.append(value[i])
-            i += 1
-            #if this case happens it means that i was incremented in such a way that value[i] would raise IndexError
+            i = i + 1
+            save_point = i
         else:
-            command_list.append(value[i])
             i += 1
+            if (i == len(value) - 1):
+                command_list.append(value[save_point:i+1])
+            elif (value[i] == ":"):
+                command_list.append(value[save_point:i])
+                save_point = i
 
     move.command = command_list
+
+
+# def command_string_to_list(move, additional_patterns):
+#     value = move.command
+#     command_list = []
+
+
+#     i = 0
+#     while (i < len(value)):
+
+#         #special case
+#         if (i + 6 < len(value) and value[i:i+7] == ":A+B+K:"):
+#             command_list.append(":A:")
+#             command_list.append(":+:")
+#             command_list.append(":B:")
+#             command_list.append(":+:")
+#             command_list.append(":K:")
+#             i += 7
+#         elif (i + 8 < len(value) and value[i:i+9] == ":(A+B+K):"):
+#             command_list.append(":(A):")
+#             command_list.append(":+:")
+#             command_list.append(":(B):")
+#             command_list.append(":+:")
+#             command_list.append(":(K):")
+#             i += 9
+
+#         if (i + 15 < len(value) and value[i:i+16] in command_smilies):
+#             command_list.append(value[i:i+16])
+#             i += 16
+#         elif (i + 14 < len(value) and value[i:i+15] in command_smilies):
+#             command_list.append(value[i:i+15])
+#             i += 15
+#         elif (i + 13 < len(value) and value[i:i+14] in command_smilies):
+#             command_list.append(value[i:i+14])
+#             i += 14
+#         elif (i + 12 < len(value) and value[i:i+13] in command_smilies):
+#             command_list.append(value[i:i+13])
+#             i += 13
+#         elif (i + 11 < len(value) and value[i:i+12] in command_smilies):
+#             command_list.append(value[i:i+12])
+#             i += 12
+#         elif (i + 10 < len(value) and value[i:i+11] in command_smilies):
+#             command_list.append(value[i:i+11])
+#             i += 11
+#         elif (i + 9 < len(value) and value[i:i+10] in command_smilies):
+#             command_list.append(value[i:i+10])
+#             i += 10
+#         elif (i + 8 < len(value) and value[i:i+9] in command_smilies):
+#             command_list.append(value[i:i+9])
+#             i += 9
+#         elif (i + 7 < len(value) and value[i:i+8] in command_smilies):
+#             command_list.append(value[i:i+8])
+#             i += 8
+#         elif (i + 6 < len(value) and value[i:i+7] in command_smilies):
+#             command_list.append(value[i:i+7])
+#             i += 7
+#         elif (i + 5 < len(value) and value[i:i+6] in command_smilies):
+#             command_list.append(value[i:i+6])
+#             i += 6
+#         elif (i + 4 < len(value) and value[i:i+5] in command_smilies or value[i:i+5] in additional_patterns):
+#             command_list.append(value[i:i+5])
+#             i += 5
+#         elif (i + 3 < len(value) and value[i:i+4] in command_smilies or value[i:i+4] in additional_patterns):
+#             command_list.append(value[i:i+4])
+#             i += 4
+#         elif (i + 2 < len(value) and value[i:i+3] in command_smilies or value[i:i+3] in additional_patterns):
+#             command_list.append(value[i:i+3])
+#             i += 3
+#         elif (i + 1 < len(value) and value[i:i+2] in command_smilies or value[i:i+2] in additional_patterns):
+#             command_list.append(value[i:i+2])
+#             i += 2
+#         elif (i >= len(value)):
+#             break
+#         elif (value[i] in command_smilies):
+#             command_list.append(value[i])
+#             i += 1
+#             #if this case happens it means that i was incremented in such a way that value[i] would raise IndexError
+#         else:
+#             command_list.append(value[i])
+#             i += 1
+
+#     move.command = command_list
