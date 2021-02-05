@@ -75,132 +75,128 @@ def height_level_to_image(value):
 @register.filter(name='command_to_image')
 def command_to_image(value):
     """ Converts the command string into an html formatted way of putting images inside the table cells """
-    
+    #print(value)
     base_dir = "img/sc-inputs/"
 
     new_value = ""
 
     my_dict = {
-        ":1:": base_dir + "1.png",
-        ":2:": base_dir + "2.png",
-        ":3:": base_dir + "3.png",
-        ":4:": base_dir + "4.png",
-        ":6:": base_dir + "6.png",
-        ":7:": base_dir + "7.png",
-        ":8:": base_dir + "8.png",
-        ":9:": base_dir + "9.png",
-
-        ":A:": base_dir + "A.png",
-        ":A": base_dir + "A.png",
-        "A:": base_dir + "A.png",
-        ":B:": base_dir + "B.png",
-        ":B": base_dir + "B.png",
-        "B:": base_dir + "B.png",
-        ":K:": base_dir + "K.png",
-        ":K": base_dir + "K.png",
-        "K:": base_dir + "K.png",
-        ":G:": base_dir + "G.png",
-        ":G": base_dir + "G.png",
-        "G:": base_dir + "G.png",
-
-        ":(1):": base_dir + "I1.png",
-        ":(2):": base_dir + "I2.png",
-        ":(3):": base_dir + "I3.png",
-        ":(4):": base_dir + "I4.png",
-        ":(6):": base_dir + "I6.png",
-        ":(7):": base_dir + "I7.png",
-        ":(8):": base_dir + "I8.png",
-        ":(9):": base_dir + "I9.png",
-
-        ":(A):": base_dir + "Ia.png",
-        ":(B):": base_dir + "Ib.png",
-        ":(K):": base_dir + "Ik.png",
-        ":(G):": base_dir + "Ig.png",
-
-        ":(A": base_dir + "Ia.png",
-        "A):": base_dir + "Ia.png",
-        ":(A)": base_dir + "Ia.png",
-        "(A):": base_dir + "Ia.png",
-        ":(B": base_dir + "Ib.png",
-        "B):": base_dir + "Ib.png",
-        ":(B)": base_dir + "Ib.png",
-        "(B):": base_dir + "Ib.png",
-        ":(K": base_dir + "Ik.png",
-        "K):": base_dir + "Ik.png",
-        ":(K)": base_dir + "Ik.png",
-        "(K):": base_dir + "Ik.png",
-        ":(G": base_dir + "Ig.png",
-        "G):": base_dir + "Ig.png",
-        ":(G)": base_dir + "Ig.png",
-        "(G):": base_dir + "Ig.png",
-
-        "Left side throw": base_dir + "left-side-throw.png",
-        "Left side": base_dir + "left-side-throw.png",
-        "Left Side": base_dir + "left-side-throw.png",
-        "Right side throw": base_dir + "right-side-throw.png",
-        "Back throw": base_dir + "back-throw.png",
-        "Left Side Throw": base_dir + "left-side-throw.png",
-        "Right Side Throw": base_dir + "right-side-throw.png",
-        "Back Throw": base_dir + "back-throw.png",
-
-        "Back": base_dir + "back.png",
-        "Air": base_dir + "vsMidair.png",
-        "FC": base_dir + "FC.png",
-        "WR": base_dir + "WR.png",
-        "BT": base_dir + "BT.png",
-        "Run": base_dir + "R.png",
-        "RUN": base_dir + "R.png",
-        "(tip)": base_dir + "tip.png",
-        "(Close Range)": base_dir + "closeHit.png",
-        "Close Range": base_dir + "closeHit.png",
-        "(Close range)": base_dir + "closeHit.png",
-        "Close range": base_dir + "closeHit.png",
-        "8WR": base_dir + "eightWayRun.png",
-
-        "RUN": base_dir + "R.png",
-
-        ":SC:": base_dir + "SoulCharged.png",
-        ":RE:": base_dir + "RE.png",
-        "RE": base_dir + "RE.png",
-
-        ":a-small:": base_dir + "Sa.png",
-        ":a-small": base_dir + "Sa.png",
-        "a-small:": base_dir + "Sa.png",
-        ":b-small:": base_dir + "Sb.png",
-        ":b-small": base_dir + "Sb.png",
-        "b-small:": base_dir + "Sb.png",
-        ":k-small:": base_dir + "Sk.png",
-        ":k-small": base_dir + "Sk.png",
-        "k-small:": base_dir + "Sk.png",
-        ":g-small:": base_dir + "Sg.png",
-        ":g-small": base_dir + "Sg.png",
-        "g-small:": base_dir + "Sg.png",
-
-        ":a:": base_dir + "Sa.png",
-        ":a": base_dir + "Sa.png",
-        "a:": base_dir + "Sa.png",
-        ":b:": base_dir + "Sb.png",
-        ":b": base_dir + "Sb.png",
-        "b:": base_dir + "Sb.png",
-        ":k:": base_dir + "Sk.png",
-        ":k": base_dir + "Sk.png",
-        "k:": base_dir + "Sk.png",
-        ":g:": base_dir + "Sg.png",
-        ":g": base_dir + "Sg.png",
-        "g:": base_dir + "Sg.png",
-
-        ":aB:": base_dir + "M.png",
-        ":bA:": base_dir + "N.png",
-        ":kA:": base_dir + "O.png",
-        ":kB:": base_dir + "P.png",
+        ":1:": [base_dir + "1.png"],
+        ":2:": [base_dir + "2.png"],
+        ":3:": [base_dir + "3.png"],
+        ":4:": [base_dir + "4.png"],
+        ":6:": [base_dir + "6.png"],
+        ":7:": [base_dir + "7.png"],
+        ":8:": [base_dir + "8.png"],
+        ":9:": [base_dir + "9.png"],
 
 
-        "*": base_dir + "_notation.png",
-        "+": base_dir + "plus.png",
-        ":+:": base_dir + "plus.png",
+        ":A:": [base_dir + "A.png"],
+        # ":A": base_dir + "A.png",
+        # "A:": base_dir + "A.png",
+
+        ":B:": [base_dir + "B.png"],
+        # ":B": base_dir + "B.png",
+        # "B:": base_dir + "B.png",
+
+        ":K:": [base_dir + "K.png"],
+        # ":K": base_dir + "K.png",
+        # "K:": base_dir + "K.png",
+
+        ":G:": [base_dir + "G.png"],
+        # ":G": base_dir + "G.png",
+        # "G:": base_dir + "G.png",
+
+
+        ":A+B:": [base_dir + "A.png", base_dir + "B.png"],
+        "A+B": [base_dir + "A.png", base_dir + "B.png"],
+
+
+        ":(1):": [base_dir + "I1.png"],
+        ":(2):": [base_dir + "I2.png"],
+        ":(3):": [base_dir + "I3.png"],
+        ":(4):": [base_dir + "I4.png"],
+        ":(6):": [base_dir + "I6.png"],
+        ":(7):": [base_dir + "I7.png"],
+        ":(8):": [base_dir + "I8.png"],
+        ":(9):": [base_dir + "I9.png"],
+
+
+        ":(A):": [base_dir + "Ia.png"],
+        # ":(A": base_dir + "Ia.png",
+        # "A):": base_dir + "Ia.png",
+        # ":(A)": base_dir + "Ia.png",
+        # "(A):": base_dir + "Ia.png",
+
+        ":(B):": [base_dir + "Ib.png"],
+        # ":(B": base_dir + "Ib.png",
+        # "B):": base_dir + "Ib.png",
+        # ":(B)": base_dir + "Ib.png",
+        # "(B):": base_dir + "Ib.png",
+
+        ":(K):": [base_dir + "Ik.png"],
+        # ":(K": base_dir + "Ik.png",
+        # "K):": base_dir + "Ik.png",
+        # ":(K)": base_dir + "Ik.png",
+        # "(K):": base_dir + "Ik.png",
+
+        ":(G):": [base_dir + "Ig.png"],
+        # ":(G": base_dir + "Ig.png",
+        # "G):": base_dir + "Ig.png",
+        # ":(G)": base_dir + "Ig.png",
+        # "(G):": base_dir + "Ig.png",
+
+
+        ":SC:": [base_dir + "SoulCharged.png"],
+        ":RE:": [base_dir + "RE.png"],
+        "RE": [base_dir + "RE.png"],
+
+
+        ":a-small:": [base_dir + "Sa.png"],
+        # ":a-small": base_dir + "Sa.png",
+        # "a-small:": base_dir + "Sa.png",
+
+        ":b-small:": [base_dir + "Sb.png"],
+        # ":b-small": base_dir + "Sb.png",
+        # "b-small:": base_dir + "Sb.png",
+
+        ":k-small:": [base_dir + "Sk.png"],
+        # ":k-small": base_dir + "Sk.png",
+        # "k-small:": base_dir + "Sk.png",
+
+        ":g-small:": [base_dir + "Sg.png"],
+        # ":g-small": base_dir + "Sg.png",
+        # "g-small:": base_dir + "Sg.png",
+
+        ":a:": [base_dir + "Sa.png"],
+        # ":a": base_dir + "Sa.png",
+        # "a:": base_dir + "Sa.png",
+
+        ":b:": [base_dir + "Sb.png"],
+        # ":b": base_dir + "Sb.png",
+        # "b:": base_dir + "Sb.png",
+
+        ":k:": [base_dir + "Sk.png"],
+        # ":k": base_dir + "Sk.png",
+        # "k:": base_dir + "Sk.png",
+
+        ":g:": [base_dir + "Sg.png"],
+        # ":g": base_dir + "Sg.png",
+        # "g:": base_dir + "Sg.png",
+
+        ":aB:": [base_dir + "M.png"],
+        ":bA:": [base_dir + "N.png"],
+        ":kA:": [base_dir + "O.png"],
+        ":kB:": [base_dir + "P.png"],
+
+
+        "*": [base_dir + "_notation.png"],
+        "+": [base_dir + "plus.png"],
+        ":+:": [base_dir + "plus.png"],
     }
 
     if (value in my_dict.keys()):
+        #print(my_dict[value])
         return my_dict[value]
     else:
         return value
