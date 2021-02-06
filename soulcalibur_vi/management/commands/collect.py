@@ -12,7 +12,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         try:
             character = options.get("character_name")
-            self.stdout.write(self.style.WARNING("About to collect data for {}".format(character)))
+            #self.stdout.write(self.style.WARNING("About to collect data for {}".format(character)))
             #print("Fetch all of the character data from our db")
 
             # retrieve the characters' slugs from the db
@@ -27,7 +27,7 @@ class Command(BaseCommand):
             else:
                 #print("character name ok")
                 self.collect_one(character)
-                self.stdout.write(self.style.SUCCESS('Every move was collected like a boss'))
+                #self.stdout.write(self.style.SUCCESS('Every move was collected like a boss'))
 
                 # check if there were any Move entries left without a section after running collect
                 self.check_moves(character)
@@ -108,8 +108,10 @@ class Command(BaseCommand):
             #print("there are some Moves without a section that were collected")
             for move in moves:
                 #print("- " , move)
+                pass
         else:
             #print("There are no Moves without a section that were collected")
+            pass
 
 
 
