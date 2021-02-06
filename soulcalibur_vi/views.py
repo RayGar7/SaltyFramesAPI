@@ -24,50 +24,9 @@ command_smilies = [
     ":gA:",":gB:",":gK:",":g(A):",":g(B):",":g(K):",
     ":SC:", ":RE:", "RE", ":GI:",
 ]
-base_dir = "img/sc-inputs/"
 
-command_paths = [
-    base_dir + "A.png",
-    base_dir + "B.png",
-    base_dir + "K.png",
-    base_dir + "G.png",
-    base_dir + "1.png",
-    base_dir + "2.png",
-    base_dir + "3.png",
-    base_dir + "4.png",
-    base_dir + "6.png",
-    base_dir + "7.png",
-    base_dir + "8.png",
-    base_dir + "9.png",
-    base_dir + "AplusB.png",
-    base_dir + "GI.png",
-    base_dir + "H.png",
-    base_dir + "I1.png",
-    base_dir + "I2.png",
-    base_dir + "I3.png",
-    base_dir + "I4.png",
-    base_dir + "I6.png",
-    base_dir + "I7.png",
-    base_dir + "I8.png",
-    base_dir + "I9.png",
-    base_dir + "Ia.png",
-    base_dir + "Ib.png",
-    base_dir + "Ik.png",
-    base_dir + "Ig.png",
-    base_dir + "M.png",
-    base_dir + "N.png",
-    base_dir + "O.png",
-    base_dir + "P.png",
-    base_dir + "plus.png",
-    base_dir + "Sa.png",
-    base_dir + "Sb.png",
-    base_dir + "Sg.png",
-    base_dir + "Sk.png",
-    base_dir + "SoulCharged.png",
-    base_dir + "LH.png",
-]
 
-# these too, but for the icon processing system to speed up performance they're separate from 
+# these strings can be turned into images too
 height_level_smilies = [
     ":M:", ":H:", ":L:", ":SM:", ":SH:", ":SL:", ":TH:", ":GI:", ":SS:"
 ]
@@ -93,24 +52,17 @@ def legend(request):
 
     return render(request, 'soulcalibur_vi/legend.html', context)
 
-
 def detail(request, slug):
     character = Character.objects.get(slug = slug)
     sections = Section.objects.all().order_by('id')     
     moves = Move.objects.filter(character=character).order_by('id')
-
-    allowable_patterns = get_allowable_patterns(character=character)        #perhaps I won't need this with the new way of processing icons
 
     context = {
         "name": character.name,
         "image": character.image.url,
         "table_list": [],
         "title": character.name,
-        #this I feel is the wrong way to approach my issue at hand, I'm passing two lists for the template to verify how the input will function
-        #and I think this is part of the problem that is causing too much overhead.
         "command_smilies": command_smilies,
-        "command_paths": command_paths,
-        "allowable_patterns": allowable_patterns,
         "height_level_smilies": height_level_smilies,
     }
 
@@ -130,7 +82,7 @@ def detail(request, slug):
             
     return render(request, 'soulcalibur_vi/character-detail.html', context)
 
-#helpers
+# Helpers
 
 def assign_section(section, context, move):
     #  don't do it like this anymore, instead use Move.objects.filter()
