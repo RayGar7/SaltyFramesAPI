@@ -28,6 +28,7 @@ command_smilies = [
     ":SC:", ":RE:", "RE",
 ]
 base_dir = "img/sc-inputs/"
+
 command_paths = [
     base_dir + "A.png",
     base_dir + "B.png",
@@ -67,8 +68,6 @@ command_paths = [
     base_dir + "Sk.png",
     base_dir + "SoulCharged.png",
     base_dir + "LH.png",
-
-
 ]
 
 # these too, but for the icon processing system to speed up performance they're separate from 
@@ -125,9 +124,8 @@ def detail(request, slug):
 
     for move in moves:
         #create a list of commands and height_levels from the respective strings so that I can use the for template tag on them
-        #print(move.command)
         command_string_to_list(move=move)
-        #print(move.command)
+        print(move.command)
         height_level_string_to_list(move=move)
 
         if (move.section):
@@ -407,7 +405,7 @@ def command_string_to_list(move):
                 command_list.append(value[save_point:i])
                 save_point = i
 
-    print(command_list)
+    #print(command_list)
 
     move.command = command_list
 
