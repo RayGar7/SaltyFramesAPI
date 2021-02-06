@@ -81,4 +81,4 @@ class SpecialState(models.Model):
     abbreviation = models.CharField(max_length=30)
 
     def __str__(self):
-        return self.name + " - (" + self.abbreviation + ")"
+        return self.character.name + "\'s " + self.name + " - (" + self.abbreviation + ")"
