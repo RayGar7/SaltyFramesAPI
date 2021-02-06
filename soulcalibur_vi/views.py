@@ -3,29 +3,73 @@ from django.http import HttpResponse
 from .models import Character, Move, SpecialStance, Section, SpecialState
 from django import template
 from django.utils.safestring import mark_safe
+from icecream import ic
 
 register = template.Library()
 
 #these strings can be turned into images
-allowable_images = [
+command_smilies = [
     ":1:", ":2:", ":3:", ":4:", ":6:", ":7:", ":8:", ":9:",
-    ":A:", ":B:", ":K:", ":G:",  
-    ":A", "A:", ":B", "B:", ":K", "K:", ":G", "G:",
     ":(1):", ":(2):", ":(3):", ":(4):", ":(6):", ":(7):", ":(8):", ":(9):",
+    ":A:", ":B:", ":K:", ":G:",  
     ":(A):", ":(B):", ":(K):", ":(G):",
-    ":(A", "A):", ":(B", "B):", "(B)", ":(K", "K):", ":(G", "G):",
-    ":(A)", "(A):", "(A", "A)", ":(B)", "(B):", "(B", "B)", ":(K)", "(K):", "(K", "K)",  ":(G)", "(G):", "(G", "G)",
-    "FC", "WR", "BT", "Run", "RUN", "8WR",
-    "*", "+", ":+:", "(tip)", "(Close Range)",
-    "Left side throw", "Right side throw", "Back throw", "Left Side Throw", "Right Side Throw", "Back Throw", "Left Side", "Left side",
-    "Back", "Air",
+    ":A+B:", ":A+K:", ":A+G:", ":B+K:", ":B+G:", ":K+G:", ":A+B+K:", ":(A+B+K):",
+    ":(A+B):", ":(A+K):", ":(A+G):", ":(B+K):", ":(B+G):", ":(K+G):", 
+    "*", "+", ":+:",
     ":a-small:", ":b-small:", ":k-small:", ":g-small:",
-    ":a-small", "a-small:", ":b-small", "b-small:", ":k-small", "k-small:", ":g-small", "g-small:",
     ":a:", ":b:", ":k:", ":g:",
-    ":a", "a:", ":b", "b:", ":k", "k:", ":g", "g:",
-    ":aB:", ":bA:", ":kA:", ":kB:",
-    ":SC:", ":RE:", "RE",
-    ":M:", ":H:", ":L:", ":SM:", ":SH:", ":SL:",
+    ":aA:",":aB:",":aK:",":aG:",":a(A):",":a(B):",":a(K):", ":a(G):",
+    ":bA:",":bB:",":bK:",":bG:",":b(A):",":b(B):",":b(K):",":b(G):",
+    ":kA:",":kB:",":kK:",":kG:",":k(A):",":k(B):",":k(K):",":k(G):",
+    ":gA:",":gB:",":gK:",":g(A):",":g(B):",":g(K):",
+    ":SC:", ":RE:", "RE", ":GI:",
+]
+base_dir = "img/sc-inputs/"
+
+command_paths = [
+    base_dir + "A.png",
+    base_dir + "B.png",
+    base_dir + "K.png",
+    base_dir + "G.png",
+    base_dir + "1.png",
+    base_dir + "2.png",
+    base_dir + "3.png",
+    base_dir + "4.png",
+    base_dir + "6.png",
+    base_dir + "7.png",
+    base_dir + "8.png",
+    base_dir + "9.png",
+    base_dir + "AplusB.png",
+    base_dir + "GI.png",
+    base_dir + "H.png",
+    base_dir + "I1.png",
+    base_dir + "I2.png",
+    base_dir + "I3.png",
+    base_dir + "I4.png",
+    base_dir + "I6.png",
+    base_dir + "I7.png",
+    base_dir + "I8.png",
+    base_dir + "I9.png",
+    base_dir + "Ia.png",
+    base_dir + "Ib.png",
+    base_dir + "Ik.png",
+    base_dir + "Ig.png",
+    base_dir + "M.png",
+    base_dir + "N.png",
+    base_dir + "O.png",
+    base_dir + "P.png",
+    base_dir + "plus.png",
+    base_dir + "Sa.png",
+    base_dir + "Sb.png",
+    base_dir + "Sg.png",
+    base_dir + "Sk.png",
+    base_dir + "SoulCharged.png",
+    base_dir + "LH.png",
+]
+
+# these too, but for the icon processing system to speed up performance they're separate from 
+height_level_smilies = [
+    ":M:", ":H:", ":L:", ":SM:", ":SH:", ":SL:", ":TH:", ":GI:", ":SS:"
 ]
 
 def home(request):
@@ -52,22 +96,22 @@ def legend(request):
 
 def detail(request, slug):
     character = Character.objects.get(slug = slug)
-    # order_by('id') is a trick I use to order objects in the order they were saved
     sections = Section.objects.all().order_by('id')     
     moves = Move.objects.filter(character=character).order_by('id')
-    special_stances = SpecialStance.objects.filter(character=character)
-    special_states = SpecialState.objects.filter(character=character)
-    special_stance_abbreviations = [special_stance.abbreviation for special_stance in special_stances]
-    special_state_abbreviations = [special_state.abbreviation for special_state in special_states]
-    allowable_patterns = special_stance_abbreviations + special_state_abbreviations
+
+    allowable_patterns = get_allowable_patterns(character=character)        #perhaps I won't need this with the new way of processing icons
 
     context = {
         "name": character.name,
         "image": character.image.url,
         "table_list": [],
         "title": character.name,
-        "allowable_images": allowable_images,
+        #this I feel is the wrong way to approach my issue at hand, I'm passing two lists for the template to verify how the input will function
+        #and I think this is part of the problem that is causing too much overhead.
+        "command_smilies": command_smilies,
+        "command_paths": command_paths,
         "allowable_patterns": allowable_patterns,
+        "height_level_smilies": height_level_smilies,
     }
 
     for i in range(0, 9):
@@ -76,34 +120,40 @@ def detail(request, slug):
 
     for move in moves:
         #create a list of commands and height_levels from the respective strings so that I can use the for template tag on them
-        command_string_to_list(move=move, additional_patterns = allowable_patterns)
+        command_string_to_list(move=move)
         height_level_string_to_list(move=move)
 
         if (move.section):
-            if (move.section.name == "horizontal attack"):
-                context['table_list'][0]['moves_list'].append(move)
-            elif (move.section.name == "vertical attack"):
-                context['table_list'][1]['moves_list'].append(move)
-            elif (move.section.name == "kick attack"):
-                context['table_list'][2]['moves_list'].append(move)
-            elif (move.section.name == "dual button attack"):
-                context['table_list'][3]['moves_list'].append(move)
-            elif (move.section.name == "8-way run"):
-                context['table_list'][4]['moves_list'].append(move)
-            elif (move.section.name == "special move"):
-                context['table_list'][5]['moves_list'].append(move)
-            elif (move.section.name == "throw"):
-                context['table_list'][6]['moves_list'].append(move)
-            elif (move.section.name == "reversal attack"):
-                context['table_list'][7]['moves_list'].append(move)
-            elif (move.section.name == "gauge attack"):
-                context['table_list'][8]['moves_list'].append(move)
+            assign_section(section=move.section, context=context, move=move)
         else:
             context['sectionless_table'].append(move)
             
     return render(request, 'soulcalibur_vi/character-detail.html', context)
 
 #helpers
+
+def assign_section(section, context, move):
+    #  don't do it like this anymore, instead use Move.objects.filter()
+
+
+    if (section.name == "horizontal attack"):
+        context['table_list'][0]['moves_list'].append(move)
+    elif (section.name == "vertical attack"):
+        context['table_list'][1]['moves_list'].append(move)
+    elif (section.name == "kick attack"):
+        context['table_list'][2]['moves_list'].append(move)
+    elif (section.name == "dual button attack"):
+        context['table_list'][3]['moves_list'].append(move)
+    elif (section.name == "8-way run"):
+        context['table_list'][4]['moves_list'].append(move)
+    elif (section.name == "special move"):
+        context['table_list'][5]['moves_list'].append(move)
+    elif (section.name == "throw"):
+        context['table_list'][6]['moves_list'].append(move)
+    elif (section.name == "reversal attack"):
+        context['table_list'][7]['moves_list'].append(move)
+    elif (section.name == "gauge attack"):
+        context['table_list'][8]['moves_list'].append(move)
 
 def get_key():
     base_dir = 'img/sc-inputs/'
@@ -283,102 +333,71 @@ def get_key():
 
     return {'columns': columns, 'inputs_without_images': inputs_without_images, 'inputs': inputs}
 
+
+def get_allowable_patterns(character):
+    special_stances = SpecialStance.objects.filter(character=character)
+    special_stance_abbreviations = [special_stance.abbreviation for special_stance in special_stances]
+    special_states = SpecialState.objects.filter(character=character)
+    special_state_abbreviations = [special_state.abbreviation for special_state in special_states]
+    
+    return special_stance_abbreviations + special_state_abbreviations
+
 def height_level_string_to_list(move):
-    if (move.height_level):
-        value = move.height_level
+    value = move.height_level
+    if (value):
         height_level_list = []
         i = 0
-        while (i < len(value)):
-            if (i + 2 < len(value) and value[i:i+3] in allowable_images):
-                height_level_list.append(value[i:i+3])
-                i += 3
-            elif (i + 3 < len(value) and value[i:i+4] in allowable_images):
-                height_level_list.append(value[i:i+4])
-                i += 4
+        save_point = i
+        while (i < len(value) - 1):
+            if (value[i] == ":"):
+                j = i + 1
+                while(j < len(value)):
+                    if (value[j] == ":"):
+                        height_level_list.append(value[i:j+1])
+                        i = j + 1
+                        save_point = i
+                        break
+                    else:
+                        j += 1
             else:
                 i += 1
-
+                if (i == len(value)):
+                    height_level_list.append(value[save_point:i])
+                elif (value[i] == ":"):
+                    height_level_list.append(value[save_point:i])
         move.height_level = height_level_list
     else:
-        move.height_level = []
+       move.height_level = ["-"]
 
-def command_string_to_list(move, additional_patterns):
+def command_string_to_list(move):
     value = move.command
     command_list = []
 
 
     i = 0
-    while (i < len(value)):
-
-        #special case
-        if (i + 6 < len(value) and value[i:i+7] == ":A+B+K:"):
-            command_list.append(":A:")
-            command_list.append(":+:")
-            command_list.append(":B:")
-            command_list.append(":+:")
-            command_list.append(":K:")
-            i += 7
-        elif (i + 8 < len(value) and value[i:i+9] == ":(A+B+K):"):
-            command_list.append(":(A):")
-            command_list.append(":+:")
-            command_list.append(":(B):")
-            command_list.append(":+:")
-            command_list.append(":(K):")
-            i += 9
-
-        if (i + 15 < len(value) and value[i:i+16] in allowable_images):
-            command_list.append(value[i:i+16])
-            i += 16
-        elif (i + 14 < len(value) and value[i:i+15] in allowable_images):
-            command_list.append(value[i:i+15])
-            i += 15
-        elif (i + 13 < len(value) and value[i:i+14] in allowable_images):
-            command_list.append(value[i:i+14])
-            i += 14
-        elif (i + 12 < len(value) and value[i:i+13] in allowable_images):
-            command_list.append(value[i:i+13])
-            i += 13
-        elif (i + 11 < len(value) and value[i:i+12] in allowable_images):
-            command_list.append(value[i:i+12])
-            i += 12
-        elif (i + 10 < len(value) and value[i:i+11] in allowable_images):
-            command_list.append(value[i:i+11])
-            i += 11
-        elif (i + 9 < len(value) and value[i:i+10] in allowable_images):
-            command_list.append(value[i:i+10])
-            i += 10
-        elif (i + 8 < len(value) and value[i:i+9] in allowable_images):
-            command_list.append(value[i:i+9])
-            i += 9
-        elif (i + 7 < len(value) and value[i:i+8] in allowable_images):
-            command_list.append(value[i:i+8])
-            i += 8
-        elif (i + 6 < len(value) and value[i:i+7] in allowable_images):
-            command_list.append(value[i:i+7])
-            i += 7
-        elif (i + 5 < len(value) and value[i:i+6] in allowable_images):
-            command_list.append(value[i:i+6])
-            i += 6
-        elif (i + 4 < len(value) and value[i:i+5] in allowable_images or value[i:i+5] in additional_patterns):
-            command_list.append(value[i:i+5])
-            i += 5
-        elif (i + 3 < len(value) and value[i:i+4] in allowable_images or value[i:i+4] in additional_patterns):
-            command_list.append(value[i:i+4])
-            i += 4
-        elif (i + 2 < len(value) and value[i:i+3] in allowable_images or value[i:i+3] in additional_patterns):
-            command_list.append(value[i:i+3])
-            i += 3
-        elif (i + 1 < len(value) and value[i:i+2] in allowable_images or value[i:i+2] in additional_patterns):
-            command_list.append(value[i:i+2])
-            i += 2
-        elif (i >= len(value)):
-            break
-        elif (value[i] in allowable_images):
+    save_point = 0
+    while (i < len(value) - 1):
+        if (value[i] == ":" and not (value[i+1] == ":" or value[i+1] == " ")):
+            j = i + 1
+            while(j < len(value)):
+                if (value[j] == ":"):
+                    command_list.append(value[i:j+1])
+                    i = j + 1
+                    save_point = i
+                    break
+                else:
+                    j += 1
+        elif (value[i] == ":" and (value[i+1] == ":" or value[i+1] == " ")):
             command_list.append(value[i])
-            i += 1
-            #if this case happens it means that i was incremented in such a way that value[i] would raise IndexError
+            i = i + 1
+            save_point = i
         else:
-            command_list.append(value[i])
             i += 1
+            if (i == len(value) - 1):
+                command_list.append(value[save_point:i+1])
+            elif (value[i] == ":"):
+                command_list.append(value[save_point:i])
+                save_point = i
 
     move.command = command_list
+

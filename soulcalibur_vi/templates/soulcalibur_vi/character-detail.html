@@ -34,23 +34,24 @@
                     <tr class="move">
                         <td colspan="3">{{ move.attack_name|default_if_none:"-" }}</td>
                         <td colspan="3">
-                        {% for command in move.command %}
-                            {% with command|command_to_image as image_static %}
-                                {% if command in allowable_images %}
-                                    <img src="{% static image_static %}" class="notation">
-                                {% elif command in allowable_patterns %}
-                                    {{ command }}
-                                {% else %}
-                                    {{ command }}
-                                {% endif %}
-                            {% endwith %}
-                        {% endfor %}                            
+                            {% for c in move.command %}
+                                {% with c|command_to_image as image_static %}
+                                    {% if c in command_smilies %}
+                                        <img src="{% static image_static %}" class="notation">
+                                    {% else %}
+                                        {{ c }}
+                                    {% endif %}
+                                {% endwith %}
+                            {% endfor %}
                         </td>
                         <td colspan="3">
                             {% for hl in move.height_level %}
                                 {% with hl|height_level_to_image as image_static %}
-                                    <img src="{% static image_static %}" class="notation">
-                                
+                                    {% if hl in height_level_smilies %}
+                                        <img src="{% static image_static %}" class="notation">
+                                    {% else %}
+                                        {{ hl }}
+                                    {% endif %}
                                 {% endwith %}
                             {% endfor %}
                         </td>
@@ -72,12 +73,12 @@
                 <tr class="move">
                     <td colspan="3">{{ move.attack_name|default_if_none:"-" }}</td>
                     <td colspan="3">
-                        {% for command in move.command %}
-                            {% with command|command_to_image as image_static %}
-                                {% if command in allowable_images %}
+                        {% for c in move.command %}
+                            {% with c|command_to_image as image_static %}
+                                {% if c in command_smilies %}
                                     <img src="{% static image_static %}" class="notation">
                                 {% else %}
-                                    {{ command }}
+                                    {{ c }}
                                 {% endif %}
                             {% endwith %}
                         {% endfor %}
@@ -85,7 +86,11 @@
                     <td colspan="3">
                         {% for hl in move.height_level %}
                             {% with hl|height_level_to_image as image_static %}
-                                <img src="{% static image_static %}" class="notation">                            
+                                {% if hl in height_level_smilies %}
+                                    <img src="{% static image_static %}" class="notation">                            
+                                {% else %}
+                                    {{ hl }}
+                                {% endif %}
                             {% endwith %}
                         {% endfor %}
                     </td>

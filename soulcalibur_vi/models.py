@@ -35,9 +35,9 @@ class Move(models.Model):
 
     section = models.ForeignKey('Section', on_delete=models.CASCADE, null=True, blank=True)
 
-    frames_to_impact = models.CharField(max_length=30, null=True, blank=True)
+    frames_to_impact = models.CharField(max_length=40, null=True, blank=True)
 
-    base_damage = models.CharField(max_length=30, null=True, blank=True)
+    base_damage = models.CharField(max_length=40, null=True, blank=True)
 
     attack_name = models.CharField(max_length=100, null=True, blank=True)
 
