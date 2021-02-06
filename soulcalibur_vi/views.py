@@ -10,22 +10,19 @@ register = template.Library()
 #these strings can be turned into images
 command_smilies = [
     ":1:", ":2:", ":3:", ":4:", ":6:", ":7:", ":8:", ":9:",
-    ":A:", ":B:", ":K:", ":G:",  
-
-    ":A+B:",
-
-    ":A", "A:", ":B", "B:", ":K", "K:", ":G", "G:",
     ":(1):", ":(2):", ":(3):", ":(4):", ":(6):", ":(7):", ":(8):", ":(9):",
+    ":A:", ":B:", ":K:", ":G:",  
     ":(A):", ":(B):", ":(K):", ":(G):",
-    ":(A", "A):", ":(B", "B):", "(B)", ":(K", "K):", ":(G", "G):",
-    ":(A)", "(A):", "(A", "A)", ":(B)", "(B):", "(B", "B)", ":(K)", "(K):", "(K", "K)",  ":(G)", "(G):", "(G", "G)",
+    ":A+B:", ":A+K:", ":A+G:", ":B+K:", ":B+G:", ":K+G:", ":A+B+K:", ":(A+B+K):",
+    ":(A+B):", ":(A+K):", ":(A+G):", ":(B+K):", ":(B+G):", ":(K+G):", 
     "*", "+", ":+:",
     ":a-small:", ":b-small:", ":k-small:", ":g-small:",
-    ":a-small", "a-small:", ":b-small", "b-small:", ":k-small", "k-small:", ":g-small", "g-small:",
     ":a:", ":b:", ":k:", ":g:",
-    ":a", "a:", ":b", "b:", ":k", "k:", ":g", "g:",
-    ":aB:", ":bA:", ":kA:", ":kB:",
-    ":SC:", ":RE:", "RE",
+    ":aA:",":aB:",":aK:",":aG:",":a(A):",":a(B):",":a(K):", ":a(G):",
+    ":bA:",":bB:",":bK:",":bG:",":b(A):",":b(B):",":b(K):",":b(G):",
+    ":kA:",":kB:",":kK:",":kG:",":k(A):",":k(B):",":k(K):",":k(G):",
+    ":gA:",":gB:",":gK:",":g(A):",":g(B):",":g(K):",
+    ":SC:", ":RE:", "RE", ":GI:",
 ]
 base_dir = "img/sc-inputs/"
 
@@ -104,7 +101,6 @@ def detail(request, slug):
 
     allowable_patterns = get_allowable_patterns(character=character)        #perhaps I won't need this with the new way of processing icons
 
-    #print(allowable_patterns)
     context = {
         "name": character.name,
         "image": character.image.url,
@@ -125,7 +121,6 @@ def detail(request, slug):
     for move in moves:
         #create a list of commands and height_levels from the respective strings so that I can use the for template tag on them
         command_string_to_list(move=move)
-        print(move.command)
         height_level_string_to_list(move=move)
 
         if (move.section):
@@ -348,7 +343,6 @@ def get_allowable_patterns(character):
     return special_stance_abbreviations + special_state_abbreviations
 
 def height_level_string_to_list(move):
-    #print(move.height_level)
     value = move.height_level
     if (value):
         height_level_list = []
@@ -404,8 +398,6 @@ def command_string_to_list(move):
             elif (value[i] == ":"):
                 command_list.append(value[save_point:i])
                 save_point = i
-
-    #print(command_list)
 
     move.command = command_list
 

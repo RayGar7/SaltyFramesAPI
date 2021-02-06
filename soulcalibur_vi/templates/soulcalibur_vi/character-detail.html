@@ -73,7 +73,15 @@
                 <tr class="move">
                     <td colspan="3">{{ move.attack_name|default_if_none:"-" }}</td>
                     <td colspan="3">
-                         
+                        {% for c in move.command %}
+                            {% with c|command_to_image as image_static %}
+                                {% if c in command_smilies %}
+                                    <img src="{% static image_static %}" class="notation">
+                                {% else %}
+                                    {{ c }}
+                                {% endif %}
+                            {% endwith %}
+                        {% endfor %}
                     </td>
                     <td colspan="3">
                         {% for hl in move.height_level %}
