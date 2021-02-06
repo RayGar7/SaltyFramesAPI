@@ -13,19 +13,19 @@ class Command(BaseCommand):
         try:
             character = options.get("character_name")
             self.stdout.write(self.style.WARNING("About to collect data for {}".format(character)))
-            print("Fetch all of the character data from our db")
+            #print("Fetch all of the character data from our db")
 
             # retrieve the characters' slugs from the db
             characters = Character.objects.all()
             slugs = [character.slug for character in characters]
-            print("fetched {} characters".format(len(slugs)))
+            #print("fetched {} characters".format(len(slugs)))
 
 
             if character not in slugs:
-                print("{} is not a valid argument".format(character))
+                #print("{} is not a valid argument".format(character))
                 raise CommandError('Invalid argument')
             else:
-                print("character name ok")
+                #print("character name ok")
                 self.collect_one(character)
                 self.stdout.write(self.style.SUCCESS('Every move was collected like a boss'))
 
@@ -41,7 +41,7 @@ class Command(BaseCommand):
 
     # todo check for duplicate Move entry's
     def collect_one(self, character):
-        print("About to request data from the source's API")
+        #print("About to request data from the source's API")
         endpoint = 'https://8wayrun.com/wiki/{}-frame-data-sc6/json'.format(character)
         response = requests.get(endpoint)
 
@@ -49,7 +49,7 @@ class Command(BaseCommand):
             raise Http404()
         elif (response.status_code == 200):
             # response ok
-            print('200 - Successfully requested frame data')
+            #print('200 - Successfully requested frame data')
 
             # get Character
             current_character = Character.objects.get(slug = character)
@@ -59,9 +59,9 @@ class Command(BaseCommand):
             i = 0
             for res in response.json():
                 if (res.get('type') == 'fd6row'):
-                    print("{} - type check ok".format(i))
+                    #print("{} - type check ok".format(i))
                     command = res.get('cmd') or None        # some res entries won't have a cmd, which means bad data
-                    print(command)
+                    #print(command)
                     if command and command not in commands:
                         commands.append(command)
                         self.save_move(raw=res, character=current_character, index=i)
@@ -69,11 +69,11 @@ class Command(BaseCommand):
 
     def save_move(self, raw, character, index):
         # sample: raw = {'type': 'fd6row', 'atk': 'Laurier Cutter', 'cmd': ':A:', 'lvl': ':H:', 'dmg': '8', 'imp': '12', 'grd': '-6', 'hit': '2', 'cnt': '2'}
-        print(raw)
+        #print(raw)
 
         section = self.get_section(command=raw.get('cmd'), character=character) or None
 
-        print("Section: ", section)
+        #print("Section: ", section)
 
         move = Move(character = character, 
         source = "8WayRun",
@@ -91,13 +91,13 @@ class Command(BaseCommand):
         notes = raw.get('nts')
         )
 
-        print(move)
-        print("Saving")    
+        #print(move)
+        #print("Saving")    
         try:
             move.save()
-            print('Successfully saved the move entry into the database')
+            #print('Successfully saved the move entry into the database')
         except:
-            print("there was an error saving {} index from the JSON response into the database.".format(str(i)))
+            #print("there was an error saving {} index from the JSON response into the database.".format(str(i)))
             raise CommandError('collect failed')
 
     def check_moves(self, character):
@@ -105,11 +105,11 @@ class Command(BaseCommand):
         moves = Move.objects.filter(character=current_character, section=None)
         
         if (moves):
-            print("there are some Moves without a section that were collected")
+            #print("there are some Moves without a section that were collected")
             for move in moves:
-                print("- " , move)
+                #print("- " , move)
         else:
-            print("There are no Moves without a section that were collected")
+            #print("There are no Moves without a section that were collected")
 
 
 
