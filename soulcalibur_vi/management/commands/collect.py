@@ -145,6 +145,14 @@ class Command(BaseCommand):
         button_a = "(\:A\:)|(\:a\-small\:)|(\:\(A\)\:)|(\:a.\:)|(\:a\(.\)\:)"
         button_b = "(\:B\:)|(\:b\-small\:)|(\:\(B\)\:)|(\:b.\:)|(\:b\(.\)\:)"
         button_k = "(\:K\:)|(\:k\-small\:)|(\:\(K\)\:)|(\:k.\:)|(\:k\(.\)\:)"
+
+
+        # in the form of :A+B:, :B+K:, :A+K: for regular, small and long button presses
+        dual_a = "(A|a\-small|a|\(A|A\)|\:a\-small\:)"
+        dual_b = "(B|b\-small|b|\(B|B\)|\:b\-small\:)"
+        dual_k = "(K|k\-small|k|\(K|K\)|\:k\-small\:)"
+
+        
         # horizontal attacks are defined as having a "A" somewhere in the beggining of the command
         if (re.search("^((" + noise + ")*(" + d + ")*(" + button_a + "))", command)):
             section = "horizontal attack"
@@ -158,8 +166,10 @@ class Command(BaseCommand):
             section = "kick attack"
 
         # dual button attacks are similar to horizontanl, vertical and kick attacks 
-        # but they are combinations of A,B,K and G but not A+G or B+G or A+B+K
-        if (re.search("(A\+B)|(B\+K)|(\:a-small\:\:\+\:\:b-small\:)|(A\+K)", command)):
+        # but they are combinations of A,B,K and G (A+B, B+K, K+G, A+K for Haohmaru) but not A+G or B+G or A+B+K
+        left_duals = "(A|a\-small|a|\(A|a\-small\:)|" + "(B|b\-small|b|\(B|b\-small\:)"
+        right_duals = "(B|b\-small|b|B\)|\:b\-small)|" + "(K|k\-small|k|K\)|\:k\-small)"
+        if (re.search("^(" + noise + ")*(" + d + ")*(" + "\:(" + left_duals + ")(\+|\:\+\:)(" + right_duals + ")\:)", command)):
             section = "dual button attack"
 
         # 8 way run refers to moving in any of the 8 directions in the game
