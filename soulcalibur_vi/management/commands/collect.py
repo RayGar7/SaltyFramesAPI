@@ -19,11 +19,11 @@ class Command(BaseCommand):
 
             # retrieve the characters' slugs from the db
             slugs = Character.objects.values_list('slug', flat=True)
-            print(slugs)
-            print("fetched {} characters".format(len(slugs)))
+            #print(slugs)
+            #print("fetched {} characters".format(len(slugs)))
 
             if (character in slugs):
-                print("character name ok")
+                #print("character name ok")
                 self.collect_one(character)
                 self.stdout.write(self.style.SUCCESS('Every move was collected'))
 
@@ -33,21 +33,21 @@ class Command(BaseCommand):
                 self.collect_all()
                 self.stdout.write(self.style.SUCCESS('Every move for every character has been saved'))
             else:
-                print("{} is not a valid argument".format(character))
+                #print("{} is not a valid argument".format(character))
                 raise CommandError('Invalid argument')
 
         except Exception:
             raise CommandError('Collect failed')
 
     def collect_one(self, character):
-        print("About to request data from the source's API")
+        #print("About to request data from the source's API")
         endpoint = 'https://8wayrun.com/wiki/{}-frame-data-sc6/json'.format(character)
         response = requests.get(endpoint)
 
         if (response.status_code == 404):
             raise Http404()
         elif (response.status_code == 200):
-            print('200 - Response ok')
+            #print('200 - Response ok')
 
             # get Character
             current_character = Character.objects.get(slug = character)
