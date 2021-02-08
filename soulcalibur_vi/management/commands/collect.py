@@ -9,65 +9,70 @@ from ...models import Character, Move, SpecialStance, Section, SpecialState
 class Command(BaseCommand):
     help = 'Request the data from the source and save it into our own datbase'
 
+    def add_arguments(self, parser):
+        parser.add_argument('character_name')
+
     def handle(self, *args, **options):
         try:
             character = options.get("character_name")
-            #self.stdout.write(self.style.WARNING("About to collect data for {}".format(character)))
-            #print("Fetch all of the character data from our db")
+            self.stdout.write(self.style.WARNING("About to collect data for {}".format(character)))
 
             # retrieve the characters' slugs from the db
-            characters = Character.objects.all()
-            slugs = [character.slug for character in characters]
-            #print("fetched {} characters".format(len(slugs)))
+            slugs = Character.objects.values_list('slug', flat=True)
+            print(slugs)
+            print("fetched {} characters".format(len(slugs)))
 
-
-            if character not in slugs:
-                #print("{} is not a valid argument".format(character))
-                raise CommandError('Invalid argument')
-            else:
-                #print("character name ok")
+            if (character in slugs):
+                print("character name ok")
                 self.collect_one(character)
-                #self.stdout.write(self.style.SUCCESS('Every move was collected like a boss'))
+                self.stdout.write(self.style.SUCCESS('Every move was collected'))
 
                 # check if there were any Move entries left without a section after running collect
-                self.check_moves(character)
+                #self.check_moves(character)
+            elif (character == "all"):
+                self.collect_all()
+                self.stdout.write(self.style.SUCCESS('Every move for every character has been saved'))
+            else:
+                print("{} is not a valid argument".format(character))
+                raise CommandError('Invalid argument')
 
         except Exception:
-            raise CommandError('collect failed')
+            raise CommandError('Collect failed')
 
-    def add_arguments(self, parser):
-        # Positional arguments are standalone name
-        parser.add_argument('character_name')
-
-    # todo check for duplicate Move entry's
     def collect_one(self, character):
-        #print("About to request data from the source's API")
+        print("About to request data from the source's API")
         endpoint = 'https://8wayrun.com/wiki/{}-frame-data-sc6/json'.format(character)
         response = requests.get(endpoint)
 
         if (response.status_code == 404):
             raise Http404()
         elif (response.status_code == 200):
-            # response ok
-            #print('200 - Successfully requested frame data')
+            print('200 - Response ok')
 
             # get Character
             current_character = Character.objects.get(slug = character)
 
-            # used to check duplicity and to check against the index number in the JSON response from the API
-            commands = []
+            # used to check against the index number in the JSON response from the API
             i = 0
             for res in response.json():
                 if (res.get('type') == 'fd6row'):
                     #print("{} - type check ok".format(i))
                     command = res.get('cmd') or None        # some res entries won't have a cmd, which means bad data
                     #print(command)
-                    if command and command not in commands:
-                        commands.append(command)
+                    if command:
                         self.save_move(raw=res, character=current_character, index=i)
                 i += 1
 
+    def collect_all(self):
+        characters = Character.objects.all()
+        for character in characters:
+            self.collect_one(character=character.slug)
+            self.stdout.write(self.style.SUCCESS('Every move was collected for the character: {}.'.format(character.name)))
+
+
+
     def save_move(self, raw, character, index):
+       # print("Control in save_move")
         # sample: raw = {'type': 'fd6row', 'atk': 'Laurier Cutter', 'cmd': ':A:', 'lvl': ':H:', 'dmg': '8', 'imp': '12', 'grd': '-6', 'hit': '2', 'cnt': '2'}
         #print(raw)
 
@@ -113,18 +118,19 @@ class Command(BaseCommand):
             #print("There are no Moves without a section that were collected")
             pass
 
-
-
     # collaborators: this is a hard function to read, it also uses some very specific business logic from 8WayRun
     # business logic is explained here: https://8wayrun.com/wiki/controls-and-inputs/
     def get_section(self, command, character):
         # get every stance for the character
-        stances = SpecialStance.objects.filter(character__name = character.name)
-        stance_codes = [stance.abbreviation for stance in stances]
+        # stances = SpecialStance.objects.filter(character__name = character.name)
+        # stance_codes = [stance.abbreviation for stance in stances]
+        #print("Execution control in get_Section")
+        stance_codes = SpecialStance.objects.filter(character__name=character.name).values_list('abbreviation', flat=True)
         
         # get every special state for the character
-        states = SpecialState.objects.filter(character__name = character.name)
-        state_codes = [state.abbreviation for state in states]
+        # states = SpecialState.objects.filter(character__name = character.name)
+        #state_codes = [state.abbreviation for state in states]
+        state_codes = SpecialState.objects.filter(character__name=character.name).values_list('abbreviation', flat=True)
 
         section = None
 
@@ -175,7 +181,7 @@ class Command(BaseCommand):
         # 8 way run refers to moving in any of the 8 directions in the game
         # in the commands it in the form :(d): where d is a digit and digits represent directions (see "directions" under "Basic Controls" here: 
         # https://8wayrun.com/wiki/controls-and-inputs/)
-        if (re.search("(Run)|(\:\(\d\)\:)", command, re.IGNORECASE)): 
+        if (re.search("^((Run)|(" + d + "))*(\:\(\d\)\:)", command, re.IGNORECASE)): 
             section = "8-way run"
 
         # characters can be in "stances" when a stance is required to do a move, that move is a special move
