@@ -51,6 +51,11 @@ a:hover {
   min-width: 100%;
 } 
 
+.card-image {
+    display: block;
+    margin: 0 auto
+}
+
 /*mobile only*/
 #content-head {
     border-radius: none;
